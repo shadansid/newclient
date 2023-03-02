@@ -21,7 +21,7 @@ const AddCustomCoin = () => {
   formdata.append('initprice', initprice);
   formdata.append('image', image);
 
-  axios.post('/addcustomcoin', formdata, {
+  axios.post('http://139.84.137.232:8800/api/addcustomcoin', formdata, {
     headers: {
       'Content-Type': 'multipart/form-data'
     }

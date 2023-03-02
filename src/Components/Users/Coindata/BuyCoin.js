@@ -15,7 +15,7 @@ function BuyCoin({coins,coinChange}) {
   const [verified, setVerified] = useState(0)
   useEffect(() => {
           
-        axios.get('/checkverified')
+        axios.get('http://139.84.137.232:8800/api/checkverified')
         .then(function (response) {
           
           // console.log(response);
@@ -73,7 +73,7 @@ let axiosConfig = {
 
 
 
-axios.post('/pay', postData, axiosConfig)
+axios.post('http://139.84.137.232:8800/api/pay', postData, axiosConfig)
 .then((res) => {
 
   setBuyres(res.data)
@@ -117,7 +117,7 @@ axios.post('/pay', postData, axiosConfig)
     
     
     
-    axios.post('/limit', postData, axiosConfig)
+    axios.post('http://139.84.137.232:8800/api/limit', postData, axiosConfig)
     .then((res) => {
     
       // setBuyres(res.data)
@@ -139,7 +139,7 @@ axios.post('/pay', postData, axiosConfig)
 // console.log(sellamount)
 
 
-fetch("/sellcoin", {
+fetch("http://139.84.137.232:8800/api/sellcoin", {
   method: "POST",
 
   body: JSON.stringify({
@@ -185,7 +185,7 @@ const [avblCoin , setavblCoin] = useState("");
 
 const avbl = ()=>{
 
-  axios.post('/avbl', {symbol:context.symbol})
+  axios.post('http://139.84.137.232:8800/api/avbl', {symbol:context.symbol})
   .then((res) => {
   
     setavblCoin(res.data)
@@ -199,7 +199,7 @@ const avbl = ()=>{
 const [avblsellCoin,setavblsellCoin] = useState(0);
 const avblsell = ()=>{
 
-  axios.post('/avblsell', {symbol:context.symbol})
+  axios.post('http://139.84.137.232:8800/api/avblsell', {symbol:context.symbol})
   .then((res) => {
   
     setavblsellCoin(res.data)

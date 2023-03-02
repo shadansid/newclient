@@ -35,7 +35,7 @@ const AllUserBox = (props) => {
   console.log(event.target.checked)
   axios({
       method: 'post',
-      url: '/allowusers',
+      url: 'http://139.84.137.232:8800/api/allowusers',
       data: {
         Allow: checked,
         userid:props.userid,
@@ -67,7 +67,7 @@ const AllUserBox = (props) => {
         
         {details ? <div style={{display:'flex'}}>
 
-          <img src={ "http://localhost:8800/static/userdoc/"+props.userid+".png"} alt="" height={200} width={300} />
+          <img src={ "http://139.84.137.232:8800/api/userdoc/"+props.userid+".png"} alt="" height={200} width={300} />
           
           <div style={{display:'flex', flexDirection:'column',gap:'10px', justifyContent:'center', paddingLeft:'40px'}}>
             <div>UserID : { props.userid}</div>

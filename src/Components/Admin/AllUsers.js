@@ -9,7 +9,7 @@ const AllUsers = () => {
  const [data, setdata] = useState([]);
     useEffect(()=>{
 
-        axios("/getallusers").then(res=>res.data).then((data)=>{
+        axios("http://139.84.137.232:8800/api/getallusers").then(res=>res.data).then((data)=>{
 
             setdata(data);
             

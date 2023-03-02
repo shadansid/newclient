@@ -77,7 +77,7 @@ setInterval(()=>{
 },3000)
 
 if(validemail && validpass){
-  fetch('/adduser', {
+  fetch('http://139.84.137.232:8800/api/adduser', {
     method: 'POST',
     body:JSON.stringify(formdata),
     headers: {
@@ -96,10 +96,10 @@ if(validemail && validpass){
   setnotvalid(false)
 
 if(validemail){
-  console.log(" Use Strong password")
+  // console.log(" Use Strong password")
 
 }else{
-console.log("Enter Valid email")
+// console.log("Enter Valid email")
 
 }
 
@@ -145,7 +145,7 @@ else
 const handleChangeName = (e) =>{
 
 
-console.log(e)
+// console.log(e)
 }
 
 const handleChangePass = (e) =>{
@@ -169,7 +169,7 @@ const handleChangePass = (e) =>{
   
     <>
     <div className="Registration" style={{ 
-      backgroundImage: `url("http://localhost:8800/static/images/lbg.jpeg")` 
+      backgroundImage: `url("http://139.84.137.232:8800/api/static/images/lbg.jpeg")` 
     }}>
         
         

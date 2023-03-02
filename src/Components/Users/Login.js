@@ -47,7 +47,7 @@ const loginData = {
  
 
 
-fetch('/login', {
+fetch('http://139.84.137.232:8800/api/login', {
   method: 'POST',
   body:JSON.stringify(loginData),
   headers: {
@@ -72,12 +72,12 @@ const handleChangeEmail = (e) =>{
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 if(e.target.value.match(mailformat))
 {
-console.log("Valid email address!");
+// console.log("Valid email address!");
 
 }
 else
 {
-console.log("You have entered an invalid email address!");
+// console.log("You have entered an invalid email address!");
 
 }
 

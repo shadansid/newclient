@@ -14,7 +14,7 @@ const WalletBalance = () => {
       }
     }
    
-    const url = "/showwallet";
+    const url = "http://139.84.137.232:8800/api/showwallet";
   
   
     axios.get(url, config)

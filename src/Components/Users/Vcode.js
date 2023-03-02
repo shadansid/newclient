@@ -40,7 +40,7 @@ const codeData = {
  
 
 
-fetch('/verifyuser', {
+fetch('http://139.84.137.232:8800/api/verifyuser', {
   method: 'POST',
   body:JSON.stringify(codeData),
   headers: {
@@ -48,7 +48,8 @@ fetch('/verifyuser', {
   },
 })
   .then((response) => response.json())
-  .then((json) => {console.log(json)
+  .then((json) => {
+    // console.log(json)
   setvvcode(json)
 
 if(vvcode.status === 200){

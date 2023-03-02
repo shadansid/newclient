@@ -12,13 +12,17 @@ const OpenOrder = () => {
     const [OrderBook,setOrderBook]  = useState(0)
 
     useEffect(()=>{
-      const url = "/openorder"; 
+      const url = "http://139.84.137.232:8800/api/openorder"; 
       axios.get(url, config)
-      .then(res=>{ console.log(res.data)
+        .then(res => {
+          // console.log(res.data)
       setOrderBook(res.data)
       
       })
-      .catch(err=> console.log(err))
+        .catch(err =>
+          console.log(err)
+        
+          )
   
     },[OrderBook])
   

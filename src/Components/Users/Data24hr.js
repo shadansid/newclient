@@ -46,7 +46,7 @@ const Data24hr = ({coins,coinChange}) => {
         client.onmessage = (message) => {
             // console.log(message.s)
             // console.log(message.data) 
-            console.log("Hii")
+            // console.log("Hii")
             let x = JSON.parse(message.data)
             setcoin(x)
         }

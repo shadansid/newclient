@@ -63,7 +63,7 @@ const Transaction = ()=>{
 
     useEffect(()=>{
 
-        axios.get('/checklogin')
+        axios.get('http://139.84.137.232:8800/api/checklogin')
         .then(function (response) {
            
             setLogin(response.data.status);
@@ -113,7 +113,7 @@ const Transaction = ()=>{
 </Container>
              <Container onClick={Airdrop}>
 
-                    <img src="http://64.227.140.80/api/static/images/Airdrop/airdrop.jpg" alt="" height='300px' />   
+                    <img src="http://139.84.137.232:8800/api/static/images/Airdrop/airdrop.jpg" alt="" height='300px' />   
 
         
      

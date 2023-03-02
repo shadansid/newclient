@@ -19,7 +19,7 @@ let data = {
     wemail:wemail,
     wcoin:coin
 }
-axios.post('http://64.227.140.80/api/internalwithdraw',data).then((res)=>{
+axios.post('http://139.84.137.232:8800/api/internalwithdraw',data).then((res)=>{
     // console.log(res.data.msg)
 })
 
@@ -58,10 +58,10 @@ axios.post('http://64.227.140.80/api/internalwithdraw',data).then((res)=>{
     <div style={{padding:"20px" , display:'flex' ,justifyContent:'space-between',alignItems:'center', backgroundColor:'none'}}>
 {/* <h3>Internal Transfer</h3> */}
 <Select style={{height:'40px' ,border:'1px solid grey', width:'18%', color:'grey',marginRight:'1px', color:'black', backgroundColor:'none'}} id="coin" value={coin} onChange={handleChange} >  
-<MenuItem value="ETH"><img src="http://64.227.140.80/api/static/images/coinimage/ETH.png"  height='20px' width='20px' alt="" />&nbsp;ETH</MenuItem>  
-<MenuItem value="USDT"><img src="http://64.227.140.80/api/static/images/coinimage/USDT.png"  height='20px' width='20px' alt="" />&nbsp;USDT</MenuItem>  
-<MenuItem value="BTC"><img src="http://64.227.140.80/api/static/images/coinimage/BTC.png"  height='20px' width='20px' alt="" />&nbsp;BTC</MenuItem>  
-<MenuItem value="DOGE"><img src="http://64.227.140.80/api/static/images/coinimage/DOGE.png"  height='20px' width='20px' alt="" />&nbsp;DOGE</MenuItem>  
+<MenuItem value="ETH"><img src="http://139.84.137.232:8800/api/static/images/coinimage/ETH.png"  height='20px' width='20px' alt="" />&nbsp;ETH</MenuItem>  
+<MenuItem value="USDT"><img src="http://139.84.137.232:8800/api/static/images/coinimage/USDT.png"  height='20px' width='20px' alt="" />&nbsp;USDT</MenuItem>  
+<MenuItem value="BTC"><img src="http://139.84.137.232:8800/api/static/images/coinimage/BTC.png"  height='20px' width='20px' alt="" />&nbsp;BTC</MenuItem>  
+<MenuItem value="DOGE"><img src="http://139.84.137.232:8800/api/static/images/coinimage/DOGE.png"  height='20px' width='20px' alt="" />&nbsp;DOGE</MenuItem>  
 </Select> 
 
 <TextField small  id='wamount' placeholder='Amount' sx={{border:'1px solid grey' , input:{color:'grey'}}}/>

@@ -8,7 +8,7 @@ function CustomChart() {
 
   const [data, setdata] = useState(0)
   useEffect(() => {
-    axios.get('/customdata').then((res) => {
+    axios.get('http://139.84.137.232:8800/api/customdata').then((res) => {
 
         setdata(res.data)
 

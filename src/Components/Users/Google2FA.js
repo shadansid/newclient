@@ -9,7 +9,7 @@ function Google2FA() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post('/api/2fa/verify', { code })
+    axios.post('http://139.84.137.232:8800/api/api/2fa/verify', { code })
       .then((response) => {
         alert('Verification successful!');
       })
@@ -21,7 +21,7 @@ function Google2FA() {
   const handleSetup = (event) => {
     event.preventDefault();
 
-    axios.post('/api/2fa/setup')
+    axios.post('http://139.84.137.232:8800/api/api/2fa/setup')
       .then((response) => {
         setSecret(response.data.secret);
         setQRCode(response.data.qr_code);

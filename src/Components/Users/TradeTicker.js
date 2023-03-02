@@ -1,36 +1,36 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
-import {Container, Box} from '@mui/material'
-import { connection, w3cwebsocket as W3CWebSocket } from "websocket";
+// import React from 'react'
+// import { useState, useEffect } from 'react';
+// import {Container, Box} from '@mui/material'
+// import { connection, w3cwebsocket as W3CWebSocket } from "websocket";
 
-const TradeTicker = () => {
-  let arr = [
-    "ethusdt@miniTicker","bnbusdt@miniTicker","wavesusdt@miniTicker","bchabcusdt@miniTicker"
+// const TradeTicker = () => {
+//   let arr = [
+//     "ethusdt@miniTicker","bnbusdt@miniTicker","wavesusdt@miniTicker","bchabcusdt@miniTicker"
     
-  ];
+//   ];
 
-      //let ws = new WebSocket("wss://stream.binance.com:9443/ws/" + streams.join('/'));
-      let ws = new WebSocket(`wss://stream.binance.com:9443/ws/miniTicker@${arr}`);
+//       //let ws = new WebSocket("wss://stream.binance.com:9443/ws/" + streams.join('/'));
+//       let ws = new WebSocket(`wss://stream.binance.com:9443/ws/miniTicker@${arr}`);
 
-      ws.onmessage = function(evt) {
-        let d  = JSON.parse(evt.data)
-        console.log(d)
+//       ws.onmessage = function(evt) {
+//         let d  = JSON.parse(evt.data)
+//         // console.log(d)
 
 
-      }
-    return (
+//       }
+//     return (
     
-        <div>
+//         <div>
 
           
 
 
 
-        </div>
+//         </div>
 
 
 
-  )
-}
+//   )
+// }
 
-export default TradeTicker
+// export default TradeTicker
