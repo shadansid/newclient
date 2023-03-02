@@ -1,0 +1,13 @@
+.coinwrap{
+
+        display: flex;
+        height: 100vh;
+
+
+
+}
+
+#chart{
+        z-index: -1;
+
+}

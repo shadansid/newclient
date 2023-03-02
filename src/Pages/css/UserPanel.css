@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.userpanel{
+
+    display: flex;
+   
+
+
+}
+.gridcontainer{
+    padding-top:20px ;
+
+}
+.gridbox{
+    
+    padding: 20px;
+    display: flex;
+    /* border: 1px solid rgba(0, 0, 0, 0.221); */
+    align-items: flex-start;
+    /* justify-content: center; */
+    
+}
