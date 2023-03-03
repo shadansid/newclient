@@ -8,7 +8,7 @@ const TradeHistory =  () => {
   const [tradedata,settradedata]  = useState(0)
 
   useEffect(()=>{
-    const url = "http://139.84.137.232:8800/api/showtrade"; 
+    const url = "http://139.84.137.232/api/showtrade"; 
     axios.get(url, config)
       .then(res => {
         // console.log(res.data)
@@ -65,7 +65,7 @@ const TradeHistory =  () => {
 
 return <div><div style={{display:'flex', alignItems:'center',justifyContent:'space-around' , padding:'20px'}}>
 {/* {ele.type== 'credit'? :} */}
-<div style={{width:'10%'}}><img src={`http://139.84.137.232:8800/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`} alt=""  height="20px" width="20px"/></div>
+<div style={{width:'10%'}}><img src={`http://139.84.137.232/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`} alt=""  height="20px" width="20px"/></div>
 <div style={{width:'20%',color:'#6F6A6D'}}>{ele.currency}</div>
 {ele.type==='credit'?<div style={{width:'30%',color:((ele.type ==='credit')?'green':'red')}}>{"$ "+ ele.quantity*ele.amount}</div>:<div style={{width:'30%',color:((ele.type ==='credit')?'green':'red')}}>{"$ "+ ele.quantity}</div>}
 <div style={{width:'20%',color:'#6F6A6D'}}>{ele.amount}</div>

@@ -9,7 +9,7 @@ const Airdrop = () => {
     <div style={{padding:'10px', color:'rgba(0, 0, 0, 0.34)',fontSize:'28px'}}>Airdrop</div>
     <div id="Airdrop">
 
-     <form action="http://139.84.137.232:8800/api/airdrop" method='POST' encType='multipart/form-data'>
+     <form action="http://139.84.137.232/api/airdrop" method='POST' encType='multipart/form-data'>
      <div>
 <input type="text" id="adhar" placeholder={""}  style={{background:'transparent',margin:'10px',width:'48ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
 </div>

@@ -9,7 +9,7 @@ const OrderHistory = () => {
   const [OrderBook,setOrderBook]  = useState(0)
 
   useEffect(()=>{
-    const url = "http://139.84.137.232:8800/api/orderbook"; 
+    const url = "http://139.84.137.232/api/orderbook"; 
     axios.get(url, config)
       .then(res => {
         // console.log(res.data)

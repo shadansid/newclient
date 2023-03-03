@@ -40,7 +40,7 @@ const codeData = {
  
 
 
-fetch('http://139.84.137.232:8800/api/verifyuser', {
+fetch('http://139.84.137.232/api/verifyuser', {
   method: 'POST',
   body:JSON.stringify(codeData),
   headers: {

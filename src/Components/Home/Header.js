@@ -43,7 +43,7 @@ const [isLoggedIn, setLogin] = useState(0);
 
 
 useEffect(() => {
-  axios.get('http://139.84.137.232:8800/api/checklogin')
+  axios.get('http://139.84.137.232/api/checklogin')
   .then(function (response) {
      
       setLogin(response.data.status);
@@ -82,7 +82,7 @@ const [color, setColor] = useState('#171B26')
 <>
   <Container sx={{display:'flex', alignItems:'center' , justifyContent:'center' , height:'10vh', backgroundColor:color}}>
   
-        <div  style={{width:"50%"}}><img src="http://139.84.137.232:8800/api/static/images/logo.png" height="45px" width="110px" alt="" /></div>
+        <div  style={{width:"50%"}}><img src="http://139.84.137.232/api/static/images/logo.png" height="45px" width="110px" alt="" /></div>
 
         <div style={{display:'flex', fontColor:'grey',alignItems:'center',width:"50%", height:'50px' , justifyContent:'space-around'}}> 
          

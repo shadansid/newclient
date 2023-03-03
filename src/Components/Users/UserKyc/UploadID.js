@@ -31,7 +31,7 @@ const UploadID = () => {
       formdata.append('pancard', pancard);
       formdata.append('image', image);
     
-      axios.post('http://139.84.137.232:8800/api/userkyc', formdata, {
+      axios.post('http://139.84.137.232/api/userkyc', formdata, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

@@ -31,7 +31,7 @@ const Main = () => {
     </Box>
     <Box>
 
-      <img src="http://139.84.137.232:8800/api/static/images/banner3.png" height="400px" width="500px"></img>
+      <img src="http://139.84.137.232/api/static/images/banner3.png" height="400px" width="500px"></img>
 
 
 
@@ -40,10 +40,10 @@ const Main = () => {
 
       <Box sx={{ display:'flex' , gap:'20px' , paddingTop:'80px'}}>
 
-          <div><img src="http://139.84.137.232:8800/api/static/images/vox/1.png" height="170px" width="250px" alt="" /></div>
-          <div><img src="http://139.84.137.232:8800/api/static/images/vox/2.jpg" height="170px" width="250px" alt="" /></div>
-          <div><img src="http://139.84.137.232:8800/api/static/images/vox/3.png" height="170px" width="250px" alt="" /></div>
-          <div><img src="http://139.84.137.232:8800/api/static/images/vox/4.png" height="170px" width="250px" alt="" /></div>
+          <div><img src="http://139.84.137.232/api/static/images/vox/1.png" height="170px" width="250px" alt="" /></div>
+          <div><img src="http://139.84.137.232/api/static/images/vox/2.jpg" height="170px" width="250px" alt="" /></div>
+          <div><img src="http://139.84.137.232/api/static/images/vox/3.png" height="170px" width="250px" alt="" /></div>
+          <div><img src="http://139.84.137.232/api/static/images/vox/4.png" height="170px" width="250px" alt="" /></div>
  </Box>
 <Box sx={{display:'flex' , flexDirection:'column' , gap:'20px' , fontSize:'16px' , color:'grey'}}>
   <div>Special Notice About Tradexpro Markets Limited</div>
@@ -63,7 +63,7 @@ const Main = () => {
 
 
 <Box sx={{display:'flex'}}>
-<div><img src="http://139.84.137.232:8800/api/static/images/banner4.png" width="600px" height="500px" alt="" /></div>
+<div><img src="http://139.84.137.232/api/static/images/banner4.png" width="600px" height="500px" alt="" /></div>
 <div style={{display:'flex', alignItems:'center', justifyContent:'center', height:'500px', flexDirection:'column'}}>
 
 <div style={{height:'10vh'}} >
@@ -84,7 +84,7 @@ const Main = () => {
 
 
 
-<Box sx={{padding:{xs:'50px',sm:'120px'},margin:'50px', background:`url("http://139.84.137.232:8800/api/static/images/bg/app.png")`, backgroundSize:'cover' , backgroundPosition:'center', display:'flex',height:'100vh', color:'white'  }}>
+<Box sx={{padding:{xs:'50px',sm:'120px'},margin:'50px', background:`url("http://139.84.137.232/api/static/images/bg/app.png")`, backgroundSize:'cover' , backgroundPosition:'center', display:'flex',height:'100vh', color:'white'  }}>
 
 <div  style={{width:'50%'}}>
 <div style={{color:'grey', fontSize:'35px', lineHeight:'1'}}>Install Mobile App and earn on the go with a million crypto pioneers</div>
