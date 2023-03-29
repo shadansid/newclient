@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Login from '../Components/Users/Login'
+
 import {Container, Typography, Toolbar,IconButton, Button,Box,Badge, Grid} from '@mui/material'
-import {LineChart,Tooltip,CartesianGrid,Line,XAxis} from 'recharts'
+// import {LineChart,Tooltip,CartesianGrid,Line,XAxis} from 'recharts'
 import TransactionHistory from '../Components/Users/TransactionHistory'
 import TradeHistory from '../Components/Users/TradeHistory'
 import Wallet from '../Components/Users/Wallet/Wallet'
 import WalletBalane from '../Components/Users/Wallet/WalletBalane'
-
+import UserProfile from '../Components/Users/UserKyc/UserProfile';
 import { useNavigate } from 'react-router-dom';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import Person4Icon from '@mui/icons-material/Person4';
@@ -18,8 +19,17 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import axios from 'axios';
+import WalletChart from '../Components/Users/Wallet/WalletChart'
+import {Chart as ChartJS, ArcElement,Legend, Tooltip} from 'chart.js'
+import { Doughnut, Line } from 'react-chartjs-2';
+import MobShortcuts from '../Components/Users/MobShortcuts'
 import TradeHistoryDashboard from '../Components/Users/TradeHistoryDashboard'
+import OpenOrder from '../Components/Users/OpenOrder'
+import OrderHistory from '../Components/Users/OrderHistory'
+import GraphWallet from '../Components/Users/Wallet/GraphWallet'
+import GraphWallet2 from '../Components/Users/Wallet/GraphWallet2'
 
+ChartJS.register(ArcElement, Tooltip, Legend)
 const Dashboard = () => {
     const navilogin =  useNavigate() 
     const Airdrop = ()=>{
@@ -81,44 +91,90 @@ const Transaction = ()=>{
     },[isLoggedIn]);
 
 
+// Chart
+const data = {
+    labels: ['USDT', 'ETH', 'XRP' ],
+    datasets: [
+      {
+        data: [300, 50, 100, 70, 60, 50, 50, 670],
+         
+            backgroundColor: ['#BE6E46', '#3F7CAC', '#912F56','#1DD3B0','#1F7A8C', '#CB9173', '#F18F01', '#ACF7C1'],
+            // hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+            hoverBackgroundColor: ['#BE6E46', '#3F7CAC', '#912F56','#1DD3B0'],
+            borderWidth: 0
+      }
+    ]
+  };
+  
+  const options = {
+    maintainAspectRatio: false,
+    responsive: true,
+    legend: {
+      position: 'bottom',
+      labels: {
+        fontColor: 'white',
+        fontSize: 14
+      }
+    }
+  };
+  
+    
+    // Chart 2 Line
+  
+    
+
+
     return (
    
          <>
-        
+
+
+     
+      
          
           {isLoggedIn && <div>
 
          
 
        
-        <Container style={{padding:'30px',backgroundColor:"#171B26"}}>
+        <Box style={{backgroundColor:"#171B26"}}>
      
-         <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+         <Box>
      
+            {/* User Profile */}
+              <UserProfile />
         
-        
-        
-         {/* <Grid item  xs={6} md={12} > */}
-   
-           
-           {/* </Grid> */}
-     
-           
-           
-           {/* <Grid item  xs={6} >
-           <Container  onClick={Wallet} style={{background:'#1B192F', height:'150px', borderRadius:'23px',cursor:'pointer' }}> */}
+                        
+                        {/* User Profile */}
                
-           <WalletBalane />
-           <Container sx={{height:'8vh',color:'#EAECEF' , fontSize:'28px', display:'flex',alignItems:'center'}}>Recommended For You
+              <WalletBalane />
+               
+
+              {/* <Box sx={{display:'flex', gap:'50px'}}><GraphWallet/>
+              <GraphWallet2/></Box> */}
+                        
+                        {/* <div style={{ width: '20%', height: '20%' }}>  <Line data={data2} options={options2} /></div> */}
+                        
+
+                        <MobShortcuts/>
+              {/* <OpenOrder /> */}
+              
+
+
+           <Container sx={{height:'8vh',color:'grey' , fontSize:{sm:'28px', xs:'22px'}, display:'flex',alignItems:'center'}}>Recommended For You
 </Container>
              <Container onClick={Airdrop}>
+               
+                  
+                      <Box sx={{backgroundImage:"url('http://localhost:8800/static/images/Airdrop/airdrop2.gif')", backgroundPosition:'center', backgroundSize:'cover', height:{sm:'300px', xs:'200px'}, width:{xs:window.innerWidth -50,sm:'100%'}}}> </Box>
+                     
+                     
 
-                    <img src="http://139.84.137.232/api/static/images/Airdrop/airdrop.jpg" alt="" height='300px' />   
-
-        
+                      {/* <OrderHistory/> */}
      
-                   </Container>
-                   <Container sx={{height:'8vh',color:'#EAECEF' , fontSize:'28px', display:'flex',alignItems:'center'}}>Recent Transactions
+                        </Container>
+                   
+                   <Container sx={{height:'8vh',color:'grey' , fontSize:{sm:'28px', xs:'22px'}, display:'flex',alignItems:'center'}}>Recent Transactions
 </Container>
     
            <Container>
@@ -165,39 +221,20 @@ const Transaction = ()=>{
      
      
      
-         </Grid>
+         </Box>
      
      
          
-        </Container>
+        </Box>
         
      
 
 
 
 {/* botto,m */}
-<Box sx={{display:{sm:'none', xs:'flex' , position:'fixed' , bottom:0, height:'55px' , width:window.innerWidth ,zIndex:5 , display:'flex' , flexDirection:'row',justifyContent:'space-between' , alignItems:'center' , boxShadow:'rgb(105 50 151) 2px 1px 2px 0px', padding:'10px'}}}>
- 
- <Box>
-  <DashboardIcon style={{color:'#5442f2'}} />
-  </Box>
-   
-<Box>
 
-<Person4Icon style={{color:'#EA661C'}} />
-</Box>
-<Box>
- <AccountBalanceWalletIcon style={{color:'#0082FC'}} />
- </Box>
-<Box>
- <ArticleIcon style={{color:'#1392DE'}}/>
- </Box>
-
-
- 
- </Box>
  </div> }
- 
+
         </>
   
   

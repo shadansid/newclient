@@ -16,7 +16,7 @@ height: 100vh;
 /* background:linear-gradient(#EFF1F4,#ffffff); */
 /* background-image:url('/client/public/bg/1.jpg'); */
 /* background-color: #F5F9FC; */
-background: url("http://localhost:8800/static/images/lbg.jpeg");
+/* background: url("http://localhost:8800/static/images/lbg.jpeg"); */
 background-position: center;
 background-size: cover;
 

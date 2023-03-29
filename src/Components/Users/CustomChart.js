@@ -2,11 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createChart, CrosshairMode } from 'lightweight-charts';
 import './css/CustomChart.css'
 import axios from 'axios';
-function CustomChart() {
+function CustomChart(props) {
   const chartContainerRef = useRef(null);
   const chartRef = useRef(null);
 
   const [data, setdata] = useState(0)
+
+  
   useEffect(() => {
     axios.get('http://139.84.137.232/api/customdata').then((res) => {
 
@@ -21,11 +23,16 @@ function CustomChart() {
   useEffect(() => {
     if (!chartRef.current) {
       chartRef.current = createChart(chartContainerRef.current, {
-        width: window.innerWidth - 600,
-        height: 400,
+        width: props.size - 40,
+        height: 350,
         layout: {
           
-          background: 'rgba(197, 203, 206, 0.5)',
+          // background: 'green',
+          backgroundColor:'aqua',
+    // borderColor: '#2C3141',
+  // color:'purple',
+    fill: true,
+  // pointBorderColor:'yellow',
           textColor:'white'
         },
         grid: {

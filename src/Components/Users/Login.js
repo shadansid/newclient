@@ -7,7 +7,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 import { Button,Checkbox , Divider } from '@mui/material';
-
+import Header from '../Home/Header'
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
@@ -98,6 +98,7 @@ else
   
   
     <>
+      <Header/>
     <div className="Registration">
         
         

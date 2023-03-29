@@ -21,6 +21,7 @@ const Data24hr = ({coins,coinChange}) => {
     //     let x = JSON.parse(message.data)
     //     setcoin(x)
     // }
+
     
     
     useEffect(()=>{
@@ -57,53 +58,130 @@ const Data24hr = ({coins,coinChange}) => {
   return (
     
     
-    <>
-    <div style={{backgroundColor:'#171B26'}}>
+      <>
+  
+          
+          <Box sx={{display:{xs:'none', sm:'block'}}}>
+                      
+    <Box sx={{backgroundColor:'#171B26'}}>
 
 
-    <Container sx={{backgroundColor:'#171B26' , color:'white' , height:'10vh' , display:'flex' , alignItems:'center', justifyContent:'center', gap:'20px'}}>
+<Container sx={{backgroundColor:'#171B26' , color:'white' , height:{sm:'10vh',xs:'7vh'} , display:'flex' , alignItems:'center', justifyContent:'space-between'}}>
+
+<Box sx={{display:'flex', flexDirection:'column' , padding:{sm:'10px',xs:'0px'}}}>
+<div style={{color:'grey', fontSize:{sm:'11px',xs:'9px'}}}>Symbol</div>
+    <Box sx={{fontSize:{sm:'16px',xs:'12px'}}}>
+    {context.symbol}
+    </Box>
+</Box>
+
+
+<Box sx={{display:'flex', flexDirection:'column' ,  padding:{sm:'10px',xs:'0px'}}}>
+<div style={{color:'grey', fontSize:{sm:'11px',xs:'9px'}}}>24h Change</div>
+    <Box sx={{fontSize:{sm:'16px',xs:'12px'}}}>
+    {coin.P}
+    </Box>
+</Box>
+
+
+
+<Box sx={{display:'flex', flexDirection:'column' ,  padding:{sm:'10px',xs:'0px'}}}>
+<div style={{color:'grey',  fontSize:{sm:'11px',xs:'9px'}}}>24h high</div>
+    <Box sx={{fontSize:{sm:'16px',xs:'12px'}, color:'#089981'}}>
+    {(Number(coin.h))}
+    </Box>
+</Box>
+
+
+
+<Box sx={{display:'flex', flexDirection:'column' ,  padding:{sm:'10px',xs:'0px'}}}>
+<div style={{color:'grey', fontSize:'11px'}}>24h Low</div>
+    <Box sx={{fontSize:{sm:'16px',xs:'12px'},color:'#F23645'}}>
+    {(Number(coin.l))}
+    </Box>
+</Box>
+
+
 
 <Box sx={{display:'flex', flexDirection:'column' , padding:'10px'}}>
-    <div style={{color:'grey', fontSize:'11px'}}>Symbol</div>
-        <Box sx={{fontSize:'16px'}}>
-        {coin.s}
+<div style={{color:'grey', fontSize:'11px'}}>24h Volume</div>
+    <Box sx={{fontSize:{sm:'16px',xs:'12px'}}}>
+    {Number(coin.v)}
+    </Box>
+</Box>
+
+
+
+
+
+
+
+</Container>
+
+
+
+      </Box>
+      
+
+          </Box>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+{/*Mobo for==========================================================================================================  */}
+{/*Mobo for==========================================================================================================  */}
+
+
+
+          <Box sx={{ display: { xs:'block', sm:'none'}}}>
+              
+          <Box sx={{
+              backgroundColor: '#171B26', width: {xs:window.innerWidth -20}
+          }}>
+
+
+    <Container sx={{backgroundColor:'#171B26' , color:'white' , height:{sm:'10vh',xs:'7vh'} , display:'flex' , alignItems:'center', justifyContent:'space-between'}}>
+
+<Box sx={{display:'flex', flexDirection:'column' , padding:{sm:'10px',xs:'0px'}}}>
+    <div style={{color:'grey', fontSize:{sm:'11px',xs:'9px'}}}>Symbol</div>
+        <Box sx={{fontSize:{sm:'16px',xs:'12px'}}}>
+        {context.symbol}
         </Box>
 </Box>
 
 
-<Box sx={{display:'flex', flexDirection:'column' , padding:'10px'}}>
-    <div style={{color:'grey', fontSize:'11px'}}>24h Change</div>
-        <Box sx={{fontSize:'16px'}}>
+<Box sx={{display:'flex', flexDirection:'column' ,  padding:{sm:'10px',xs:'0px'}}}>
+    <div style={{color:'grey', fontSize:{sm:'11px',xs:'9px'}}}>24h Change</div>
+        <Box sx={{fontSize:{sm:'16px',xs:'12px'}}}>
         {coin.P}
         </Box>
 </Box>
 
 
 
-<Box sx={{display:'flex', flexDirection:'column' , padding:'10px'}}>
-    <div style={{color:'grey', fontSize:'11px'}}>24h high</div>
-        <Box sx={{fontSize:'16px', color:'#089981'}}>
-        {coin.h}
+<Box sx={{display:'flex', flexDirection:'column' ,  padding:{sm:'10px',xs:'0px'}}}>
+    <div style={{color:'grey',  fontSize:{sm:'11px',xs:'9px'}}}>24h high</div>
+        <Box sx={{fontSize:{sm:'16px',xs:'12px'}, color:'#089981'}}>
+        {(Number(coin.h)).toFixed(3)}
         </Box>
 </Box>
 
 
 
-<Box sx={{display:'flex', flexDirection:'column' , padding:'10px'}}>
+<Box sx={{display:'flex', flexDirection:'column' ,  padding:{sm:'10px',xs:'0px'}}}>
     <div style={{color:'grey', fontSize:'11px'}}>24h Low</div>
-        <Box sx={{fontSize:'16px',color:'#F23645'}}>
-        {coin.l}
+        <Box sx={{fontSize:{sm:'16px',xs:'12px'},color:'#F23645'}}>
+        {(Number(coin.l)).toFixed(3)}
         </Box>
 </Box>
 
-
-
-<Box sx={{display:'flex', flexDirection:'column' , padding:'10px'}}>
-    <div style={{color:'grey', fontSize:'11px'}}>24h Volume</div>
-        <Box sx={{fontSize:'16px'}}>
-        {coin.v}
-        </Box>
-</Box>
 
 
 
@@ -115,7 +193,18 @@ const Data24hr = ({coins,coinChange}) => {
     
    
     
-    </div>
+          </Box>
+
+</Box>
+
+
+
+
+
+{/*Mobo for==========================================================================================================  */}
+{/*Mobo for==========================================================================================================  */}
+
+
     </>
   )
 }

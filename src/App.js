@@ -1,6 +1,4 @@
 import React from 'react'
-import { I18nProvider } from '@lingui/react';
-import i18n from './Components/i18n';
 import Registration from './Components/Users/Registration'
 import Login from './Components/Users/Login'
 import HomePage from './Components/Home/HomePage'
@@ -18,7 +16,7 @@ import Limit from './Components/Users/Coindata/Limit'
 import Coin from './Components/Users/Coindata/Coin'
 import Stoplimit from './Components/Users/Coindata/StopLimit'
 
-import { render } from "react-dom";
+import { render } from "react-dom";  
 import {
   BrowserRouter,
   Routes,
@@ -42,6 +40,15 @@ import Data24hr from './Components/Users/Data24hr'
 import TradeTicker from './Components/Users/TradeTicker'
 import Google2FA from './Components/Users/Google2FA'
 import CustomChart from './Components/Users/CustomChart'
+import OpenOrder from './Components/Users/OpenOrder';
+import OrderHistory from './Components/Users/OrderHistory';
+import MobTrade from './Pages/MobTrade'
+import AdminDashboard from './Components/Admin/AdminDashboard'
+import { SellCoin } from './Components/Users/Coindata/SellCoin'
+import UserProfile from './Components/Users/UserKyc/UserProfile'
+import Page1 from './Components/Home/ListingForm/Page1'
+import Page2 from './Components/Home/ListingForm/Page2'
+import Page3 from './Components/Home/ListingForm/Page3'
 
 
 function App() {
@@ -57,6 +64,7 @@ function App() {
       
 
       <Route exact path="/userpanel/userkyc" element={<UserKyc/>}/>
+      <Route exact path="/userpanel/userprofile" element={<UserProfile/>}/>
       
       
       <Route exact path="/userpanel/transactionhistory" element={<TransactionHistory/>}/>
@@ -78,15 +86,25 @@ function App() {
       
       </Route>
       {/* Limit and Market */}
+   
       <Route exact path="/trade" element={<Trade/>}>
-      <Route exact path="/trade/limit" element={<Limit/>}/>
-      <Route exact path="/trade/stoplimit" element={<Stoplimit/>}/>
+            <Route exact path="/trade/openorder" element={<OpenOrder />} />
+            <Route exact path="/trade/buysell" element={<BuyCoin/>}/>
+            <Route exact path="/trade/buysell/buycoin" element={<BuyCoin/>}/>
+      <Route exact path="/trade/buysell/sellcoin" element={<SellCoin/>}/>
+      <Route exact path="/trade/orderhistroy" element={<OrderHistory/>}/>
+      <Route exact path="/trade/tradehistory" element={<TradeHistory/>}/>
+      <Route exact path="/trade/showwallet" element={<Showwallet/>}/>
       </Route>
 
-
-
+{/* 
+      <Route exact path="/mobtrade" element={<MobTrade/>}>
+      <Route exact path="/mobtrade/buysell" element={<BuyCoin/>}/>
+      <Route exact path="/mobtrade/buysell/sellcoin" element={<SellCoin/>}/>
+       
+          </Route> */}
       <Route exact path="/Logout" element={<Logout/>}/>
-      <Route exact path="/reqcall" element={<RequestCall/>}/>
+      
       {/* <Route exact path="/trade" element={<Trade/>}/> */}
       <Route exact path="/chart" element={<Chart/>}/>
       <Route exact path="/registration" element={<Registration/>}/>
@@ -100,13 +118,20 @@ function App() {
       <Route exact path="/google2fa" element={<Google2FA/>}/>
       <Route exact path="/customchart" element={<CustomChart/>}/>
      
-        
+          <Route exact path="/reqcall" element={<RequestCall />}> </Route>
+          <Route exact path="/reqcall/page1" element={<Page1 />}/>
+          <Route exact path="/reqcall/page2" element={<Page2 />}/>
+          <Route exact path="/reqcall/page3" element={<Page3 />}/>
+            
+         
 
       {/* admin routes */}
       <Route exat path='/admin' element={<AdminPanel/>}>
       <Route exat path='/admin/allusers' element={<AllUsers/>}/>
+      <Route exat path='/admin/admindashboard' element={<AdminDashboard/>}/>
       <Route exat path='/admin/airdrop' element={<Airdrop/>}/>
       <Route exat path='/admin/addcoin' element={<AddCustomCoin/>}/>
+      
 
         </Route>
 

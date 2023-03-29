@@ -1,7 +1,20 @@
 import React from 'react'
-import { Button } from '@mui/material'
+
+import {useNavigate} from 'react-router-dom'
+import { Button,Box } from '@mui/material'
 
 const RequestCall = () => {
+  const navigate = useNavigate()
+    
+    
+  const Next = () => {
+      navigate('/reqcall/page1')
+    
+
+}
+
+ 
+ 
   return (
     <>
          
@@ -11,14 +24,14 @@ const RequestCall = () => {
       
       <div style={{fontSize:'20px',color:'white',padding:'20px'}}>
         
-Need Help ? Request a Callback        </div>
+Listing Form      </div>
 
         <div><input type="text" placeholder='Name'  style={{height:"20px", backgroundColor:'transparent' , border:'1px solid grey', padding:'20px' , margin:'10px'}}   /></div>
         <div><input type="text" placeholder='Phone Number'style={{height:"20px",backgroundColor:'transparent',border:'1px solid grey', padding:'20px' , margin:'10px'}} /></div>
-        <div><input type="text" placeholder='Message' style={{backgroundColor:'transparent',border:'1px solid grey', padding:'20px' , margin:'10px'}} /></div>
+        <div><input type="text" placeholder='Email id' style={{backgroundColor:'transparent',border:'1px solid grey', padding:'20px' , margin:'10px'}} /></div>
         
       <div>
-         <Button sx={{marginTop:'10px'}} variant="contained">Request a CallBack</Button>
+         <Button  onClick={Next} sx={{marginTop:'10px'}} variant="contained">Request a CallBack</Button>
         </div>
         
       </div>

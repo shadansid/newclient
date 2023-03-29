@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import { SellCoin } from './SellCoin';
 
 import './Css/buycoin.css'
 import { useState } from 'react';
@@ -32,7 +33,7 @@ function BuyCoin({coins,coinChange}) {
 
  useEffect(()=>{
 avbl();
-avblsell();
+// avblsell();
 
  },[context])
 
@@ -365,12 +366,12 @@ const limitX = ()=>{
   const market = ()=>{
     setlimit(0)
   }
-  
+   
   
   return (
    
   <>
-   <div className="coin" style={{backgroundColor:'', zIndex:'2'}}>
+   <Box className="coin" sx={{display:{sm:'block ',xs:'block '},backgroundColor:'', zIndex:'2'}}>
 
     <div style={{paddingLeft:'30px',paddingTop:'20px' , display:'flex', gap:'10px', alignItems:'center'}}>
     <Typography>
@@ -409,7 +410,7 @@ const limitX = ()=>{
           
           <div>
 
-          <input type="number" id="buyamount" value={testing?testing:""} onChange={onchangeBuy} placeholder={context.symbol} style={{background:'transparent',padding:'15px',width:'48ch' ,margin:'10px', border:'1px solid grey'}} />
+          <input type="number" min="1" max='2400' onwheel="this.blur()" id="buyamount" value={testing?testing:""} onChange={onchangeBuy} placeholder={context.symbol} style={{background:'transparent',padding:'15px',width:'48ch' ,margin:'10px', border:'1px solid grey'}} />
           </div>
 
           <div>
@@ -445,10 +446,10 @@ const limitX = ()=>{
 
 
 
-{!limit && verified? <span><Button  size='small' onClick={buy} sx={{width:'52ch'}} color="success" variant="contained">Buy</Button></span>:<span></span>}
+                {!limit && verified ? <span><Button size='small' onClick={buy} sx={{ width: '52ch' }} color="success" variant="contained">Buy &nbsp;{ context.symbol}</Button></span>:<span></span>}
 
 
-{limit && verified? <span> <Button size='small' onClick={buyLimit} sx={{width:'52ch'}} color="success" variant="contained">Limit</Button></span>:<span></span>}
+{limit && verified? <span> <Button size='small' onClick={buyLimit} sx={{width:'52ch'}} color="success" variant="contained">Limit &nbsp;{ context.symbol}</Button></span>:<span></span>}
 
 
 {/* <div>{buyres? <div style={{color:'grey',fontSize:'14px'}}>{buyres.msg}</div>:<div></div>}</div> */}
@@ -485,50 +486,6 @@ const limitX = ()=>{
 
 <div style={{display:'flex', flexDirection:'column'  ,justifyContent:'center', alignItems:'center'}}>
 
-<div>                                                                           
-
-<input type="number" disabled  placeholder={"Avbl" + " " + ": " + "$ "+     (context.custom?avblsellCoin.msg*context.Cprice:avblsellCoin.msg*context.price).toFixed(3) } style={{background:'transparent',padding:'15px',width:'48ch' ,margin:'10px', border:'1px solid grey'}} />
-</div>
-{limit? <div>
-
-<input type="number" id="limitsellprice"  placeholder={"Price"} style={{background:'transparent',padding:'15px',width:'48ch' ,margin:'10px', border:'1px solid grey'}} />
-</div>:<span></span>}
-<div>
-
-<input type="number" id="sellamount" placeholder={context.symbol}  value={testing2?testing2:""}   onChange={onchangeSell} style={{background:'transparent',margin:'10px',width:'48ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
-</div>
-
-<div>
-
-<input type="number" disabled  placeholder={amountBox2}  style={{background:'transparent',padding:'15px' ,margin:'10px',width:'48ch', border:'1px solid grey'}} />
-            </div>
-           
-        
-      <Slider size='small'
-  aria-label="Temperature"
-  defaultValue={0} value={slider2}
-  getAriaValueText={""}
-  valueLabelDisplay="auto"
-  step={25}
-  marks onChange={sliderX2}
-  min={0}
-  max={100} color="error"
-  sx={{width:'45ch'}}
-/>
-
-<div>
-
-{/* <Button size='small' onClick={sell} sx={{width:'52ch'}} color="error" variant="contained">Sell</Button> */}
-{!limit && verified? <span><Button size='small' onClick={sell} sx={{width:'52ch'}} color="error" variant="contained">sell</Button></span>:<span></span>}
-
-
-{limit && verified? <span> <Button size='small' sx={{width:'52ch'}} color="error" variant="contained">Limit sell</Button></span>:<span></span>}
-
-
-              {/* <div>{sellres && sellres.msg}</div> */}
-              
-              {sellres?<div style={{ position: 'fixed', top: '0', right: '0', bottom: '0', left: '0', margin: 'auto',height:'100vh', zIndex:'10', backgroundColor: 'rgb(23 27 38 / 85%)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Alert sx={{ backgroundColor: '#1B202E', color: 'white', padding: '20px', boxShadow: '1px 1px -2px ' }} severity="success">{sellres.msg}</Alert></div>:<></>}
-</div>
         
         </div>
 
@@ -542,7 +499,68 @@ const limitX = ()=>{
 
 
 
-</div>
+</Box>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    
+      
+
+
+
+      
+      
+      {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+    {/* ========================================================Mobo=================================================================== */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
   </>

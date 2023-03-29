@@ -1,15 +1,16 @@
 import React from 'react'
 import './css/Footer.css'
-import {Container , Grid} from '@mui/material'
-const Footer = () => {
+import { Container, Grid } from '@mui/material'
+import { Box } from '@mui/system'
+const Footer = (props) => {
   return (
     
     
    <>
-   <footer style={{backgroundColor:'#0B0917'}}>
+   <footer style={{backgroundColor:'#171B26'}}>
 
    
-  <div class="footer" style={{ color:'#2A2A2D'}}>
+  <Box class="footer" sx={{ color:'grey', display:'flex', flexWrap:'wrap' }}>
     
     
     
@@ -19,39 +20,39 @@ const Footer = () => {
 
     <div class="col">
         <h4 style={{ color:'grey', fontSize:'22px'}}>Company</h4>
-        <p>About us</p>
-        <p>Need Help?</p>
-        <p>Crypto Exchange</p>
-        <p>Vision</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>About us</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>Need Help?</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>Crypto Exchange</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>Vision</p>
     </div>
   
 
     <div class="col">
         <h4 style={{ color:'grey', fontSize:'22px'}}>Trading</h4>
-        <p>Spot Wallet</p>
-        <p>Margin Wallet</p>
-        <p>Future Trading</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>Spot Wallet</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>Margin Wallet</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>Future Trading</p>
     </div>
 
 
     <div class="col">
         <h4 style={{ color:'grey', fontSize:'22px'}}>Listing</h4>
-        <p>Create New Token</p>
-        <p>Earn with us</p>
-        <p>Others</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>Create New Token</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>Earn with us</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>Others</p>
         
     </div>
     <div class="col">
         <h4 style={{ color:'grey', fontSize:'22px'}}>Analysis</h4>
-        <p>CandleStick Chart</p>
-        <p>Need help</p>
-        <p>Tutorial</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>CandleStick Chart</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>Need help</p>
+        <p style={{fontSize:'14px' , color:'grey'}}>Tutorial</p>
         
     </div>
 
 
 
-</div>
+</Box>
 </footer>
   
 

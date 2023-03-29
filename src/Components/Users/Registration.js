@@ -10,6 +10,7 @@ import { Button,Checkbox,Backdrop, Typography } from '@mui/material';
 import TermsConditions from './TermsConditions'
 import Vcode from './Vcode'
 import { useNavigate } from 'react-router-dom';
+import Header from '../Home/Header'
 
 
 export default function Registration() {
@@ -168,8 +169,10 @@ const handleChangePass = (e) =>{
   
   
     <>
+            <Header/>
     <div className="Registration" style={{ 
-      backgroundImage: `url("http://139.84.137.232/api/static/images/lbg.jpeg")` 
+      // backgroundImage: `url("/static/images/lbg.jpeg")` 
+      backgroundColor:'#1D2230'
     }}>
         
         
@@ -234,7 +237,7 @@ const handleChangePass = (e) =>{
             <InputAdornment position="start">
               <LockOpenOutlinedIcon style={{color:'#30CFD0'}}/>
             </InputAdornment>
-          ), type:"password"
+          ), type:"password" 
         }}variant="outlined"/>
 </div>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Button,Container} from '@mui/material'
+import {Button,Container,Box} from '@mui/material'
 
 const AirdropContest = () => {
 
@@ -18,9 +18,9 @@ const AirdropContest = () => {
  
   return (
     <>
-    <Container sx={{height:'100vh'}} >
+    <Container sx={{height:'100vh', paddingTop:'20px'}} >
 
-    
+    <Box sx={{backgroundImage:"url('http://139.84.137.232/api/static/images/Airdrop/airdrop2.gif')", backgroundPosition:'center', backgroundSize:'cover', height:{sm:'300px', xs:'200px'}, width:{xs:window.innerWidth -50,sm:'100%'}}}> </Box>
 
 <h1 style={{color:'#330867' ,background: `linear-gradient(to right, #30CFD0 0%, #330867 100%)`,
 '-webkit-background-clip': 'text',

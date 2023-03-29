@@ -8,7 +8,7 @@ const AllUserBox = (props) => {
  
  
  
-    const [checked, setChecked] = useState(true);
+
     const [disabled,setdisabled]= useState(false);
 
 
@@ -29,11 +29,18 @@ const AllUserBox = (props) => {
   
  
 
-
+    const [checked, setChecked] = useState(true);
     const handleChange = (event) => {
-  setChecked(event.target.checked);
+  
+     setChecked(event.target.checked);
   console.log(event.target.checked)
-  axios({
+  
+
+
+};
+
+  useEffect(() => {
+    axios({
       method: 'post',
       url: 'http://139.84.137.232/api/allowusers',
       data: {
@@ -42,10 +49,7 @@ const AllUserBox = (props) => {
         email:props.email
         }
     });
-
-
-};
-
+  },[checked])
  
  
  
@@ -60,7 +64,7 @@ const AllUserBox = (props) => {
           <div  style={{ width: '20%' }}>{ props.phone}</div>
        
           <div  style={{ width: '20%' }}>{ props.adharcard}</div>
-          <div  style={{ width: '10%' }}><Switch onChange={handleChange} inputProps={{ 'aria-label': 'controlled' }} /></div>
+          <div  style={{ width: '10%' }}><Switch value={""} onChange={handleChange} inputProps={{ 'aria-label': 'controlled' }} /></div>
         
         
         </div>

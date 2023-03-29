@@ -2,6 +2,8 @@ import React , {useEffect,useState} from 'react'
 import './css/UserPanel.css'
 import Login from '../Components/Users/Login'
 import UserHeader from '../Components/Users/UserHeader'
+import { useContext, useReducer } from 'react'
+import Context from '../hooks/useTheme';
 import {
     Link, Outlet 
   } from "react-router-dom";
@@ -16,10 +18,11 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import SsidChartIcon from '@mui/icons-material/SsidChart';
+import TradeNow from '@mui/icons-material/GraphicEq';
 
 
 const UserPanel = () => {
-  
+
 const [isLoggedIn, setLogin] = useState(true);
 const [toggle, settoggle] = useState(false);
 
@@ -44,19 +47,50 @@ const hidetoggle = () =>{
 }
 
 
+  
+  
+  
+const reducer = (state, action) => {
+
+  switch(action.type){
+
+      case "update":
+          return action.payload
+      default:
+          throw new Error()
+  }
+
+
+}
+
+const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
+
+
+  
+  
+  
+
+  
+  
+  
 
   return (
-     <> {isLoggedIn && 
-     <div style={{backgroundColor:'#171B26'}}>
+    <>
+        <Context.Provider value={{
+      color:state.color,
+      dispatcher : dispatcher
+  }}>
+      {isLoggedIn && 
+     <div style={{backgroundColor:'#181A20'}}>
   <UserHeader/>
   <Container sx={{height:'8vh'}}></Container>
  <div className="userpanel">
-<Container sx={{width:'300px'}}></Container>
+              <Container sx={{ display: { xs: 'none', sm: 'block' } ,width:'20%', backgroundColor:''}}></Container>
 
- <Container sx={{display:{xs:'none', sm:'block' , position:'fixed'}}} maxWidth="xl" style={{width:'300px', backgroundColor:'#171B26', height:'100vh' , borderRight:'1px solid #2A2F3F'}}>
+ <Container sx={{display:{xs:'none', sm:'flex' , position:'fixed'}}} maxWidth="xl" style={{width:'20%', backgroundColor:'#171B26', height:'100vh' , borderRight:'1px solid #2A2F3F', flexDirection:'column' }}>
    
 
-   
+    
    
   <Grid container alignItems="center" rowSpacing={1} columnSpacing={{ xs: 3, sm: 2, md: 3 }} className='gridcontainer'>
  
@@ -143,31 +177,48 @@ const hidetoggle = () =>{
 <Link to='/airdropcontest'></Link>
 </Grid>
 
-
+                <Box sx={{display:'flex', justifyContent:'center',position:'fixed',bottom:'10px',left:'1px', alignItems:'center'}}>
+                  <Link style={{textDecoration:'none', color:'grey', fontSize:'14px'}}>Need Help?</Link>
+</Box>
 
  </Container>
- <Container maxWidth="xl" style={{backgroundColor:'#171B26'}} >
-   <Container maxWidth="lg" style={{backgroundColor:'#171B26'}}>
+ <Box  sx={{  width:(window.innerWidth)}}maxWidth="xl" style={{backgroundColor:'#171B26', border:''}} >
+                <Box maxWidth="lg" sx={{ backgroundColor: '', display: { xs: 'block', sm:'none'}}}>
+   <Outlet />
+   </Box>
+
+   <Container  maxWidth="lg" sx={{backgroundColor:'', display: { xs: 'none', sm:'block'}}}>
    <Outlet />
    </Container>
+                
 
- </Container>
+                
 
- <Box sx={{display:{sm:'none', xs:'flex' , position:'fixed' , bottom:0, height:'55px' , width:window.innerWidth ,zIndex:5 , display:'flex' , flexDirection:'row',justifyContent:'space-between' , alignItems:'center' , boxShadow:'rgb(105 50 151) 2px 1px 2px 0px', padding:'10px'}}}>
+ </Box>
+{/* mobo=============================================================== */}
+<Box sx={{display:{sm:'none', xs:'flex' , position:'fixed' , bottom:0, height:'55px' , width:window.innerWidth ,zIndex:5 , display:'flex' ,backgroundColor:'#171B26' ,flexDirection:'row',justifyContent:'space-between' , alignItems:'center' , boxShadow:'rgb(105 50 151) 2px 1px 2px 0px', padding:'10px', borderTop:'1px solid '}}}>
  
  <Box>
-  <DashboardIcon style={{color:'#5442f2'}} />
+                {/* <DashboardIcon style={{ color: '#5442f2' }} /> */}
+                <Link to='/userpanel/userdashboard' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'16px' , padding:'10px'}}><DashboardIcon sx={{color:'#7D8794',fontSize:'18px'}} /></IconButton></Link>
   </Box>
    
 <Box>
 
-<Person4Icon style={{color:'#EA661C'}} />
+             
+                <Link to='/userpanel/userkyc' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'16px' , padding:'10px'}}><Person4Icon sx={{color:'#7D8794',fontSize:'18px'}} /></IconButton></Link>
+                </Box>
+                <Box>
+               
+               <Link to='/trade' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'16px' , padding:'10px'}}><TradeNow sx={{color:'#7D8794',fontSize:'18px'}} /></IconButton></Link>
 </Box>
 <Box>
- <AccountBalanceWalletIcon style={{color:'#0082FC'}} />
+    
+                <Link to='/userpanel/wallet' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'16px' , padding:'10px'}}><AccountBalanceWalletIcon sx={{color:'#7D8794',fontSize:'18px'}} /></IconButton></Link>
  </Box>
 <Box>
- <ArticleIcon style={{color:'#1392DE'}}/>
+               
+                <Link to='/userpanel/tradehistory' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'16px' , padding:'10px'}}><ArticleIcon sx={{color:'#7D8794',fontSize:'18px'}} /></IconButton></Link>
  </Box>
 
 
@@ -175,7 +226,8 @@ const hidetoggle = () =>{
  </Box>
  </div> 
  </div> 
- }
+        }
+        </Context.Provider>
  </>  
     )
 }

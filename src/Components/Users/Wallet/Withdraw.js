@@ -25,7 +25,7 @@ axios.post('http://139.84.137.232/api/internalwithdraw',data).then((res)=>{
 
 
 
-
+  
 
   }
 
@@ -64,7 +64,7 @@ axios.post('http://139.84.137.232/api/internalwithdraw',data).then((res)=>{
 <MenuItem value="DOGE"><img src="http://139.84.137.232/api/static/images/coinimage/DOGE.png"  height='20px' width='20px' alt="" />&nbsp;DOGE</MenuItem>  
 </Select> 
 
-<TextField small  id='wamount' placeholder='Amount' sx={{border:'1px solid grey' , input:{color:'grey'}}}/>
+<TextField small type="number" min='1' id='wamount' placeholder='Amount' sx={{border:'1px solid grey' , input:{color:'grey'}}}/>
 
 <TextField id='wemail' placeholder='Email Address'sx={{border:'1px solid grey' , input:{color:'grey'}}}/>
 

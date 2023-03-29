@@ -1,6 +1,6 @@
 import React from 'react';
 import CoinListh from './CoinListh'
-
+import { Box } from '@mui/system';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 
@@ -32,13 +32,14 @@ function CoinListBoxh({coins}) {
   return (
    
   <>
-  <div  style={{backgroundColor:'transparent', width:'100%', color:'black', border:'1px solid #d4d4d4',borderRadius:'9px'}}>
+  <div  style={{backgroundColor:'transparent', width:'100%', color:'black', border:'1px solid #E8E9EC',borderRadius:'9px'}}>
   
-  <div style={{height:'8vh',padding:'13px',borderBottom:'1px solid #d4d4d4',borderRadius:'9px', display:'flex',alignItems:'center'}}>
-      <div style={{width:'30%',fontSize:'16px',color:'#657489'}}>Assests</div>
-      <div style={{width:'20%',fontSize:'16px',color:'#657489'}}>Name</div>
-      <div style={{width:'30%',fontSize:'16px',color:'#657489'}}>Price</div>
-      <div style={{width:'20%',fontSize:'16px',color:"#657489"}}>Action</div>
+  <div style={{height:'8vh',padding:'13px',borderBottom:'1px solid #E8E9EC',borderRadius:'9px', display:'flex',alignItems:'center'}}>
+      <div style={{width:'20%',fontSize:'16px',color:'#657489'}}>Assests</div>
+      <Box sx={{display:{xs:'none',sm:'block'}, width:'20%',fontSize:'16px',color:'#657489'}}>Name</Box>
+      <div style={{width:'20%',fontSize:'16px',color:'#657489'}}>Price</div>
+      <div style={{width:'20%',fontSize:'16px',color:'#657489'}}>Graph</div>
+      <div style={{width:'',fontSize:'16px',color:"#657489"}}>Action</div>
     </div>
     
   {coin.map((element)=>{
@@ -48,12 +49,12 @@ function CoinListBoxh({coins}) {
     // console.log(coins)
     if(coins!=null&&coins.length>0){
       // console.log(element.symbol)
-      
+         
       let t = coins.find((el)=> el.s==element.symbol)
       // console.log(t)
       if(t!=null){
         price = Number(t["p"]).toFixed(3)
-        color = t["color"]
+        color = t["color"] 
       }
 
     }

@@ -27,6 +27,12 @@ const AdminPanel = () => {
         <Grid container alignItems="center" rowSpacing={1} columnSpacing={{ xs: 3, sm: 2, md: 3 }} className='gridcontainer'>
     
        
+        <Grid item xs={12} className='gridbox'>
+       
+       <Link style={{textDecoration:'none', color:'grey' , fontSize:'16px',marginLeft:'10px'}} to='/admin/admindashboard'>Dashboard</Link>
+       </Grid>
+
+
        <Grid item xs={12} className='gridbox'>
        
        <Link style={{textDecoration:'none', color:'grey' , fontSize:'16px',marginLeft:'10px'}} to='/admin/allusers'>All Users</Link>

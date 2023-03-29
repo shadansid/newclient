@@ -61,26 +61,26 @@ const UploadID = () => {
     <div><IconButton><User sx={{color:'#EA661C' , height:'80px' , width:'80px'}} />  <Container sx={{color:'white', fontSize:'22px', paddingTop:'10px'}}>Complete Your KYC </Container></IconButton></div>
 
         <div>
-<input type="text" id="name" placeholder={"Full Name"}  style={{background:'transparent',margin:'10px',width:'48ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
+<input type="text" id="name" placeholder={"Full Name"}  style={{background:'transparent',margin:'10px',width:'',padding:'15px' , m:"1", border:'1px solid grey'}} />
 </div>
 
 {/* 
         <div style={{ margin: '12px' }}><TextField sx={{ input: { color: "#363C4E" } }} color="primary" size="small" id="adhar" label="AdharCard Number" variant="outlined" focused /></div> */}
                 <div>
-<input type="number" id="adhar" placeholder={"Adhar Number"}  style={{background:'transparent',margin:'10px',width:'48ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
+<input type="number" id="adhar" placeholder={"Adhar Number"}  style={{background:'transparent',margin:'10px',width:'',padding:'15px' , m:"1", border:'1px solid grey'}} />
 </div>
 
         {/* <div style={{ margin: '12px' }}><TextField sx={{ input: { color: "#363C4E" } }} color="primary" size="small" id="phone" label="Phone Number" variant="outlined" focused /></div> */}
         
         <div>
-<input type="number" id="phone" placeholder={"Phone No."}  style={{background:'transparent',margin:'10px',width:'48ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
+<input type="number" id="phone" placeholder={"Phone No."}  style={{background:'transparent',margin:'10px',width:'',padding:'15px' , m:"1", border:'1px solid grey'}} />
         </div>
         
 {/* <div style={{margin:'12px'}}><TextField sx={{input:{color:"#363C4E"}}} color="primary"  size="small" id="pancard" label="PAN Number" variant="outlined" focused />
         </div> */}
         
         <div>
-<input type="text" id="pancard" placeholder={"PanCard"}  style={{background:'transparent',margin:'10px',width:'48ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
+<input type="text" id="pancard" placeholder={"PanCard"}  style={{background:'transparent',margin:'10px',width:'',padding:'15px' , m:"1", border:'1px solid grey'}} />
         </div>
   
         

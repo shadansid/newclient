@@ -55,7 +55,7 @@ const Showwallet = () => {
 <>
 
 
-{/* <div style={{padding:'30px' , display:'flex' , alignItems:'center' , justifyContent:'center' , gap:'50px'}}>
+<div style={{padding:'30px' , display:'flex' , alignItems:'center' , justifyContent:'center' , gap:'50px'}}>
 
    <Box sx={{"&:active":{color:"red"},"&:hover":{color:"green"}}}>
     
@@ -66,7 +66,7 @@ const Showwallet = () => {
   
    </div>
   
-   <Container> <Outlet /></Container> */}
+   <Container> <Outlet /></Container>
    
 
 {/* ============================================================================== */}

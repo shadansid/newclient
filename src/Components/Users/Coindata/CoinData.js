@@ -9,13 +9,19 @@ import CoinListBox from './CoinListBox';
 const client = new W3CWebSocket('wss://stream.binance.com:9443/ws/ethusdt@trade/dogeusdt@trade/btcusdt@trade/lunausdt@trade/bnbusdt@trade/solusdt@trade/xrpusdt@trade/adausdt@trade/ltcusdt@trade/btcbusd@trade');
 
 
-function CoinData() {
+function CoinData(props) {
 
 
 
   const [coin,setcoin] = useState({});
 
-  const [coins,setCoins] = useState([])
+  const [coins, setCoins] = useState([]);
+  const [DisbableBtn, setdisbableBtn] = useState(0)
+  const disbableBtn = () => {
+    setdisbableBtn(1)
+
+
+}
 
   client.onopen = () => {
     // console.log('WebSocket Client Connected');
@@ -68,7 +74,7 @@ return (
       <>
       
      
-      <CoinListBox coins={coins}/>
+      {DisbableBtn?<></>:<CoinListBox disbableBtn={disbableBtn} DisbableBtn={DisbableBtn} coins={coins}  data={props.on} />}
       
 
         </>
