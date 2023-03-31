@@ -8,8 +8,8 @@ const Footer = (props) => {
     
       <>
         
-   <Box sx={{width:window.innerWidth}}>
-   <Box sx={{backgroundColor:'#171B26',padding: {sm:'60px',xs:'10px'} ,display:'flex', alignItems:'center', justifyContent:'center', backgroundColor:'#f2f2f2'}}>
+   <Box sx={{width:window.innerWidth, backgroundColor:'aqua'}}>
+   <Box sx={{backgroundColor:'#171B26',padding: {sm:'60px',xs:'10px'} ,display:'flex', alignItems:'center', justifyContent:'center', backgroundColor:'purple'}}>
 
    
   <Box  sx={{ display:'flex',flexDirection:'row', alignItems:'center', gap:'20px', flexWrap:'wrap' }}>
@@ -20,7 +20,7 @@ const Footer = (props) => {
     
 
 
-    <div class="col" style={{ padding:'20px'}}>
+    <div class="col" style={{ padding:'20px', backgroundColor:'yellow' , border:'1px solid red'}}>
         <h4 style={{ color:'grey', fontSize:'14px'}}>Company</h4>
         <p style={{fontSize:'10px' , color:'grey'}}>About us</p>
         <p style={{fontSize:'10px' , color:'grey'}}>Need Help?</p>
@@ -29,7 +29,7 @@ const Footer = (props) => {
     </div>
   
 
-    <div class="col"  style={{ padding:'20px'}}>
+    <div class="col"  style={{ padding:'20px', backgroundColor:'yellow' , border:'1px solid red'}}>
         <h4 style={{ color:'grey', fontSize:'14px'}}>Trading</h4>
         <p style={{fontSize:'10px' , color:'grey'}}>Spot Wallet</p>
         <p style={{fontSize:'10px' , color:'grey'}}>Margin Wallet</p>
@@ -37,7 +37,7 @@ const Footer = (props) => {
     </div>
 
 
-    <div class="col" style={{ padding:'20px'}}>
+    <div class="col" style={{ padding:'20px', backgroundColor:'yellow' , border:'1px solid red'}}>
         <h4 style={{ color:'grey', fontSize:'14px'}}>Listing</h4>
         <p style={{fontSize:'10px' , color:'grey'}}>Create New Token</p>
         <p style={{fontSize:'10px' , color:'grey'}}>Earn with us</p>
@@ -48,7 +48,7 @@ const Footer = (props) => {
 
 
 
-         <div class="col"  style={{padding:'20px'}}>
+         <div class="col"  style={{padding:'20px', backgroundColor:'yellow' , border:'1px solid red'}}>
         <h4 style={{ color:'grey', fontSize:'14px'}}>Analysis</h4>
         <p style={{fontSize:'10px' , color:'grey'}}>CandleStick Chart</p>
         <p style={{fontSize:'10px' , color:'grey'}}>Need help</p>

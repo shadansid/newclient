@@ -113,7 +113,7 @@ const [color, setColor] = useState('#171B26')
       <>
                    {/* togle================================================================================================== */}
 
-        <Box sx={{ display: 'flex', position: 'fixed', zIndex: '4', flexDirection: 'column', height: '100vh', backgroundColor: '#171B26', alignItems: '', width: window.innerWidth }}>
+        {toggle?<Box sx={{ display: 'flex', position: 'fixed', zIndex: '4', flexDirection: 'column', height: '100vh', backgroundColor: '#171B26', alignItems: '', width: window.innerWidth }}>
           <Box>
             <Box sx={{width:'90%'}}></Box>
           <IconButton sx={{ color: '#7D8794', fontSize: '0.8rem', padding: '10px' }}><Close onClick={hidetoggle } /></IconButton>
@@ -157,7 +157,7 @@ const [color, setColor] = useState('#171B26')
 
 
 
-          </Box> 
+          </Box>:<></> }
           {/* togle================================================================================================== */}
 
         <Box sx={{ width:window.innerWidth,backgroundColor: color, display: 'flex', alignItems: 'center', paddingLeft: '20px', paddingRight: '20px' }}>
