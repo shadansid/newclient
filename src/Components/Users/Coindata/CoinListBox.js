@@ -36,7 +36,7 @@ function CoinListBox({coins,disbableBtn} , props) {
   useEffect(() => {
   
     const fetchData = async () => {
-      const response = await fetch(`/searchquery/${'u'}`);
+      const response = await fetch(`http://139.84.137.232/api/searchquery/${'u'}`);
       const data = await response.json();
       setSearchResults(data);
       // console.log("THis is Searched Data " + data)
@@ -53,7 +53,7 @@ function CoinListBox({coins,disbableBtn} , props) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`/searchquery/${searchQuery}`);
+      const response = await fetch(`http://139.84.137.232/api/searchquery/${searchQuery}`);
       const data = await response.json();
       setSearchResults(data);
       // console.log("THis is Searched Data " + data)
