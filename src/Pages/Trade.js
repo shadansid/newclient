@@ -308,9 +308,7 @@ const toggleClose = () => {
         
         <Box sx={{fontSize:'16px', color:'grey',padding:'20px',overflow:'scroll', height:'50vh' }}>
         <SellOrder></SellOrder>
-     
-            {/* <p style={{fontSize:'13px',textAlign:'center', paddingTop:'30px'}}
-            >No Data to show</p> */}
+   
 
         </Box>
 

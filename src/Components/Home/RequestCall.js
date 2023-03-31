@@ -19,7 +19,7 @@ const RequestCall = () => {
     <>
          
          
-      <div style={{height:'100vh' , backgroundColor:'#171B26' ,paddingLeft:'200px',paddingRight:'200px' , paddingTop:'70px'}}>
+      <Box sx={{height:'100vh' , backgroundColor:'#171B26' ,paddingLeft:{sm:'200px',xs:'30px'},paddingRight:{sm:'200px',xs:'30px'} , paddingTop:'70px'}}>
       <div style={{display:"flex",alignItems:'center', justifyContent:'center', flexDirection:'column',gap:'3', height:'80vh' , border:'1px solid grey'}}>
       
       <div style={{fontSize:'20px',color:'white',padding:'20px'}}>
@@ -31,12 +31,12 @@ Listing Form      </div>
         <div><input type="text" placeholder='Email id' style={{backgroundColor:'transparent',border:'1px solid grey', padding:'20px' , margin:'10px'}} /></div>
         
       <div>
-         <Button  onClick={Next} sx={{marginTop:'10px'}} variant="contained">Request a CallBack</Button>
+         <Button  size='small' onClick={Next} sx={{marginTop:'10px'}} variant="contained">Next</Button>
         </div>
         
       </div>
 
-      </div>
+      </Box>
     
     
     </>

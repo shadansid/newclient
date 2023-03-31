@@ -13,9 +13,9 @@ function DynamicText({ texts }) {
   }, [texts, index]);
 
   return (
-    <div id="text-container">
-      <Box id="text" sx={{transition:'0.5s ease-in-out', fontSize:{xs:'13px',sm:'23px'} , color:'grey', fontWeight:'200', display:'flex'}}>{displayText}</Box>
-    </div>
+    <Box sx={{display:{xs:'none', sm:'block'}}} id="text-container">
+      <Box  id="text" sx={{transition:'0.5s ease-in-out',display:{xs:'none', sm:'block'}, fontSize:{xs:'13px',sm:'23px'} , color:'grey', fontWeight:'200', display:'flex'}}>{displayText}</Box>
+    </Box>
   );
 }
 

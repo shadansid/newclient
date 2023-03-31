@@ -1,16 +1,18 @@
 import React from 'react'
-import './css/Footer.css'
+// import './css/Footer.css'
 import { Container, Grid } from '@mui/material'
 import { Box } from '@mui/system'
 const Footer = (props) => {
   return (
     
     
-   <>
-   <footer style={{backgroundColor:'#171B26'}}>
+      <>
+        
+   <Box sx={{width:window.innerWidth}}>
+   <Box sx={{backgroundColor:'#171B26',padding: {sm:'60px',xs:'10px'} ,display:'flex', alignItems:'center', justifyContent:'center', backgroundColor:'#f2f2f2'}}>
 
    
-  <Box class="footer" sx={{ color:'grey', display:'flex', flexWrap:'wrap' }}>
+  <Box  sx={{ display:'flex',flexDirection:'row', alignItems:'center', gap:'20px', flexWrap:'wrap' }}>
     
     
     
@@ -18,49 +20,53 @@ const Footer = (props) => {
     
 
 
-    <div class="col">
-        <h4 style={{ color:'grey', fontSize:'22px'}}>Company</h4>
-        <p style={{fontSize:'14px' , color:'grey'}}>About us</p>
-        <p style={{fontSize:'14px' , color:'grey'}}>Need Help?</p>
-        <p style={{fontSize:'14px' , color:'grey'}}>Crypto Exchange</p>
-        <p style={{fontSize:'14px' , color:'grey'}}>Vision</p>
+    <div class="col" style={{ padding:'20px'}}>
+        <h4 style={{ color:'grey', fontSize:'14px'}}>Company</h4>
+        <p style={{fontSize:'10px' , color:'grey'}}>About us</p>
+        <p style={{fontSize:'10px' , color:'grey'}}>Need Help?</p>
+        <p style={{fontSize:'10px' , color:'grey'}}>Crypto Exchange</p>
+       
     </div>
   
 
-    <div class="col">
-        <h4 style={{ color:'grey', fontSize:'22px'}}>Trading</h4>
-        <p style={{fontSize:'14px' , color:'grey'}}>Spot Wallet</p>
-        <p style={{fontSize:'14px' , color:'grey'}}>Margin Wallet</p>
-        <p style={{fontSize:'14px' , color:'grey'}}>Future Trading</p>
+    <div class="col"  style={{ padding:'20px'}}>
+        <h4 style={{ color:'grey', fontSize:'14px'}}>Trading</h4>
+        <p style={{fontSize:'10px' , color:'grey'}}>Spot Wallet</p>
+        <p style={{fontSize:'10px' , color:'grey'}}>Margin Wallet</p>
+        <p style={{fontSize:'10px' , color:'grey'}}>Future Trading</p>
     </div>
 
 
-    <div class="col">
-        <h4 style={{ color:'grey', fontSize:'22px'}}>Listing</h4>
-        <p style={{fontSize:'14px' , color:'grey'}}>Create New Token</p>
-        <p style={{fontSize:'14px' , color:'grey'}}>Earn with us</p>
-        <p style={{fontSize:'14px' , color:'grey'}}>Others</p>
+    <div class="col" style={{ padding:'20px'}}>
+        <h4 style={{ color:'grey', fontSize:'14px'}}>Listing</h4>
+        <p style={{fontSize:'10px' , color:'grey'}}>Create New Token</p>
+        <p style={{fontSize:'10px' , color:'grey'}}>Earn with us</p>
+        <p style={{fontSize:'10px' , color:'grey'}}>Others</p>
         
     </div>
-    <div class="col">
-        <h4 style={{ color:'grey', fontSize:'22px'}}>Analysis</h4>
-        <p style={{fontSize:'14px' , color:'grey'}}>CandleStick Chart</p>
-        <p style={{fontSize:'14px' , color:'grey'}}>Need help</p>
-        <p style={{fontSize:'14px' , color:'grey'}}>Tutorial</p>
+
+
+
+
+         <div class="col"  style={{padding:'20px'}}>
+        <h4 style={{ color:'grey', fontSize:'14px'}}>Analysis</h4>
+        <p style={{fontSize:'10px' , color:'grey'}}>CandleStick Chart</p>
+        <p style={{fontSize:'10px' , color:'grey'}}>Need help</p>
+        <p style={{fontSize:'10px' , color:'grey'}}>Tutorial</p>
         
     </div>
 
 
 
 </Box>
-</footer>
+</Box>
   
 
-    <div style={{display:'flex', justifyContent:'center', alignItems:'center' , height:'10vh', backgroundColor:'#171B26'}}>
-      <p style={{fontSize:'14px' , color:'grey'}}> Copyright © 2023  BCEX Crypto Exchange. All rights reserved.</p>
-    </div>
+    <Box sx={{display:'flex', justifyContent:'center', alignItems:'center' , height:'7vh', backgroundColor:'#171B26'}}>
+      <p style={{fontSize:'10px' , color:'grey'}}> Copyright © 2023  BCEX Crypto Exchange. All rights reserved.</p>
+    </Box>
   
-
+    </Box>
     </>
   
   

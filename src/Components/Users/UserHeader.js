@@ -43,7 +43,7 @@ const UserHeader = () => {
   }
   
 
-    const res =  axios.get(`http://139.84.137.232/api/checklogin`);
+    const res =  axios.get(`/checklogin`);
       // console.log("this is very important "+res.email)
 
 

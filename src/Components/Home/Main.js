@@ -24,17 +24,17 @@ const Main = (props) => {
 
   return (
     <>
-      <div style={{ backgroundColor: props.color }}>
-        <Box sx={{ height: {xs:'100vh',sm:'100vh'}, backgroundColor: '#171B26', padding: '20px'}}>
+      <Box sx={{ backgroundColor: props.color , width:window.innerWidth, overflow:'hidden'}}>
+        <Box sx={{ height: {xs:'100vh',sm:'100vh'}, backgroundColor: (props.color==='#171B26'?'#f2f2f2':'#171B26'), padding: '20px'}}>
         
           <div style={{}}>
             <Box sx={{display:'flex', height: {xs:'60vh',sm:'100vh'}, alignItems:'center', justifyContent:'center', padding:'20px'}}>
            
            
-           <Box sx={{fontSize: {xs:'62px',sm:'102px'}, color: 'white', fontWeight: '900', fontFamily: 'roboto'}}>Buy & Sell Instantly And
+           <Box sx={{fontSize: {xs:'52px',sm:'102px'}, color: (props.color==='#171B26'?'grey':'white'), fontWeight: '900', fontFamily: 'roboto'}}>Buy & Sell Instantly And
            
               <Box sx={{
-                fontSize: {xs:'62px',sm:'102px'}, color: 'white', fontWeight: '900', fontFamily: 'roboto', background: 'linear-gradient(to right,  #1B42FE, #EF0F4B)',
+                fontSize: {xs:'52px',sm:'102px'}, color: 'white', fontWeight: '900', fontFamily: 'roboto', background: 'linear-gradient(to right,  #1B42FE, #EF0F4B)',
   backgroundClip: 'text',
   WebkitBackgroundClip: 'text',
   color: 'transparent',
@@ -42,8 +42,8 @@ const Main = (props) => {
                 }}> Hold Cryptocurrency</Box>
                
                
-                <Box sx={{fontSize:{xs:'13px',sm:'23px'} , color:'grey', fontWeight:'200', display:'flex'}}>BCEX Exchange is such a marketplace where people&nbsp;
-                  {/* <AutoWriteText  text="can trade directly with each other." /> */}
+                <Box sx={{fontSize:{xs:'13px',sm:'23px'} , color:'grey', fontWeight:'200', display:'flex', gap:'2px', }}>BCEX Exchange is such a marketplace where people&nbsp;<Box sx={{display:{xs:'block', sm:'none'}}}>can trade and hold their coins</Box>
+             
                   <DynamicText texts={texts} />
                 </Box>
                 
@@ -67,7 +67,7 @@ const Main = (props) => {
         
         </Box>
 
-        <Box sx={{ padding: '20px' ,display:'flex', alignItems:'center', justifyContent:'center', height:'50vh', backgroundColor:'#f2f2f2'}}>
+        <Box sx={{ padding: '20px' ,display:'flex', alignItems:'center', justifyContent:'center', backgroundColor:'#f2f2f2'}}>
           
 
           <div style={{display:'flex', alignItems:'center', gap:'20px', flexWrap:'wrap'}}>
@@ -130,29 +130,7 @@ const Main = (props) => {
 
 
 
-{/* 
 
-<Box sx={{padding:{xs:'50px',sm:'120px'},margin:'50px', backgroundSize:'cover' , backgroundPosition:'center', display:'flex',height:'100vh', color:'white'  }}>
-
-<div  style={{width:'50%'}}>
-<div style={{color:'grey', fontSize:'35px', lineHeight:'1'}}>Install Mobile App and earn on the go with a million crypto pioneers</div>
-<div style={{padding:'10px'}}/>
- <p style={{color:'grey', fontSize:'16px'}}>Never miss a new token with new launches, free Airdrops and price alerts.</p>
-
-</div>
-
-<div style={{width:'50%'}}>
-
-</div>
-
-
-
-
-</Box>
-<Box sx={{display:'flex' , flexDirection:'column' , gap:'20px' , fontSize:'16px' , color:'grey'}}>
-  <div>Special Notice About Tradexpro Markets Limited</div>
-  <div style={{ fontSize:'15px' , color:'grey', fontWeight:'200', display:'flex'}}>Tradexpro Collect & Win Christmas Edition: Trade TRX, BTT, WIN, JST or SUN to Light Up the Christmas Tree & Share $300k in Rewards!</div>
-</Box> */}
 
 
 {/* =====================================================end */}
@@ -177,33 +155,36 @@ const Main = (props) => {
         </Box>
 
        
-        <Container>
+        <Container sx={{backgroundColor:'#f9f2f2'}}>
             
-            <Box sx={{paddingTop:'50px',paddingBottom:'50px',fontSize:'32px', color:'#2A2A2D',fontWeight:'800'}}>Trade Anywhere</Box>
+            <Box sx={{paddingTop:{sm:'50px',xs:'20px'},paddingBottom:{sm:'50px',xs:'20px'},fontSize:{sm:'32px',xs:'22px'}, color:'#2A2A2D',fontWeight:'800'}}>Trade Anywhere</Box>
             
             
-            <Box sx={{display:'flex', backgroundColor:'#f2f2f2'}}>
-            <div style={{width:"50%"}}><img src="http://139.84.137.232/api/static/images/banner4.png" width="500px" height="500px" alt="" /></div>
-            <div style={{display:'flex', alignItems:'center', justifyContent:'center', height:'500px', flexDirection:'column'}}>
+            <Box sx={{display:'flex',flexDirection:{xs:'column', sm:'row'}, alignItems:'center',backgroundColor:'#f2f2f2'}}>
+           
+            <div style={{ width: "50%" }}><img src="http://139.84.137.232/api/static/images/banner4.png" width="500px" height="500px" alt="" /></div>
+           
+           
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: {sm:'500px',xs:'200px'}, flexDirection: 'column' }}>
             
-            <div style={{height:'10vh'}} >
+            <Box sx={{height:{sm:'10vh',xs:'6vh'}}} >
             
-            <IconButton sx={{color:'#2A2A2D' , fontSize:'16px' , padding:'10px'}}><AppleIcon/>&nbsp;Apple</IconButton>
-            <IconButton sx={{color:'#2A2A2D' , fontSize:'16px' , padding:'10px'}}><GoogleIcon/>&nbsp;Google Play</IconButton>
-            <IconButton sx={{color:'#2A2A2D' , fontSize:'16px' , padding:'10px'}}><LaptopIcon/>&nbsp;Mac Os</IconButton>
-            </div>
+            <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><AppleIcon/>&nbsp;Apple</IconButton>
+            <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><GoogleIcon/>&nbsp;Google Play</IconButton>
+            <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><LaptopIcon/>&nbsp;Mac Os</IconButton>
+            </Box>
             
-            <div style={{height:'10vh'}}>
-            <IconButton sx={{color:'#2A2A2D' , fontSize:'16px' , padding:'10px'}}><WindowIcon/>&nbsp;Windows</IconButton>
-            <IconButton sx={{color:'#2A2A2D' , fontSize:'16px' , padding:'10px'}}><FlutterDashOutlinedIcon/>&nbsp; Linux</IconButton>
-            <IconButton sx={{color:'#2A2A2D' , fontSize:'16px' , padding:'10px'}}><WebhookIcon/>&nbsp;APIs</IconButton>
-            </div>
+            <Box sx={{height:{sm:'10vh',xs:'6vh'}}} >
+            <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><WindowIcon/>&nbsp;Windows</IconButton>
+            <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><FlutterDashOutlinedIcon/>&nbsp; Linux</IconButton>
+            <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><WebhookIcon/>&nbsp;APIs</IconButton>
+            </Box>
             
-            </div>
+            </Box>
             </Box>
             </Container>
  
-</div>
+</Box>
   </> 
  
     )

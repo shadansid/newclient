@@ -113,7 +113,7 @@ const [color, setColor] = useState('#171B26')
       <>
                    {/* togle================================================================================================== */}
 
-        {toggle ? <Box sx={{ display: 'flex', position: 'fixed', zIndex: '4', flexDirection: 'column', height: '100vh', backgroundColor: '#171B26', alignItems: '', width: window.innerWidth }}>
+        <Box sx={{ display: 'flex', position: 'fixed', zIndex: '4', flexDirection: 'column', height: '100vh', backgroundColor: '#171B26', alignItems: '', width: window.innerWidth }}>
           <Box>
             <Box sx={{width:'90%'}}></Box>
           <IconButton sx={{ color: '#7D8794', fontSize: '0.8rem', padding: '10px' }}><Close onClick={hidetoggle } /></IconButton>
@@ -157,10 +157,10 @@ const [color, setColor] = useState('#171B26')
 
 
 
-          </Box> : <></>}
+          </Box> 
           {/* togle================================================================================================== */}
 
-        <div style={{ backgroundColor: color, display: 'flex', alignItems: 'center', paddingLeft: '20px', paddingRight: '20px' }}>
+        <Box sx={{ width:window.innerWidth,backgroundColor: color, display: 'flex', alignItems: 'center', paddingLeft: '20px', paddingRight: '20px' }}>
      
 
 
@@ -241,7 +241,7 @@ const [color, setColor] = useState('#171B26')
                            fontSize:'18px'}} /> &nbsp;Sign Up</IconButton></Link>
          </Typography> */}
             
-            <Box sx={{display:{xs:'flex', sm:'none'}}}> <div style={{display:'flex', alignItems:'center',gap:'10px' , justifyContent:'center'}}><input type="text" onChange={""} placeholder='Explore New Coins...'  style={{height:"15px", backgroundColor:'transparent' , border:'1px solid white', width:'120px',borderRadius:'5px',padding:'15px' , margin:'10px'}}   /> <SearchIcon sx={{color:'#3468D1'}} /></div></Box>
+            <Box sx={{display:{xs:'none', sm:'none'}}}> <div style={{display:'flex', alignItems:'center',gap:'10px' , justifyContent:'center'}}><input type="text" onChange={""} placeholder='Explore New Coins...'  style={{height:"15px", backgroundColor:'transparent' , border:'1px solid white', width:'120px',borderRadius:'5px',padding:'15px' , margin:'10px'}}   /> <SearchIcon sx={{color:'#3468D1'}} /></div></Box>
          
          
          <Typography >
@@ -261,7 +261,7 @@ const [color, setColor] = useState('#171B26')
          
                  </div>
           
-  </div>  
+  </Box>  
 </>
 
     )
