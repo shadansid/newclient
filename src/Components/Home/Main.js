@@ -31,10 +31,10 @@ const Main = (props) => {
             <Box sx={{display:'flex', height: {xs:'60vh',sm:'100vh'}, alignItems:'center', justifyContent:'center', padding:'20px'}}>
            
            
-           <Box sx={{fontSize: {xs:'52px',sm:'102px'}, color: (props.color==='#171B26'?'grey':'white'), fontWeight: '900', fontFamily: 'roboto'}}>Buy & Sell Instantly And
+           <Box sx={{fontSize: {xs:'42px',sm:'102px'}, color: (props.color==='#171B26'?'grey':'white'), fontWeight: '900', fontFamily: 'roboto'}}>Buy & Sell Instantly And
            
               <Box sx={{
-                fontSize: {xs:'52px',sm:'102px'}, color: 'white', fontWeight: '900', fontFamily: 'roboto', background: 'linear-gradient(to right,  #1B42FE, #EF0F4B)',
+                fontSize: {xs:'42px',sm:'102px'}, color: 'white', fontWeight: '900', fontFamily: 'roboto', background: 'linear-gradient(to right,  #1B42FE, #EF0F4B)',
   backgroundClip: 'text',
   WebkitBackgroundClip: 'text',
   color: 'transparent',

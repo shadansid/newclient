@@ -97,12 +97,12 @@ function App() {
       <Route exact path="/trade/showwallet" element={<Showwallet/>}/>
       </Route>
 
-{/* 
+
       <Route exact path="/mobtrade" element={<MobTrade/>}>
-      <Route exact path="/mobtrade/buysell" element={<BuyCoin/>}/>
-      <Route exact path="/mobtrade/buysell/sellcoin" element={<SellCoin/>}/>
+      {/* <Route exact path="/mobtrade/buysell" element={<BuyCoin/>}/>
+      <Route exact path="/mobtrade/buysell/sellcoin" element={<SellCoin/>}/> */}
        
-          </Route> */}
+          </Route>
       <Route exact path="/Logout" element={<Logout/>}/>
       
       {/* <Route exact path="/trade" element={<Trade/>}/> */}

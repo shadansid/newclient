@@ -16,7 +16,7 @@ function BuyCoin({coins,coinChange}) {
   const [verified, setVerified] = useState(0)
   useEffect(() => {
           
-        axios.get('http://139.84.137.232/api/checkverified')
+        axios.get('/checkverified')
         .then(function (response) {
           
           // console.log(response);
@@ -186,7 +186,7 @@ const [avblCoin , setavblCoin] = useState("");
 
 const avbl = ()=>{
 
-  axios.post('http://139.84.137.232/api/avbl', {symbol:context.symbol})
+  axios.post('/avbl', {symbol:context.symbol})
   .then((res) => {
   
     setavblCoin(res.data)

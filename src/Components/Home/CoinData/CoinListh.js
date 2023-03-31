@@ -3,7 +3,8 @@ import DownGraph from '@mui/icons-material/TrendingDownOutlined';
 import UpGraph from '@mui/icons-material/TrendingUpOutlined';
 import Graph from '@mui/icons-material/StackedLineChartOutlined';
 import { Box } from '@mui/system';
-import {Container,Grid,Button} from '@mui/material'
+import { Container, Grid, Button } from '@mui/material'
+import { Link } from 'react-router-dom';
 
 function CoinListh(props) {
 
@@ -35,7 +36,7 @@ const showcoin = ()=>{
         </Box>
 
 
-        <div style={{ display: 'flex', alignItems: 'center', width: '' }}><Button size='small' sx={{ backgroundColor: '#5661FF' }} variant="contained">Trade</Button></div>
+        <Link  to='/mobtrade' style={{ display: 'flex', alignItems: 'center', width: '' }}><Button size='small' sx={{ backgroundColor: '#5661FF' }}   variant="contained">Trade</Button></Link>
    </div>
 
 
