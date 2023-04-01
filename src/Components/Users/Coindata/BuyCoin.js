@@ -400,28 +400,28 @@ const limitX = ()=>{
 
 <div>
 
-<input type="number" disabled  placeholder={"Avbl" + " " + ": " + "$ "+avblCoin.msg} style={{background:'transparent',padding:'15px',width:'48ch' ,margin:'10px', border:'1px solid grey'}} />
+<input type="number" disabled  placeholder={"Avbl" + " " + ": " + "$ "+avblCoin.msg} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
 </div>
          
          {limit? <div>
 
-<input type="number" id="limitprice"  placeholder={"Price"} style={{background:'transparent',padding:'15px',width:'48ch' ,margin:'10px', border:'1px solid grey'}} />
+<input type="number" id="limitprice"  placeholder={"Price"} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
 </div>:<span></span>}
           
           <div>
 
-          <input type="number" min="1" max='2400' onwheel="this.blur()" id="buyamount" value={testing?testing:""} onChange={onchangeBuy} placeholder={context.symbol} style={{background:'transparent',padding:'15px',width:'48ch' ,margin:'10px', border:'1px solid grey'}} />
+          <input type="number" min="1" max='2400' onwheel="this.blur()" id="buyamount" value={testing?testing:""} onChange={onchangeBuy} placeholder={context.symbol} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
           </div>
 
           <div>
 
-<input type="number"  value={amountBox} placeholder="Amount" style={{background:'transparent',margin:'10px',padding:'15px' ,width:'48ch', border:'1px solid grey'}} />
+<input type="number"  value={amountBox} placeholder="Amount" style={{background:'transparent',margin:'10px',padding:'15px' ,width:'38ch', border:'1px solid grey'}} />
 </div>
       
       {/* <TextField  size='small' inputProps={{ readonly: true }}
           label="Amount"  value={'--'} 
           id="buyamount" color="primary"
-          sx={{ m: 1, width: '48ch',input:{color:"#363C4E"}}}
+          sx={{ m: 1, width: '38ch',input:{color:"#363C4E"}}}
           focused />
          */}
               {/* <div>{ "this is good thing " + verified}</div> */}
@@ -435,7 +435,7 @@ const limitX = ()=>{
   marks
   min={0}
   max={100} color="success"
-  sx={{width:'45ch'}}
+  sx={{width:'40ch'}}
               />
               
 
@@ -446,10 +446,10 @@ const limitX = ()=>{
 
 
 
-                {!limit && verified ? <span><Button size='small' onClick={buy} sx={{ width: '52ch' }} color="success" variant="contained">Buy &nbsp;{ context.symbol}</Button></span>:<span></span>}
+                {!limit ? <span><Button size='small' onClick={buy} sx={{ width: '40ch' }} color="success" variant="contained">{verified?'Buy':'Verify yourself' } &nbsp;{ context.symbol}</Button></span>:<span></span>}
 
 
-{limit && verified? <span> <Button size='small' onClick={buyLimit} sx={{width:'52ch'}} color="success" variant="contained">Limit &nbsp;{ context.symbol}</Button></span>:<span></span>}
+{limit ? <span> <Button size='small' onClick={buyLimit} sx={{width:'40ch'}} color="success" variant="contained">{verified?"Limit":'Verify yourself'} &nbsp;{ context.symbol}</Button></span>:<span></span>}
 
 
 {/* <div>{buyres? <div style={{color:'grey',fontSize:'14px'}}>{buyres.msg}</div>:<div></div>}</div> */}

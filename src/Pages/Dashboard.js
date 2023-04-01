@@ -166,7 +166,7 @@ const data = {
              <Container onClick={Airdrop}>
                
                   
-                      <Box sx={{backgroundImage:"url('http://139.84.137.232/api/static/images/Airdrop/airdrop2.gif')", backgroundPosition:'center', backgroundSize:'cover', height:{sm:'300px', xs:'200px'}, width:{xs:window.innerWidth -50,sm:'100%'}}}> </Box>
+                      <Box sx={{backgroundImage:"url('http://139.84.137.232/api/static/images/Airdrop/Airdrop2.gif')", backgroundPosition:'center', backgroundSize:'cover', height:{sm:'300px', xs:'200px'}, width:{xs:window.innerWidth -50,sm:'100%'}}}> </Box>
                      
                      
 

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-
+import { Input } from '@mui/material';
 import './Css/buycoin.css'
 import { useState } from 'react';
 import axios from 'axios'
@@ -226,20 +226,20 @@ const limitX = ()=>{
 
 <div>                                                                           
 
-<input type="number" disabled  placeholder={"Avbl" + " " + ": " + "$ "+     (context.custom?avblsellCoin.msg*context.Cprice:avblsellCoin.msg*context.price).toFixed(3) } style={{background:'transparent',padding:'15px',width:'48ch' ,margin:'10px', border:'1px solid grey'}} />
+<input type="number" disabled  placeholder={"Avbl" + " " + ": " + "$ "+     (context.custom?avblsellCoin.msg*context.Cprice:avblsellCoin.msg*context.price).toFixed(3) } style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
 </div>
 {limit? <div>
 
-<input type="number" id="limitsellprice"  placeholder={"Price"} style={{background:'transparent',padding:'15px',width:'48ch' ,margin:'10px', border:'1px solid grey'}} />
+<input type="number" id="limitsellprice"  placeholder={"Price"} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
 </div>:<span></span>}
 <div>
 
-<input type="number" id="sellamount" placeholder={context.symbol}  value={testing2?testing2:""}   onChange={onchangeSell} style={{background:'transparent',margin:'10px',width:'48ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
+<input type="number" id="sellamount" placeholder={context.symbol}  value={testing2?testing2:""}   onChange={onchangeSell} style={{background:'transparent',margin:'10px',width:'38ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
 </div>
 
 <div>
 
-<input type="number" disabled  placeholder={amountBox2}  style={{background:'transparent',padding:'15px' ,margin:'10px',width:'48ch', border:'1px solid grey'}} />
+<input type="number" disabled  placeholder={amountBox2}  style={{background:'transparent',padding:'15px' ,margin:'10px',width:'38ch', border:'1px solid grey'}} />
         </div>
        
     
@@ -252,16 +252,16 @@ step={25}
 marks onChange={sliderX2}
 min={0}
 max={100} color="error"
-sx={{width:'45ch'}}
+sx={{width:'40ch'}}
 />
 
 <div>
 
 {/* <Button size='small' onClick={sell} sx={{width:'52ch'}} color="error" variant="contained">Sell</Button> */}
-{!limit && verified? <span><Button size='small' onClick={sell} sx={{width:'52ch'}} color="error" variant="contained">sell  &nbsp;{ context.symbol}</Button></span>:<span></span>}
+{!limit ? <span><Button size='small' onClick={sell} sx={{width:'40ch'}} color="error" variant="contained">{verified?'sell':'Verify yourself' }  &nbsp;{ context.symbol}</Button></span>:<span></span>}
 
 
-{limit && verified? <span> <Button size='small' sx={{width:'52ch'}} color="error" variant="contained">Limit  &nbsp;{ context.symbol}</Button></span>:<span></span>}
+{limit ? <span> <Button size='small' sx={{width:'40ch'}} color="error" variant="contained">{verified?'limit':'Verify yourself' } &nbsp;{ context.symbol}</Button></span>:<span></span>}
 
 
           {/* <div>{sellres && sellres.msg}</div> */}

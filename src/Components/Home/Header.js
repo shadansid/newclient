@@ -113,43 +113,43 @@ const [color, setColor] = useState('#171B26')
       <>
                    {/* togle================================================================================================== */}
 
-        {toggle?<Box sx={{ display: 'flex', position: 'fixed', zIndex: '4', flexDirection: 'column', height: '100vh', backgroundColor: '#171B26', alignItems: '', width: window.innerWidth }}>
+        {toggle?<Box sx={{ display: 'flex', position: 'fixed', zIndex: '4', flexDirection: 'column', height: '100vh', backgroundColor: '#171B26', alignItems: '', width: window.innerWidth}}>
           <Box>
             <Box sx={{width:'90%'}}></Box>
           <IconButton sx={{ color: '#7D8794', fontSize: '0.8rem', padding: '10px' }}><Close onClick={hidetoggle } /></IconButton>
           </Box>
           
 
-<Box>
+<Box sx={{ borderTop:'1px solid grey'}}>
 
-<Link to='/userpanel/userdashboard' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'0.8rem' , padding:'10px'}}>Dashboard</IconButton></Link>
+<Link to='/userpanel/userdashboard' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'0.9rem' , padding:'10px'}}>Dashboard</IconButton></Link>
 </Box>
 
-<Box>
+<Box sx={{ borderTop:'1px solid grey'}}>
 
-<Link to='/trade' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'0.8rem' , padding:'10px'}}>Trade</IconButton></Link>
+<Link to='/trade' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'0.9rem' , padding:'10px'}}>Trade</IconButton></Link>
 </Box>
 
-<Box>
+<Box sx={{ borderTop:'1px solid grey'}}>
 
-<Link to='/userpanel/wallet' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'0.8rem' , padding:'10px'}}>Deposit</IconButton></Link>
+<Link to='/userpanel/wallet' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'0.9rem' , padding:'10px'}}>Deposit</IconButton></Link>
 </Box>
-<Box>
+<Box sx={{ borderTop:'1px solid grey'}}>
 
-<Link to='/reqcall' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'0.8rem' , padding:'10px'}}>Apply For Listing</IconButton></Link>
+<Link to='/reqcall' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'0.9rem' , padding:'10px'}}>Apply For Listing</IconButton></Link>
           </Box>
           
           
-<Typography >
-<Link to='/login' style={{textDecoration:'none'}}><IconButton sx={{color:'grey' , fontSize:'0.8rem' , padding:'6px'}}>Login </IconButton></Link>
+<Typography sx={{ borderTop:'1px solid grey'}}>
+<Link to='/login' style={{textDecoration:'none'}}><IconButton sx={{color:'grey' , fontSize:'0.9rem' , padding:'10px'}}>Login </IconButton></Link>
               </Typography>
               
 
         
 
 
-<Typography >
-<Link to='/registration' style={{textDecoration:'none'}}><IconButton sx={{color:'grey' , fontSize:'0.8rem' , padding:'6px'}}>Sign Up</IconButton></Link>
+<Typography sx={{ borderTop:'1px solid grey'}} >
+<Link to='/registration' style={{textDecoration:'none'}}><IconButton sx={{color:'grey' , fontSize:'0.9rem' , padding:'10px'}}>Sign Up</IconButton></Link>
 </Typography>
               
 

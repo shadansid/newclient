@@ -87,7 +87,7 @@ const Main = (props) => {
 
 
 
-  <Container sx={{backgroundColor:props.color}}>
+  <Container sx={{backgroundColor:'white'}}>
     
     {/* <Container sx={{display:'flex' , alignItems:'center' , paddingTop:'100px'}}>
 

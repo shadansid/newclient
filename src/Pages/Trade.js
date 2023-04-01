@@ -190,7 +190,7 @@ const toggleClose = () => {
 
                      
                      
-                        <Box sx={{display:{xs:'none',sm:'block'}}}>{state.custom ? <CustomChart size={size} /> : <AdvancedRealTimeChart style={{ zIndex: -2 }} height={350} width={size - 40} symbol={state.symbol} theme='dark' container_id='chart' ></AdvancedRealTimeChart>}</Box>
+                        <Box sx={{display:{xs:'none',sm:'block'}}}>{state.custom ? <CustomChart size={size} /> : <AdvancedRealTimeChart style={{ zIndex: -2 }} height={350} width={size - 40} symbol={state.symbol} theme='dark' container_id='chart' hide_top_toolbar='true' left_toolbar= 'true'  ></AdvancedRealTimeChart>}</Box>
                         
                         <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
 
@@ -211,10 +211,10 @@ const toggleClose = () => {
                     
                     {state.boolVal ?
                         
-                        <Box><Box id='middlebox' sx={{ display: { xs: 'block', sm: 'none' }, backgroundColor:'#171B26' , padding:'10px'}}>
+                        <Box sx={{overflow:''}}><Box id='middlebox' sx={{ display: { xs: 'block', sm: 'none' }, backgroundColor:'#171B26' , padding:'10px'}}>
                         <Data24hr coins={coins} coinChange={handleCoinChange}></Data24hr>
                     
-                          <Box  sx={{display:{xs:'block',sm:'none'}}}> { state.custom?<CustomChart/>:<AdvancedRealTimeChart style={{ zIndex:2 }} height={window.innerHeight} width={window.innerWidth - 20} symbol={state.symbol} theme='dark'  container_id='chart2' ></AdvancedRealTimeChart>}</Box>
+                          <Box  sx={{display:{xs:'block',sm:'none'}}}> { state.custom?<CustomChart/>:<AdvancedRealTimeChart style={{ zIndex:2 }} height={window.innerHeight} width={window.innerWidth - 20} symbol={state.symbol} theme='dark'   container_id='chart2' hide_side_toolbar='false' ></AdvancedRealTimeChart>}</Box>
                         
                                             
                     {buyactive?
@@ -224,11 +224,11 @@ const toggleClose = () => {
                                                     <Box>
                                                 <Box sx={{ display: 'flex', height: '3vh', backgroundColor: '#1C2230', alignItems: 'center', width:window.innerWidth-30}}>
                     
-                                                    <Box sx={{ backgroundColor: (changeColor?'#2E7D32':''), color: 'white', height: '3vh', display:'flex',justifyContent:'center',alignItems:'center',width:window.innerWidth* 0.5}}>
+                                                    <Box sx={{ backgroundColor: (changeColor?'#2E7D32':''), color: 'white', height: '4vh', display:'flex',justifyContent:'center',alignItems:'center',width:window.innerWidth* 0.5}}>
                                                     
                                                     <NavLink  onClick={changecolor1} style={{textDecoration:'none', color:'white', paddingLeft:'60px', paddingRight:'60px'}}  to='/trade/buysell/buycoin'>Buy</NavLink>
                                                     </Box>
-                                                    <Box sx={{backgroundColor: (changeColor?'':'#D32F2F'), display:'flex',justifyContent:'center',alignItems:'center', color:'white',height:'3vh', width:window.innerWidth* 0.5}}>
+                                                    <Box sx={{backgroundColor: (changeColor?'':'#D32F2F'), display:'flex',justifyContent:'center',alignItems:'center', color:'white',height:'4vh', width:window.innerWidth* 0.5}}>
                                                         
                                                     <NavLink onClick={changecolor2} style={{textDecoration:'none', color:'white', paddingLeft:'60px', paddingRight:'60px'}}    to='/trade/buysell/sellcoin'>Sell</NavLink>
                                                 </Box>
@@ -236,7 +236,7 @@ const toggleClose = () => {
                                                 </Box>
                                            
                                            
-                                                <Box sx={{ width: window.innerWidth-20, display: 'flex', justifyContent: 'center' }}> 
+                                                <Box sx={{  display: 'flex', justifyContent: 'center' }}> 
                                                 <Outlet coins={coins} coinChange={handleCoinChange}></Outlet>
                                             </Box>
                                     </Box></Box> : <></>}
@@ -254,15 +254,15 @@ const toggleClose = () => {
                     
                     
                         {buyactive || sellactive ?<></>:
-                            <Box sx={{ display:{xs:'block', sm:'none'},position: 'fixed', bottom: '55px', backgroundColor: '', height: '3vh', width: window.innerWidth }}>
+                            <Box sx={{ display:{xs:'block', sm:'none'},position: 'fixed', bottom: '70px', backgroundColor: '', height: '3vh', width: window.innerWidth }}>
                             
-                            <Box sx={{ display: 'flex', height: '3vh', backgroundColor: '', alignItems: 'center', width:window.innerWidth}}>
+                            <Box sx={{ display: 'flex', height: '5vh', backgroundColor: '', alignItems: 'center', width:window.innerWidth}}>
                     
-                    <Box onClick={BuyToggleBtn} sx={{ backgroundColor: '#2E7D32', cursor:'pointer',color: 'white', height: '3vh', display:'flex',justifyContent:'center',alignItems:'center',width:window.innerWidth* 0.5}}>
+                    <Box onClick={BuyToggleBtn} sx={{ backgroundColor: '#2E7D32', cursor:'pointer',color: 'white', height: '5vh', display:'flex',justifyContent:'center',alignItems:'center',width:window.innerWidth* 0.5}}>
                     
                     <Box   style={{textDecoration:'none', color:'white'}} >Buy</Box>
                     </Box>
-                    <Box  onClick={SellToggleBtn} sx={{backgroundColor:'#D32F2F',cursor:'pointer', display:'flex',justifyContent:'center',alignItems:'center', color:'white',height:'3vh', width:window.innerWidth* 0.5}}>
+                    <Box  onClick={SellToggleBtn} sx={{backgroundColor:'#D32F2F',cursor:'pointer', display:'flex',justifyContent:'center',alignItems:'center', color:'white',height:'5vh', width:window.innerWidth* 0.5}}>
                         
                     <Box  style={{textDecoration:'none', color:'white'}}>Sell</Box>
                     </Box>
