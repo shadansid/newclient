@@ -7,7 +7,11 @@ import WWWs from '@mui/icons-material/Equalizer';
 const WalletChart = () => {
 
     const [walletdata, setWalletdata] = useState(0)
-    useEffect(()=>{
+   
+  
+  
+  
+  useEffect(() => {
 
         const config = {
           headers:{
@@ -46,22 +50,21 @@ const data = {
   const options = {
     maintainAspectRatio: false,
     responsive: true,
-    // legend: {
-    //   position: 'top',
-    //   labels: {
-    //     fontColor: 'white',
-    //     fontSize: 14
-    //   }
-    // }
+   
     plugins:{
-      legend:true}
+     
+      legend: {
+        position: 'right'
+      }
+    
+    }
   };
   
     return (
   
   
   
-      <div style={{ width: '250px', height: '250px', padding: '20px', display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems:'center' , gap:'40px'}}>  <Doughnut data={data} options={options} />
+      <div style={{ width: '350px', height: '350px', padding: '20px', display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems:'center' , gap:'40px'}}>  <Doughnut data={data} options={options} />
       
         <Box sx={{ color: 'grey', display: 'flex', justifyContent: 'center', alignItems:'center',}}><WWWs sx={{fontSize:'22px', color:'grey'}}/>   &nbsp;Wallet Overview </Box>
       

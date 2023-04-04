@@ -25,7 +25,7 @@ const WalletBalance = () => {
       }
     }
    
-    const url = "http://139.84.137.232/api/showwallet";
+    const url = "/showwallet";
   
   
     axios.get(url, config)
@@ -96,7 +96,7 @@ const WalletBalance = () => {
       <div style={{display:'flex', flexDirection:'column'}}>
        {/* <div style={{width:'30%'}}> <Line data={data} options={options} /></div> */}
     
-      <div style={{ backgroundColor: "#1C2230", display: 'flex',alignItems:'', flexDirection:'column' , padding:'20px' , borderRadius:'9px'}}>
+      <div style={{ backgroundColor: "#1C2230", display: 'flex',alignItems:'', flexDirection:'column' , padding:'20px' , borderRadius:'9px',boxShadow:'1px -2px 14px -1px black'}}>
        
         <Box sx={{display:'flex', justifyContent:'space-between', backgroundColor:'', marginBottom:'10px'}}>
           

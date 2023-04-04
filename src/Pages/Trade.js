@@ -209,16 +209,16 @@ const toggleClose = () => {
 
 
                     
-                    {state.boolVal ?
+                    {!(state.boolVal) ?
                         
                         <Box sx={{overflow:''}}><Box id='middlebox' sx={{ display: { xs: 'block', sm: 'none' }, backgroundColor:'#171B26' , padding:'10px'}}>
                         <Data24hr coins={coins} coinChange={handleCoinChange}></Data24hr>
                     
-                          <Box  sx={{display:{xs:'block',sm:'none'}}}> { state.custom?<CustomChart/>:<AdvancedRealTimeChart style={{ zIndex:2 }} height={window.innerHeight} width={window.innerWidth - 20} symbol={state.symbol} theme='dark'   container_id='chart2' hide_side_toolbar='false' ></AdvancedRealTimeChart>}</Box>
+                          <Box  sx={{display:{xs:'block',sm:'none'}, width:window.innerWidth -20, overflow:'hidden'}}> { state.custom?<CustomChart/>:<AdvancedRealTimeChart  height={window.innerHeight} width={window.innerWidth - 20} symbol={state.symbol} theme='dark'   container_id='chart2' hide_side_toolbar='false' ></AdvancedRealTimeChart>}</Box>
                         
                                             
                     {buyactive?
-                                                <Box sx={{ backgroundColor: '#171b26', position: 'fixed', top: '0vh', overflow: 'scroll', padding: '20px', height: window.innerHeight ,zIndex:'8', width:window.innerWidth-20, overflow:'hidden'}}>
+                                                <Box sx={{ overflowX:'hidden',backgroundColor: '#171b26', position: 'fixed', top: '0vh', overflow: 'scroll', padding: '20px', height:'100vh' ,zIndex:'8', overflow:'hidden', width:'100%'}}>
                                                    <Box sx={{display:'flex', justifyContent:'flex-end'}}> <Box onClick={toggleClose} sx={{color:'grey', fontSize:'20px', cursor:'pointer', padding:'20px'}}> X </Box></Box>
                                                     
                                                     <Box>

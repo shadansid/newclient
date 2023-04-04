@@ -234,12 +234,12 @@ const limitX = ()=>{
 </div>:<span></span>}
 <div>
 
-<input type="number" id="sellamount" placeholder={context.symbol}  value={testing2?testing2:""}   onChange={onchangeSell} style={{background:'transparent',margin:'10px',width:'38ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
+<input type="number" id="sellamount" placeholder={"Amount"}  value={testing2?testing2:""}   onChange={onchangeSell} style={{background:'transparent',margin:'10px',width:'38ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
 </div>
 
 <div>
 
-<input type="number" disabled  placeholder={amountBox2}  style={{background:'transparent',padding:'15px' ,margin:'10px',width:'38ch', border:'1px solid grey'}} />
+<input type="number" disabled  placeholder={context.symbol} value={amountBox2}  style={{background:'transparent',padding:'15px' ,margin:'10px',width:'38ch', border:'1px solid grey'}} />
         </div>
        
     

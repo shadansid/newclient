@@ -97,7 +97,7 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
       background: "#18192B"
     }}} >
- <DashboardIcon style={{color:'#5442f2'}} />
+ <DashboardIcon style={{color:'#0082FC'}} />
  <Link style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/userdashboard'>Dashboard</Link>
  
  
@@ -106,7 +106,7 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
       background: "#18192B"
     }}}>
- <Person4Icon style={{color:'#EA661C'}} />
+ <Person4Icon style={{color:'#0082FC'}} />
  <Link style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/userkyc'>Profile</Link>
  </Grid>
 
@@ -123,21 +123,21 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
       background: "#18192B"
     }}}>
- <EqualizerIcon style={{color:'#19B6A4'}} />
+ <EqualizerIcon style={{color:'#0082FC'}} />
  <Link  style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px' , marginLeft:'10px'}} to='/trade'>Buy Coins</Link>
  </Grid>
  
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
       background: "#18192B"
     }}}>
- <ArticleIcon style={{color:'#1392DE'}}/>
+ <ArticleIcon style={{color:'#0082FC'}}/>
  <Link  style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/tradehistory'>Trade History</Link>
  </Grid>
 
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
       background: "#18192B"
     }}}>
- <RequestPageIcon style={{color:'#AEB5BB'}}/>
+ <RequestPageIcon style={{color:'#0082FC'}}/>
  <Link  style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/transactionhistory'>Transaction History</Link>
  </Grid>
 
@@ -152,7 +152,7 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
       background: "#18192B"
     }}}>
- <PersonAddIcon style={{color:'#22A3D0'}} />
+ <PersonAddIcon style={{color:'#0082FC'}} />
  <Link style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/referral'>Referral</Link>
  
  
@@ -188,13 +188,23 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
    </Box>
 
    <Container  maxWidth="lg" sx={{backgroundColor:'', display: { xs: 'none', sm:'block'}}}>
-   <Outlet />
+                  <Outlet />
+ 
+
    </Container>
                 
 
                 
 
- </Box>
+              </Box>
+              
+
+
+
+
+
+
+
 {/* mobo=============================================================== */}
 <Box sx={{display:{sm:'none', xs:'flex' , position:'fixed' , bottom:0, height:'55px' , width:window.innerWidth ,zIndex:5 , display:'flex' ,backgroundColor:'#171B26' ,flexDirection:'row',justifyContent:'space-between' , alignItems:'center' , boxShadow:'rgb(105 50 151) 2px 1px 2px 0px', padding:'10px', borderTop:'1px solid '}}}>
  

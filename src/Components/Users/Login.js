@@ -9,6 +9,7 @@ import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRig
 import { Button,Checkbox , Divider } from '@mui/material';
 import Header from '../Home/Header'
 import { useNavigate } from 'react-router-dom';
+import {Box} from '@mui/material'
 
 export default function Login() {
  
@@ -99,7 +100,7 @@ else
   
     <>
       <Header/>
-    <div className="Registration">
+    <Box className="Registration" sx={{padding:{xs:'20px'}}}>
         
         
         
@@ -167,7 +168,7 @@ else
    </div>  
 <Divider></Divider>
 
-</div>
+</Box>
 
     </>
 

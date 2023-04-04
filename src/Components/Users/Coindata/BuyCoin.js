@@ -410,12 +410,12 @@ const limitX = ()=>{
           
           <div>
 
-          <input type="number" min="1" max='2400' onwheel="this.blur()" id="buyamount" value={testing?testing:""} onChange={onchangeBuy} placeholder={context.symbol} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
+          <input type="number" min="1" max='2400' onwheel="this.blur()" id="buyamount" value={testing?testing:""} onChange={onchangeBuy} placeholder={"Amount"} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
           </div>
 
           <div>
 
-<input type="number"  value={amountBox} placeholder="Amount" style={{background:'transparent',margin:'10px',padding:'15px' ,width:'38ch', border:'1px solid grey'}} />
+<input type="number"  value={amountBox} placeholder={context.symbol} style={{background:'transparent',margin:'10px',padding:'15px' ,width:'38ch', border:'1px solid grey'}} />
 </div>
       
       {/* <TextField  size='small' inputProps={{ readonly: true }}

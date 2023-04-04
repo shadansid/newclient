@@ -40,7 +40,7 @@ const options = {
   }
   return (
     <>
-      <Box sx={{height:{sm:'300px',xs:'200px'}, width:{sm:'100%',xs:'100%'}}}>
+      <Box sx={{ width:{sm:'100%',xs:'100%'}}}>
 
     <Line data={data} options={options}></Line>
     
