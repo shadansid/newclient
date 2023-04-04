@@ -37,7 +37,7 @@ const Navigate3 = () => {
     
     useEffect(() => {
         
-        axios.get('/userprofile')
+        axios.get('http://139.84.137.232/api/userprofile')
         .then(response => {
             setUser(response.data)
             console.log(response.data)
