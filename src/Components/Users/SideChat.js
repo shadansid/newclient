@@ -25,7 +25,7 @@ const [chat, setChat] = useState(0)
     }
     return (
       <>
-         <Box onClick={openChat} sx={{position:'fixed', cursor:'pointer',bottom:'20px', right:'30px', borderRadius:'100px',padding:'20px', backgroundColor:'black', padding:'10px'}}> <Chat sx={ {color:'grey', fontSize:'28px'}} /></Box>
+         <Box onClick={openChat} sx={{display:{xs:'none',sm:'block'},position:'fixed', cursor:'pointer',bottom:'20px', right:'30px', borderRadius:'100px',padding:'20px', backgroundColor:'black', padding:'10px'}}> <Chat sx={ {color:'grey', fontSize:'28px'}} /></Box>
 
        {chat? <Box>
                 
@@ -33,7 +33,7 @@ const [chat, setChat] = useState(0)
                     <Box sx={{ color: 'grey', cursor: 'pointer', display: 'flex', justifyContent: 'flex-end', width:'100%' }} onClick={closeChat}>
                         <Box sx={{padding:'20px', fontSize:'16px'}}>X</Box>
                     </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems:'center', flexDirection:'column'}}><img src="/static/images/chatlady.png" height={'100px'} width={'100px'} alt="" />
+                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems:'center', flexDirection:'column'}}><img src="http://139.84.137.232/api/static/images/chatlady.png" height={'100px'} width={'100px'} alt="" />
                     <Box sx={{color:'grey', fontSize:'16px'}}>Alice</Box>
                     </Box>
                     <Box sx={{ height: '60vh', display:'flex', justifyContent:'space-between' , flexDirection:'column', alignItems:'center'}}>

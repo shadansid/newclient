@@ -84,16 +84,16 @@ const UploadID = () => {
         </div>
   
         
-        <div style={{display:'flex'}}>
+        <div style={{display:'flex', gap:'20px'}}>
 
       
-<div style={{margin:'12px'}}> <Button sx={{backgroundColor:'#EA661C'}} size="small" variant="contained" component="label">
-  Upload ID
+<div style={{}}> <Button  sx={{backgroundColor:'#EA661C', fontSize:{sm:'13px', xs:'11px'}}} size="small" variant="contained" component="label">
+  Upload
   <input id='img' hidden accept="image/*" onChange={(e) => setimage(e.target.files[0])} multiple type="file" />
 </Button></div>
     
     
-<div style={{margin:'12px', display:'flex'}}><Button sx={{backgroundColor:'#EA661C'}} size="small" onClick={HandleSubmit} variant="contained" component="label">Submit</Button></div>  </div>
+<div style={{ display:'flex'}}><Button  sx={{backgroundColor:'#EA661C',fontSize:{sm:'13px', xs:'11px'}}} size="small" onClick={HandleSubmit} variant="contained" component="label">Submit</Button></div>  </div>
     </Box>
     </>
 

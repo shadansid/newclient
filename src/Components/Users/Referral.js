@@ -51,16 +51,16 @@ const Referral = () => {
       <div style={{height:'100vh', display:'flex',alignItems:'center', justifyContent:'center', overflow:'none'}}>
       <div style={{display:"flex",alignItems:'center', justifyContent:'center', flexDirection:'column', height:'80vh' , border:'1px solid #2A2F3F' , padding:'50px'}}>
       <Gift sx={{color:'#EA661C', height:'80px', width:'80px'}}/>
-      <div style={{fontSize:'20px',color:'white',padding:'20px'}}>
+      <div style={{fontSize:{sm:'20px',xs:'16px'},color:'white',padding:'20px'}}>
         
          Refer and Earn Upto <span style={{color:'#EA661C'}}> Rs.1000 Cash </span>
         </div>
         
         <div style={{fontSize:'20px',color:'white',padding:'20px', display:'flex',flexDirection:'column'}}>
         
-<input type="text" id="myInput"  disabled  value="https://bcex.com/user?value=98899/referid?" style={{background:'transparent',padding:'10px',width:'48ch' , border:'1px solid #EA661C'}} />
+<input type="text" id="myInput"  disabled  value="https://bcex.com/user?value=98899/referid?" style={{background:'transparent',padding:'10px',width: {sm:'51ch',xs:'40ch'} , border:'1px solid #EA661C'}} />
 
-    <Button id="copy" onClick={myFunction} style={{ background: '#EA661C', padding: '5px', width: '51ch', color:'white' ,borderRadius:'0px' }} >Copy Code</Button>
+    <Button id="copy" onClick={myFunction} sx={{ background: '#EA661C', padding: '5px', width: {sm:'51ch',xs:'40ch'}, color:'white' ,borderRadius:'0px' }} >Copy Code</Button>
 
             
             </div>
@@ -74,21 +74,21 @@ const Referral = () => {
         
       <div>
       <a style={{textDecoration:'none', color:'white'}} href="https://api.whatsapp.com/send?phone=+919810946956&text=Join BCEX using this link : https://bcex.com/newuser?!" target="_blank">
-        <Button sx={{backgroundColor:'#EA661C'}} variant="contained">WhatsApp</Button>
+        <Button size='small' sx={{backgroundColor:'#EA661C'}} variant="contained">WhatsApp</Button>
 </a>
             </div>
             
 
             <div>
       <a style={{textDecoration:'none', color:'white'}} href="https://www.facebook.com/sharer/sharer.php?" target="_blank">
-        <Button sx={{backgroundColor:'#EA661C'}} variant="contained">FaceBook</Button>
+        <Button  size='small' sx={{backgroundColor:'#EA661C'}} variant="contained">FaceBook</Button>
 </a>
         </div>
         
     
         <div>
       <a style={{textDecoration:'none', color:'white'}} href="https://t.me/mytelegramaccount" target="_blank">
-        <Button sx={{backgroundColor:'#EA661C'}} variant="contained">Telegram</Button>
+        <Button size='small' sx={{backgroundColor:'#EA661C'}} variant="contained">Telegram</Button>
 </a>
         </div>
         </div>

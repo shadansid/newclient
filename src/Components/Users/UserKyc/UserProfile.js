@@ -74,7 +74,7 @@ const Navigate3 = () => {
                         <Box> <User6 sx={{ color: 'grey', fontSize: { sm: '70px', xs: '30px' } }} /></Box><Box sx={{marginLeft:'-29px'}}>
                             
                                 <Box></Box>
-                                <Box sx={{marginTop:'25px'}}><img src="/static/images/levels/basic.png" height={"40px"} width={"40px"} alt="" /></Box>
+                                <Box sx={{marginTop:'25px'}}><img src="http://139.84.137.232/api/static/images/levels/basic.png" height={"40px"} width={"40px"} alt="" /></Box>
 
 
 

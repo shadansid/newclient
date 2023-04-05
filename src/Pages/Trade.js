@@ -209,7 +209,7 @@ const toggleClose = () => {
 
 
                     
-                    {!(state.boolVal) ?
+                    {(state.boolVal) ?
                         
                         <Box sx={{overflow:''}}><Box id='middlebox' sx={{ display: { xs: 'block', sm: 'none' }, backgroundColor:'#171B26' , padding:'10px'}}>
                         <Data24hr coins={coins} coinChange={handleCoinChange}></Data24hr>

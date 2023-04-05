@@ -56,7 +56,7 @@ const Wallet = ()=>{
 
 const Trade = ()=>{
 
-        
+         
     navilogin('/userpanel/tradehistory')
       
     // console.log("clicked on airdeop")
@@ -157,22 +157,25 @@ const data = {
 
 
 
-              <Box onClick={Airdrop} sx={{ marginTop: '20px',marginBottom:'20px', display:'flex', justifyContent:'center'}}>
+              <Box onClick={Airdrop} sx={{display:{sm:'block', xs:'none'}, marginTop: {sm:'20px',xs:'0px'},marginBottom:{sm:'20px',xs:'0px'}, display:'flex', justifyContent:'center'}}>
 
 <Box sx={{display:{sm:'block', xs:'none'},backgroundImage:"url('http://139.84.137.232/api/static/images/Airdrop/Airdrop2.gif')", backgroundPosition:'center', backgroundSize:'cover', height:{sm:'200px', xs:'200px'}, width:{xs:window.innerWidth -50,sm:'100%'}}}> </Box>  
-{/* User Profile */}
+
 </Box>
-              <FourBoxes/>
+             
+             
+             
+              <FourBoxes />
 
             
             
             
               <Box sx={{ display: 'flex', justifyContent: '', gap: '20px', flexWrap:'wrap' , padding:{xs:'20px'}}}>
 
-    
+              <Box sx={{display:{sm:'none',xs:'block'}, padding:'15px', fontSize:'16px', color:'grey'}}> Spot Wallet</Box>
                 <Box sx={{backgroundColor: "#1C2230", display: 'flex',alignItems:'', flexDirection:'column' , padding:'20px' , borderRadius:'9px',boxShadow:'1px -2px 14px -1px black',width:'100%', overflow:'scroll', height:'50vh'}}><WalletDashboard/></Box>
              
-                
+                <Box sx={{display:{sm:'none',xs:'block'}, padding:'15px', fontSize:'16px', color:'grey'}}> Trade History</Box>
                 <Box sx={{backgroundColor: "#1C2230", display: 'flex',alignItems:'', flexDirection:'column' , padding:'20px' , borderRadius:'9px',boxShadow:'1px -2px 14px -1px black',width:'100%', overflow:'scroll', height:'50vh'}}><TradeHistoryDashboard/></Box>
              
              

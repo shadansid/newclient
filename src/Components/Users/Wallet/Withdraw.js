@@ -51,24 +51,24 @@ axios.post('http://139.84.137.232/api/internalwithdraw',data).then((res)=>{
 
   
     return (
-  
+   
     <>
-    <div style={{border:'1px solid grey'}}>
+    <div style={{border:'1px solid #80808017'}}>
   
     <div style={{padding:"20px" , display:'flex' ,justifyContent:'space-between',alignItems:'center', backgroundColor:'none'}}>
 {/* <h3>Internal Transfer</h3> */}
-<Select style={{height:'40px' ,border:'1px solid grey', width:'18%', color:'grey',marginRight:'1px', color:'black', backgroundColor:'none'}} id="coin" value={coin} onChange={handleChange} >  
-<MenuItem value="ETH"><img src="http://139.84.137.232/api/static/images/coinimage/ETH.png"  height='20px' width='20px' alt="" />&nbsp;ETH</MenuItem>  
-<MenuItem value="USDT"><img src="http://139.84.137.232/api/static/images/coinimage/USDT.png"  height='20px' width='20px' alt="" />&nbsp;USDT</MenuItem>  
-<MenuItem value="BTC"><img src="http://139.84.137.232/api/static/images/coinimage/BTC.png"  height='20px' width='20px' alt="" />&nbsp;BTC</MenuItem>  
-<MenuItem value="DOGE"><img src="http://139.84.137.232/api/static/images/coinimage/DOGE.png"  height='20px' width='20px' alt="" />&nbsp;DOGE</MenuItem>  
+<Select style={{height:'27px' ,border:'1px solid grey', width:'18%', color:'grey',marginRight:'1px', color:'black', backgroundColor:'none'}} id="coin" value={coin} onChange={handleChange} >  
+<MenuItem sx={{color:'grey'}} value="ETH"><img src="http://139.84.137.232/api/static/images/coinimage/ETH.png"  height='20px' width='20px' alt="" />&nbsp;ETH</MenuItem>  
+<MenuItem   sx={{color:'grey'}} value="USDT"><img src="http://139.84.137.232/api/static/images/coinimage/USDT.png"  height='20px' width='20px' alt="" />&nbsp;USDT</MenuItem>  
+<MenuItem  sx={{color:'grey'}} value="BTC"><img src="http://139.84.137.232/api/static/images/coinimage/BTC.png"  height='20px' width='20px' alt="" />&nbsp;BTC</MenuItem>  
+<MenuItem   sx={{color:'grey'}} value="DOGE"><img src="http://139.84.137.232/api/static/images/coinimage/DOGE.png"  height='20px' width='20px' alt="" />&nbsp;DOGE</MenuItem>  
 </Select> 
 
-<TextField small type="number" min='1' id='wamount' placeholder='Amount' sx={{border:'1px solid grey' , input:{color:'grey'}}}/>
+<input small type="number" min='1' id='wamount' placeholder='Amount' style={{background:'transparent',margin:'10px',height:'27px' ,input:{color:"grey"}, width:'74%',border:'1px solid grey', padding:'10px'}}/>
 
-<TextField id='wemail' placeholder='Email Address'sx={{border:'1px solid grey' , input:{color:'grey'}}}/>
+<input id='wemail' placeholder='Email Address'style={{background:'transparent',margin:'10px',height:'27px' ,input:{color:"grey"}, width:'74%',border:'1px solid grey', padding:'10px'}}/>
 
-<Button variant="contained" onClick={inwithdraw}>Withdraw</Button>
+<Button size='small' sx={{ fontSize:{sm:'11px',xs:'11px'}}} variant="contained" onClick={inwithdraw}>Withdraw</Button>
 </div>
 
 </div>

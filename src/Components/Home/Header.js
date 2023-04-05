@@ -120,27 +120,27 @@ const [color, setColor] = useState('#171B26')
           </Box>
           
 
-<Box sx={{ borderTop:'1px solid grey'}}>
+<Box sx={{}}>
 
 <Link to='/userpanel/userdashboard' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'0.9rem' , padding:'10px'}}>Dashboard</IconButton></Link>
 </Box>
 
-<Box sx={{ borderTop:'1px solid grey'}}>
+<Box sx={{ }}>
 
 <Link to='/trade' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'0.9rem' , padding:'10px'}}>Trade</IconButton></Link>
 </Box>
 
-<Box sx={{ borderTop:'1px solid grey'}}>
+<Box sx={{}}>
 
 <Link to='/userpanel/wallet' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'0.9rem' , padding:'10px'}}>Deposit</IconButton></Link>
 </Box>
-<Box sx={{ borderTop:'1px solid grey'}}>
+<Box sx={{ }}>
 
 <Link to='/reqcall' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'0.9rem' , padding:'10px'}}>Apply For Listing</IconButton></Link>
           </Box>
           
           
-<Typography sx={{ borderTop:'1px solid grey'}}>
+<Typography sx={{ }}>
 <Link to='/login' style={{textDecoration:'none'}}><IconButton sx={{color:'grey' , fontSize:'0.9rem' , padding:'10px'}}>Login </IconButton></Link>
               </Typography>
               
@@ -148,7 +148,7 @@ const [color, setColor] = useState('#171B26')
         
 
 
-<Typography sx={{ borderTop:'1px solid grey'}} >
+<Typography sx={{}} >
 <Link to='/registration' style={{textDecoration:'none'}}><IconButton sx={{color:'grey' , fontSize:'0.9rem' , padding:'10px'}}>Sign Up</IconButton></Link>
 </Typography>
               

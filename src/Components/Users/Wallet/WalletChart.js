@@ -64,11 +64,13 @@ const data = {
   
   
   
-      <div style={{ width: '350px', height: '350px', padding: '20px', display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems:'center' , gap:'40px'}}>  <Doughnut data={data} options={options} />
+      <Box sx={{ backgroundColor: '', width: { sm: '350px', xs: '300px' }, height: { sm: '350px', xs: '300px' }, padding: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
+        
+        <Doughnut data={data} options={options} />
       
         <Box sx={{ color: 'grey', display: 'flex', justifyContent: 'center', alignItems:'center',}}><WWWs sx={{fontSize:'22px', color:'grey'}}/>   &nbsp;Wallet Overview </Box>
       
-      </div>
+      </Box>
   )
 }
 

@@ -13,7 +13,7 @@ const WalletDashboard = () => {
       }
     }
    
-    const url = "/showwallet";
+    const url = "http://139.84.137.232/api/showwallet";
   
   
     axios.get(url, config)
@@ -47,19 +47,19 @@ const WalletDashboard = () => {
 
       
         {/* ============================================================================== */}
-        <div style={{padding:'20px'}}><Typography sx={{fontSize:'20px',    display: 'flex',
+        <Box style={{padding:'20px'}}><Typography sx={{fontSize:'20px',    display: {sm:'flex',xs:'none'},
             alignItems: 'center',
-            height: '4vh' , color:'grey'}}>Wallet Balance</Typography></div>
+            height: '4vh' , color:'grey'}}>Wallet Balance</Typography></Box>
       
         
         {walletdata && walletdata.map((ele)=>{
         
         return <div style={{display:'flex', alignItems:'center', justifyContent:'space-around' , padding:'20px'}}>
         {/* {ele.type== 'credit'? :} */}
-        <div style={{width:"20%"}}><img src={`http://139.84.137.232/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`} alt=""  height="30px" width="30px"/></div>
-        <div style={{color:'#7D8794', fontSize:'13px', width:"30%"}}>{(ele.currency).toUpperCase()}</div>
-        <div style={{color:'#7D8794', fontSize:'13px',width:"30%"}}>{ele.quantity}&nbsp;{ele.currency.toUpperCase()}</div>
-        <div style={{width:"20%"}}><Button>Widthraw</Button></div>
+        <Box style={{width:"20%"}}><img src={`http://139.84.137.232/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`} alt=""  height="30px" width="30px"/></Box>
+        <Box sx={{color:'#7D8794', fontSize:{sm:'13px',xs:'10px'}, width:"30%"}}>{(ele.currency).toUpperCase()}</Box>
+        <Box sx={{color:'#7D8794', fontSize:{sm:'13px',xs:'10px'},width:"30%"}}>{ele.quantity}&nbsp;{ele.currency.toUpperCase()}</Box>
+        <Box sx={{width:"20%"}}><Button sx={{fontSize:{sm:'13px',xs:'10px'}}} size='small'>Widthraw</Button></Box>
         
         
         
