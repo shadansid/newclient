@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useReducer } from 'react'
 import Login from '../Components/Users/Login'
+import CoinDatah from '../Components/Home/CoinData/CoinDatah'
 import FourBoxes from '../Components/Users/FourBoxes'
 import SideChat from '../Components/Users/SideChat'
 import {Container, Typography, Toolbar,IconButton, Button,Box,Badge, Grid} from '@mui/material'
@@ -33,6 +34,8 @@ import GraphWallet2 from '../Components/Users/Wallet/GraphWallet2'
 import Footer from '../Components/Home/Footer'
 import WalletDashboard from '../Components/Users/Wallet/WalletDashboard'
 import TwoBoxes from '../Components/Users/TwoBoxes'
+import Context from '../hooks/useTheme2'
+
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 const Dashboard = () => {
@@ -125,7 +128,21 @@ const data = {
   
     
     // Chart 2 Line
+   
+    const reducer = (state, action) => {
+
+      switch(action.type){
   
+          case "update":
+              return action.payload
+          default:
+              throw new Error()
+      }
+  
+  
+  }
+  
+  const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
     
 
 
@@ -133,7 +150,10 @@ const data = {
    
          <>
 
-
+<Context.Provider value={{
+      color:state.color,
+      dispatcher : dispatcher
+  }}>
      
       
          
@@ -142,7 +162,7 @@ const data = {
          
 
        
-        <Box style={{backgroundColor:"#171b26"}}>
+        <Box style={{backgroundColor:''}}>
      
             
 
@@ -150,9 +170,9 @@ const data = {
          <Box>
      
             {/* User Profile */}
-              <UserProfile />
+              <UserProfile bg={state.color} />
 
-              <TwoBoxes/>
+              <TwoBoxes bg={state.color}/>
 
 
 
@@ -165,7 +185,7 @@ const data = {
              
              
              
-              <FourBoxes />
+              <FourBoxes bg={state.color} />
 
             
             
@@ -176,14 +196,19 @@ const data = {
                 <Box sx={{backgroundColor: "#1C2230", display: 'flex',alignItems:'', flexDirection:'column' , padding:'20px' , borderRadius:'9px',boxShadow:'1px -2px 14px -1px black',width:'100%', overflow:'scroll', height:'50vh'}}><WalletDashboard/></Box>
              
                 <Box sx={{display:{sm:'none',xs:'block'}, padding:'15px', fontSize:'16px', color:'grey'}}> Trade History</Box>
-                <Box sx={{backgroundColor: "#1C2230", display: 'flex',alignItems:'', flexDirection:'column' , padding:'20px' , borderRadius:'9px',boxShadow:'1px -2px 14px -1px black',width:'100%', overflow:'scroll', height:'50vh'}}><TradeHistoryDashboard/></Box>
+                <Box sx={{ backgroundColor: "#1C2230", display: 'flex', alignItems: '', flexDirection: 'column', padding: '20px', borderRadius: '9px', boxShadow: '1px -2px 14px -1px black', width: '100%', overflow: 'scroll', height: '50vh' }}>
+                  
+                  
+                  {/* <TradeHistoryDashboard /> */}
+                  <CoinDatah/>
+                </Box>
              
              
              
               </Box>
                
 
-              <SideChat/>
+              <SideChat bg={state.color}/>
 
                    
    
@@ -225,7 +250,7 @@ const data = {
 {/* botto,m */}
 
  </div> }
-
+ </Context.Provider>
         </>
   
   

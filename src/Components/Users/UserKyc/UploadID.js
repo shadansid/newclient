@@ -3,6 +3,7 @@ import { TextField ,Button,IconButton} from '@mui/material'
 import { Box,Container} from '@mui/system';
 import User from '@mui/icons-material/AdminPanelSettingsOutlined';
 import axios from 'axios'
+import '../Coindata/Css/buycoin.css'
 
 const UploadID = () => {
   
@@ -58,7 +59,7 @@ const UploadID = () => {
 
         {/* <div style={{ margin: '12px' }}><TextField sx={{ input: { color: "#363C4E" } }} color="primary" size="small" id="" label="Full Name" variant="outlined" focused /></div>
          */}
-    <div><IconButton><User sx={{color:'#EA661C' , height:'80px' , width:'80px'}} />  <Container sx={{color:'white', fontSize:'22px', paddingTop:'10px'}}>Complete Your KYC </Container></IconButton></div>
+    <div><IconButton><User sx={{color:'grey' , height:'80px' , width:'80px'}} />  <Container sx={{color:'grey', fontSize:'22px', paddingTop:'10px'}}>Complete Your KYC </Container></IconButton></div>
 
         <div>
 <input type="text" id="name" placeholder={"Full Name"}  style={{background:'transparent',margin:'10px',width:'',padding:'15px' , m:"1", border:'1px solid grey'}} />

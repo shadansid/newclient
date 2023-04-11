@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer ,useContext} from 'react'
 import CoinListBox from '../Components/Users/Coindata/CoinListBox'
 import Chart from '../Components/Users/Coindata/Chart'
 import BuyCoin from '../Components/Users/Coindata/BuyCoin'
@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react'
 import './css/Trade.css'
 import { Box,Container, IconButton} from '@mui/material';
 import SingleCoin from '../Components/Users/Coindata/SingleCoin'
-import useContext from 'react'
+
 import TradeHistoryTrade from '../Components/Users/TradeHistoryTrade'
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 import Addmoney from '../Components/Users/Wallet/Addmoney'
@@ -35,6 +35,7 @@ import OrderHistory from '../Components/Users/OrderHistory'
 import CustomChart from '../Components/Users/CustomChart'
 import Loading from '../Components/Loading'
 import TradeNow from '@mui/icons-material/GraphicEq';
+import Context2 from '../hooks/useTheme2'
 
 import { Outlet , Link, NavLink} from 'react-router-dom'
 
@@ -61,49 +62,9 @@ const [loader, setLoader] = useState(1)
 
 },[])
 
-    const [tradedata, settradedata] = useState(0)
-    const Tradehistory = () =>{
-        setFund(0)
-        settradedata(1)
-      
+ 
 
 
-    }
-
-    const [openOrderx, setopenOrder] = useState(0)
-    const openOrder = () =>{
-
-        settradedata(0)
-        setFund(0)
-        setorderhistory(0)
-        setopenOrder(1)
-
-    }
-
-    const [orderhistoryx, setorderhistory] = useState(0)
-    const orderhistory = () =>{
-
-        settradedata(0)
-        setFund(0)
-        setopenOrder(0)
-        setorderhistory(1)
-
-
-    }
-
-    const [Fundx, setFund] = useState(0)
-    const Fund = () =>{
-        settradedata(0)
-            setFund(1)
-
-
-    }
-
-
-
-
-    // ijdjojioj4oifjoijioj4i3f
-    // ijdjojioj4oifjoijioj4i3f
 // toglee
 const [buyactive, setbuyactive] = useState(0)
 const [sellactive, setsellactive] = useState(0)
@@ -156,15 +117,39 @@ const toggleClose = () => {
     
     
     }
+
+    const [state, dispatcher] = useReducer(reducer, { symbol: 'ETHUSDT', custom: false, Price: "--" })
     
-    // const [state,dispatcher] = useReducer(reducer,"ETHUSDT")
-    const [state,dispatcher] = useReducer(reducer,{symbol:'ETHUSDT',custom:false, Price:"--"})
+
+
+
+
+
+   
+    const reducer2 = (state, action) => {
+
+        switch(action.type){
+    
+            case "update":
+                return action.payload
+            default:
+                throw new Error()
+        }
+    
+    
+    }
+    
+    const [state2,dispatcher2] = useReducer(reducer,{color:'#171B26'})
+
   
     
     return ( <>
-    
+       <Context2.Provider value={{
+        color:state2.color,
+        dispatcher : dispatcher2
+    }}>
 
-    <div style={{backgroundColor:'#171B26'}}>
+    <div style={{backgroundColor:state2.color}}>
     <UserHeader/>
     
     <Box sx={{height:'7vh' ,width:'100%', backgroundColor:'#171B26'}}></Box>
@@ -182,20 +167,20 @@ const toggleClose = () => {
                 >
 
 
-<CoinData coins={coins} coinChange={handleCoinChange} />
+<CoinData bgcolor={state2.color} coins={coins} coinChange={handleCoinChange} />
     {/* <Container style={{width:'300px'}}></Container> */}
     
-    <Box id='middlebox' sx={{ display: { xs: 'none', sm: 'block' }, backgroundColor:'#171B26' , padding:'10px', width:'60%'}}>
-    <Data24hr coins={coins} coinChange={handleCoinChange}></Data24hr>
+    <Box id='middlebox' sx={{ display: { xs: 'none', sm: 'block' }, backgroundColor:state2.color , padding:'10px', width:'60%'}}>
+    <Data24hr color={state2.color} coins={coins} coinChange={handleCoinChange}></Data24hr>
 
                      
                      
-                        <Box sx={{display:{xs:'none',sm:'block'}}}>{state.custom ? <CustomChart size={size} /> : <AdvancedRealTimeChart style={{ zIndex: -2 }} height={350} width={size - 40} symbol={state.symbol} theme='dark' container_id='chart' hide_top_toolbar='true' left_toolbar= 'true'  ></AdvancedRealTimeChart>}</Box>
+                        <Box sx={{display:{xs:'none',sm:'block'}}}>{state.custom ? <CustomChart size={size} /> : <AdvancedRealTimeChart style={{ zIndex: -2 }} height={350} width={size - 40} symbol={state.symbol} theme={state2.color == '#ffffff'?'light':'dark'} container_id='chart' hide_top_toolbar='true' left_toolbar= 'true'  ></AdvancedRealTimeChart>}</Box>
                         
                         <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
 
-                        <BuyCoin coins={coins} coinChange={handleCoinChange} />
-                        <SellCoin  coins={coins} coinChange={handleCoinChange} />
+                        <BuyCoin bgcolor={state2.color} coins={coins} coinChange={handleCoinChange} />
+                        <SellCoin bgcolor={state2.color}  coins={coins} coinChange={handleCoinChange} />
                         </Box>
                     </Box>
                     
@@ -295,11 +280,11 @@ const toggleClose = () => {
 
 
 
-    <Box sx={{ display: { xs: 'none', sm: 'block' } ,width:'500px', backgroundColor:'#171B26' , borderLeft:'1px solid #363c4e',  borderBottom:'1px solid #363c4e', width:'20%'}}>
+    <Box sx={{ display: { xs: 'none', sm: 'block' } ,width:'500px', backgroundColor:state2.color , borderLeft:(state2.color == '#ffffff'?'1px solid #E7E7E8':'1px solid #363c4e'),  borderBottom:(state2.color == '#ffffff'?'1px solid #E7E7E8':'1px solid #363c4e'), width:'20%'}}>
 
         <Box sx={{overflow:'scroll', height:'50vh'}}> 
                             <Box sx={{ fontSize: '16px', color: 'grey', padding: '20px' }}>
-                            <BuyOrder></BuyOrder>
+                            <BuyOrder bgcolor={state2.color}></BuyOrder>
 
                                
         </Box>
@@ -307,7 +292,7 @@ const toggleClose = () => {
         </Box>
         
         <Box sx={{fontSize:'16px', color:'grey',padding:'20px',overflow:'scroll', height:'50vh' }}>
-        <SellOrder></SellOrder>
+        <SellOrder bgcolor={state2.color}></SellOrder>
    
 
         </Box>
@@ -318,8 +303,8 @@ const toggleClose = () => {
                 <div style={{height:'7vh'}}></div>
     <Box sx={{display:{xs:'none', sm:'block'} , 
                     height: '100vh', marginTop:'20px' }}>
-                    <div style={{width:'100%',backgroundColor:'rgb(27 32 46)' }}>  
-                    <div style={{ display: 'flex', gap: '20px', alignItems: "center" , justifyContent:'space-around', color:'grey' , backgroundColor:'rgb(27 32 46)' , height:'7vh' , width:'50%'}}>
+                    <div style={{width:'100%',backgroundColor:(state2.color == '#ffffff'?'white':'rgb(27 32 46)') }}>  
+                    <div style={{ display: 'flex', gap: '20px', alignItems: "center" , justifyContent:'space-around', color:'grey' , backgroundColor:(state2.color == '#ffffff'?'white':'rgb(27 32 46)') , height:'7vh' , width:'50%'}}>
                             
                             {/* <div onClick={openOrder} style={{ cursor: 'pointer' }}>Open Order</div>
                             <div onClick={orderhistory} style={{cursor:'pointer'}}>Order History</div>
@@ -362,7 +347,7 @@ const toggleClose = () => {
    
         </div>  
         {/* mobo=============================================================== */}
- <Box sx={{display:{sm:'none', xs:'flex' , position:'fixed' , bottom:0, height:'55px' , width:window.innerWidth ,zIndex:5 , display:'flex' ,backgroundColor:'#171B26' ,flexDirection:'row',justifyContent:'space-between' , alignItems:'center' , boxShadow:'rgb(105 50 151) 2px 1px 2px 0px', padding:'10px', borderTop:'1px solid '}}}>
+ <Box sx={{display:{sm:'none', xs:'flex' , position:'fixed' , bottom:0, height:'55px' , width:window.innerWidth ,zIndex:5 , display:'flex' ,backgroundColor:(state.color=='#ffffff'?'#f9f9f9':'#171B26') ,flexDirection:'row',justifyContent:'space-between' , alignItems:'center' , boxShadow:'rgb(105 50 151) 2px 1px 2px 0px', padding:'10px', borderTop:(state2.color == '#ffffff'?'1px solid #E7E7E8':'1px solid #363c4e')}}}>
  
  <Box>
                 {/* <DashboardIcon style={{ color: '#5442f2' }} /> */}
@@ -424,7 +409,7 @@ const toggleClose = () => {
 
 
 
-
+        </Context2.Provider>
 
 
         </>

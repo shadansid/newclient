@@ -13,7 +13,7 @@ import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined
 import ToggleButton from '@mui/material/ToggleButton';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import FormatAlignJustifyIcon from '@mui/icons-material/FormatAlignJustify';
-import Context from '../../hooks/useTheme';
+import Context from '../../hooks/useTheme2';
 
 import {Container,Box, Typography, Toolbar,IconButton, Button,Badge , Grid} from '@mui/material'
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -30,7 +30,7 @@ import Close from '@mui/icons-material/CloseOutlined';
 const UserHeader = () => {
   const [toggle, settoggle] = useState(false);
   const context = useContext(Context)
-  const context2 = useContext(Context)
+  // const context2 = useContext(Context)
   const togglebtn = ()=>{
   
   if(toggle){
@@ -47,7 +47,7 @@ const UserHeader = () => {
       // console.log("this is very important "+res.email)
 
 
-  
+    
   
   const hidetoggle = () =>{
         
@@ -73,19 +73,19 @@ const [color, setColor] = useState('#171B26')
   }
 
 
-  const [currency, setCurrency] = useState('INR')
-  const ChangeCurrency = () => {
-    if (currency === 'INR') {
-      setCurrency('USD')
-      context2.dispatcher({type:"update",payload:{symbol:currency} })
-    } else {
-      setCurrency('INR')
-      context2.dispatcher({type:"update",payload:{symbol:currency} })
-          }
+  // const [currency, setCurrency] = useState('INR')
+  // const ChangeCurrency = () => {
+  //   if (currency === 'INR') {
+  //     setCurrency('USD')
+  //     context2.dispatcher({type:"update",payload:{symbol:currency} })
+  //   } else {
+  //     setCurrency('INR')
+  //     context2.dispatcher({type:"update",payload:{symbol:currency} })
+  //         }
 
 
 
-  }
+  // }
 
 
 
@@ -96,8 +96,8 @@ const [color, setColor] = useState('#171B26')
 
          {/* Togle================================================================= */}
              
-   { toggle?<Container sx={{display:{xs:'block', sm:'none' ,transition:'0.7s', position:'fixed', zIndex:'9'}}} maxWidth="xl" style={{width:window.innerWidth, backgroundColor:'#171B26', height:'100vh' , borderRight:'1px solid #2A2F3F'}}>
-   
+   { toggle?<Container sx={{display:{xs:'block', sm:'none' ,transition:'0.7s', position:'fixed', zIndex:'9'}}} maxWidth="xl" style={{width:window.innerWidth, backgroundColor:color, height:'100vh' , borderRight:'1px solid #2A2F3F'}}>
+    
 
    <Box>
             <Box sx={{width:'90%'}}></Box>
@@ -261,7 +261,7 @@ Krypto
 <Link to='' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'16px' , padding:'10px'}}> &nbsp;<NotificationsNoneOutlinedIcon sx={{color:'#7D8794',fontSize:'18px'}} /></IconButton></Link>
     <Link to='/userpanel/userkyc' style={{textDecoration:'none'}}><IconButton sx={{color:'#7D8794' , fontSize:'16px' , padding:'10px'}}><AccountCircleOutlinedIcon sx={{color:'#7D8794',fontSize:'18px'}} /></IconButton></Link>
 
-              <Button onClick={ChangeCurrency} style={{ color: '#7D8794' }}>{currency==='INR'?'INR':'USD'} </Button>
+              <Button onClick={'ChangeCurrency'} style={{ color: '#7D8794' }}>{'currency'==='INR'?'INR':'USD'} </Button>
     <IconButton>              {color==='#171B26'?<Light style={{color:'#7D8794',fontSize:'18px'}} onClick={Theme} ></Light>:<DarkModeOutlinedIcon style={{color:'#7D8794',fontSize:'18px'}} onClick={Theme}/>}
 </IconButton>
 

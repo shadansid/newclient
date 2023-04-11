@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-const BuyOrder = () => {
+const BuyOrder = ({bgcolor}) => {
   
     const [orderdata,setorderdata]  = useState(0)
 
@@ -28,7 +28,7 @@ const BuyOrder = () => {
     return (
     <>
           <div>
-              <div style={{ fontSize: '14px', marginBottom: '10px', backgroundColor: '#1B202E', padding:"10px"}}>Buy Order Book</div>
+              <div style={{ fontSize: '14px', marginBottom: '10px', backgroundColor: (bgcolor == '#ffffff'?'#363BE6':'#1B202E'), padding:"10px", color:(bgcolor == '#ffffff'?'White':'grey')}}>Buy Order Book</div>
               <div style={{display:'flex', alignItems:'center' , justifyContent:'space-between'}}>
                   <div>Price</div>
                   <div>Amount</div>

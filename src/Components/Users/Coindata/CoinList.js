@@ -24,8 +24,7 @@ const context = useContext(Context)
 
   useEffect(() => {
     if (props.symbol === "ETHUSDT") {
-      console.log(props.price+" this is price")
-      console.log("Hi there~!!!")
+    
       showcoin();
     }
 
@@ -68,7 +67,7 @@ const [boolVal, setboolVal] = useState(0)
   return (
     <>
 
- {<Box  className="coinlis" style={{ borderTop: '1px solid #363c4e', display:'flex' , alignItems:'center', justifyContent:'space-around'}} id={props.symbol}>
+ {<Box  className="coinlis" style={{ borderTop: (props.bg == '#FFFFFF'?'1px solid #E7E7E8':'1px solid #363c4e'), display:'flex' , alignItems:'center', justifyContent:'space-around'}} id={props.symbol}>
 
         <div style={{ width: '10%', cursor:'pointer' , paddingLeft:'10px'}} id="coinimg">{Fav ? <Star2 onClick={addFav} sx={{ color: 'rgb(125 135 148 / 28%)', fontSize: '20px' }} /> : <Star onClick={addFav} sx={{ color: 'rgb(125 135 148 / 28%)', fontSize: '20px' }} />}</div>
         

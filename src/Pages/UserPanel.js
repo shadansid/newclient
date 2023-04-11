@@ -3,7 +3,7 @@ import './css/UserPanel.css'
 import Login from '../Components/Users/Login'
 import UserHeader from '../Components/Users/UserHeader'
 import { useContext, useReducer } from 'react'
-import Context from '../hooks/useTheme';
+import Context from '../hooks/useTheme2';
 import {
     Link, Outlet 
   } from "react-router-dom";
@@ -63,7 +63,7 @@ const reducer = (state, action) => {
 
 }
 
-const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
+const [state,dispatcher] = useReducer(reducer,{color:0})
 
 
   
@@ -81,13 +81,13 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
       dispatcher : dispatcher
   }}>
       {isLoggedIn && 
-     <div style={{backgroundColor:'#181A20'}}>
+     <div style={{backgroundColor:state.color}}>
   <UserHeader/>
   <Container sx={{height:'8vh'}}></Container>
  <div className="userpanel">
               <Container sx={{ display: { xs: 'none', sm: 'block' } ,width:'20%', backgroundColor:''}}></Container>
 
- <Container sx={{display:{xs:'none', sm:'flex' , position:'fixed'}}} maxWidth="xl" style={{width:'20%', backgroundColor:'#171B26', height:'100vh' , borderRight:'1px solid #2A2F3F', flexDirection:'column' }}>
+ <Container sx={{display:{xs:'none', sm:'flex' , position:'fixed'}}} maxWidth="xl" style={{width:'20%', backgroundColor:state.color, height:'100vh' , borderRight:(state.color == '#ffffff'? '1px solid #E7E7E8' :'1px solid #2A2F3F'), flexDirection:'column' }}>
    
 
     
@@ -95,7 +95,7 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
   <Grid container alignItems="center" rowSpacing={1} columnSpacing={{ xs: 3, sm: 2, md: 3 }} className='gridcontainer'>
  
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
-      background: "#18192B"
+      background: (state.color=='#ffffff'?'#f9f9f9':"#18192B")
     }}} >
  <DashboardIcon style={{color:'#0082FC'}} />
  <Link style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/userdashboard'>Dashboard</Link>
@@ -104,7 +104,7 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
  </Grid>
  
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
-      background: "#18192B"
+      background: (state.color=='#ffffff'?'#f9f9f9':"#18192B")
     }}}>
  <Person4Icon style={{color:'#0082FC'}} />
  <Link style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/userkyc'>Profile</Link>
@@ -112,7 +112,7 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
 
 
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
-      background: "#18192B"
+      background: (state.color=='#ffffff'?'#f9f9f9':"#18192B")
     }}} >
  <AccountBalanceWalletIcon style={{color:'#0082FC'}} />
  <Link style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/wallet'>Wallet</Link>
@@ -121,21 +121,21 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
 
  
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
-      background: "#18192B"
+      background:(state.color=='#ffffff'?'#f9f9f9':"#18192B")
     }}}>
  <EqualizerIcon style={{color:'#0082FC'}} />
  <Link  style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px' , marginLeft:'10px'}} to='/trade'>Buy Coins</Link>
  </Grid>
  
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
-      background: "#18192B"
+      background: (state.color=='#ffffff'?'#f9f9f9':"#18192B")
     }}}>
  <ArticleIcon style={{color:'#0082FC'}}/>
  <Link  style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/tradehistory'>Trade History</Link>
  </Grid>
 
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
-      background: "#18192B"
+      background: (state.color=='#ffffff'?'#f9f9f9':"#18192B")
     }}}>
  <RequestPageIcon style={{color:'#0082FC'}}/>
  <Link  style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/transactionhistory'>Transaction History</Link>
@@ -143,14 +143,14 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
 
 
  <Grid item xs={12} className='gridbox'sx={{  "&:hover": {
-      background: "#18192B"
+      background: (state.color=='#ffffff'?'#f9f9f9':"#18192B")
     }}} >
  <SecurityIcon style={{color:'#0082FC'}} />
  <Link style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/security'>Security</Link>
  </Grid>
 
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
-      background: "#18192B"
+      background: (state.color=='#ffffff'?'#f9f9f9':"#18192B")
     }}}>
  <PersonAddIcon style={{color:'#0082FC'}} />
  <Link style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/userpanel/referral'>Referral</Link>
@@ -160,7 +160,7 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
 
 
  <Grid item xs={12} className='gridbox'sx={{  "&:hover": {
-      background: "#18192B"
+      background: (state.color=='#ffffff'?'#f9f9f9':"#18192B")
     }}} >
  <SsidChartIcon style={{color:'#0082FC'}} />
  <Link style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/chart'>Technical Analysis</Link>
@@ -168,7 +168,7 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
 
 
  <Grid item xs={12} className='gridbox' sx={{  "&:hover": {
-      background: "#18192B"
+      background: (state.color=='#ffffff'?'#f9f9f9':"#18192B")
     } }}>
  <PowerSettingsNewIcon style={{color:'#0082FC'}} />
  <Link style={{textDecoration:'none', color:'#7D8794' , fontSize:'16px',marginLeft:'10px'}} to='/Logout'>Logout</Link>
@@ -182,12 +182,12 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
 </Box>
 
  </Container>
- <Box  sx={{  width:(window.innerWidth)}}maxWidth="xl" style={{backgroundColor:'#171B26', border:''}} >
+ <Box  sx={{  width:(window.innerWidth)}}maxWidth="xl" style={{backgroundColor:state.color, border:''}} >
                 <Box maxWidth="lg" sx={{ backgroundColor: '', display: { xs: 'block', sm:'none'}}}>
    <Outlet />
    </Box>
 
-   <Container  maxWidth="lg" sx={{backgroundColor:'', display: { xs: 'none', sm:'block'}}}>
+   <Container  maxWidth="lg" sx={{backgroundColor:state.color, display: { xs: 'none', sm:'block'}}}>
                   <Outlet />
  
 
@@ -206,7 +206,7 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
 
 
 {/* mobo=============================================================== */}
-<Box sx={{display:{sm:'none', xs:'flex' , position:'fixed' , bottom:0, height:'55px' , width:window.innerWidth ,zIndex:5 , display:'flex' ,backgroundColor:'#171B26' ,flexDirection:'row',justifyContent:'space-between' , alignItems:'center' , boxShadow:'rgb(105 50 151) 2px 1px 2px 0px', padding:'10px', borderTop:'1px solid '}}}>
+<Box sx={{display:{sm:'none', xs:'flex' , position:'fixed' , bottom:0, height:'55px' , width:window.innerWidth ,zIndex:5 , display:'flex' ,backgroundColor:(state.color=='#ffffff'?'#f9f9f9':'#171B26') ,flexDirection:'row',justifyContent:'space-between' , alignItems:'center' , boxShadow:'rgb(105 50 151) 2px 1px 2px 0px', padding:'10px', borderTop:(state.color == '#ffffff'?'1px solid #E7E7E8':'1px solid #363c4e')}}}>
  
  <Box>
                 {/* <DashboardIcon style={{ color: '#5442f2' }} /> */}

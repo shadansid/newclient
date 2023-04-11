@@ -1,7 +1,8 @@
 import React from 'react';
 import CoinList from './CoinList'
 import './Css/CoinListBox.css'
-import { Button ,SearchBar, Box} from '@mui/material';
+import { Button, SearchBar, Box } from '@mui/material';
+import Loading from '../../Loading'
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import Star from '@mui/icons-material/StarBorderOutlined';
@@ -9,7 +10,7 @@ import Star2 from '@mui/icons-material/Star';
 import SearchIcon from '@mui/icons-material/Search';
 function CoinListBox({coins,disbableBtn} , props) {
   const [coin,setcoin]=useState([])
-  
+  const [Loader, setLoader] = useState(0)
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState(coin);
 
@@ -32,6 +33,16 @@ function CoinListBox({coins,disbableBtn} , props) {
 
 
   },[searchQuery])
+
+
+  useEffect(() => {
+    setTimeout(() => {
+        setLoader(1)        
+
+            },2000)  
+
+    },[])
+
 
   useEffect(() => {
   
@@ -114,17 +125,32 @@ function CoinListBox({coins,disbableBtn} , props) {
   return (
    
   <>
-  <Box sx={{width: { xs: '100%', sm: '20%' }}} className="coinlistbox">
+      <Box sx={{
+        width: { xs: '100%', sm: '20%' }, backgroundColor: props.bg,
+         
+
+
+    borderBottom: (props.bg == '#ffffff'? '1px solid #E7E7E8' :'1px solid #363c4e') ,
+    borderRight: (props.bg == '#ffffff'? '1px solid #E7E7E8' :'1px solid #363c4e'),
+    overflow: 'scroll',
+        overflowX: 'hidden',
+    
+
+
+      
+   
+      
+      }} >
   <Box sx={{height:'4vh', backgroundColor:'#363BE6',display:'flex', alignItems:'center',  fontSize:'12px', color:'white', padding:'20px' }}>
            Find Coin from here
               
             </Box>
 
-            <Box> <div style={{display:'flex', alignItems:'center',gap:'10px' }}><input type="text" onChange={handleInputChange} placeholder='Explore New Coins...'  style={{height:"15px", backgroundColor:'transparent' , border:'1px solid grey', padding:'15px' , margin:'10px', width:'90%'}}   /> <SearchIcon sx={{color:'#3468D1'}} /></div></Box>
+             <Box> <div style={{display:'flex', alignItems:'center',gap:'10px' }}><input type="text" onChange={handleInputChange} placeholder='Explore New Coins...'  style={{height:"15px", backgroundColor:'transparent' , border:'1px solid grey', padding:'15px' , margin:'10px', width:'90%'}}   /> <SearchIcon sx={{color:'#3468D1'}} /></div></Box>
 
+            
         
-        
-         
+             {Loader?<Box sx={{backgroundColor:props.bg}}> 
          
   {searchResults.map((element)=>{
 
@@ -141,13 +167,13 @@ function CoinListBox({coins,disbableBtn} , props) {
         color = t["color"]
       }  
 
-    }
+    }  
 
     return <>
       {/* <div style={{ width: '20%' }} id="coinimg">{Fav ? <Star2 onClick={addFav} sx={{ color: 'rgb(125 135 148 / 28%)', fontSize: '20px' }} /> : <Star onClick={addFav} sx={{ color: 'rgb(125 135 148 / 28%)', fontSize: '20px' }} />}</div> */}
-      <CoinList DisbableBtn={props.DisbableBtn} disbableBtn={disbableBtn} key={element.coinid} symbol={element.symbol} coinimg={element.coinimg} price={price} color={color} quantity={element.quantity} Cprice={element.price} custom={element.custom} /> </>
+      <CoinList bg={props.bg} DisbableBtn={props.DisbableBtn} disbableBtn={disbableBtn} key={element.coinid} symbol={element.symbol} coinimg={element.coinimg} price={price} color={color} quantity={element.quantity} Cprice={element.price} custom={element.custom} /> </>
      
-     })}
+     })} </Box> :<Loading/>}
       <div style={{borderRight:'1px solid #363c4e', height:'38px'}}>
       
 
@@ -155,7 +181,7 @@ function CoinListBox({coins,disbableBtn} , props) {
       </div>
   </Box>
  
- 
+
 
   </> 
     

@@ -9,7 +9,7 @@ import {Container, Typography, Toolbar,IconButton, Button,Badge,Grid,Divider, Bo
 import Context from '../../../hooks/useCoin';
 import {Link} from 'react-router-dom';
 
-function BuyCoin({coins,coinChange}) {
+function BuyCoin({coins,coinChange,color}) {
   const context = useContext(Context)
 
 
@@ -400,17 +400,17 @@ const limitX = ()=>{
 
 <div>
 
-<input type="number" disabled  placeholder={"Avbl" + " " + ": " + "$ "+avblCoin.msg} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
+<input type="number" disabled  placeholder={"Avbl" + " " + ": " + "$ "+avblCoin.msg} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:(color =='#ffffff'? '1px solid #E7E7E8':'1px solid grey')}} />
 </div>
          
          {limit? <div>
 
-<input type="number" id="limitprice"  placeholder={"Price"} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
+<input type="number" id="limitprice"  placeholder={"Price"} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:(color =='#ffffff'? '1px solid #E7E7E8':'1px solid grey')}} />
 </div>:<span></span>}
           
           <div>
 
-          <input type="number" min="1" max='2400' onwheel="this.blur()" id="buyamount" value={testing?testing:""} onChange={onchangeBuy} placeholder={"Amount"} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
+          <input type="number" min="1" max='2400' onwheel="this.blur()" id="buyamount" value={testing?testing:""} onChange={onchangeBuy} placeholder={"Amount"} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:(color =='#ffffff'? '1px solid #E7E7E8':'1px solid grey')}} />
           </div>
 
           <div>

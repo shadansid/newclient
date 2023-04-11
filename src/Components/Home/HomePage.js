@@ -5,10 +5,10 @@ import Footer from './Footer'
 import { useContext, useEffect, useState, useReducer } from 'react'
 import Context from '../../hooks/useTheme';
 
-
+import Boxes from './Boxes'
 const HomePage = () => {
   
-  
+   
   const reducer = (state, action) => {
 
     switch(action.type){
@@ -32,7 +32,8 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
   }}>
     <div style={{ backgroundColor: 'white' }}>
    <Header></Header>
-   <Main color={state.color} ></Main>
+        <Main color={state.color} ></Main>
+       < Boxes/>
    <Footer color={state.color}></Footer>
    
       </div>

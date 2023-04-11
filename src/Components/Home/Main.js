@@ -67,16 +67,24 @@ const Main = (props) => {
         
         </Box>
 
-        <Box sx={{ padding: '20px' ,display:'flex', alignItems:'center', justifyContent:'center', backgroundColor:'#f2f2f2'}}>
+        <Box sx={{ padding: '60px' ,display:'flex', alignItems:'center', justifyContent:'center', backgroundColor:'#f2f2f2'}}>
           
 
           <div style={{display:'flex', alignItems:'center', gap:'20px', flexWrap:'wrap'}}>
 
 
-                <div style={{width:'200px',height:'200px', backgroundColor:'#171B26', flexGrow:'1'}}>w</div>
-                <div style={{width:'200px',height:'200px', backgroundColor:'#171B26', flexGrow:'1'}}>w</div>
-                <div style={{width:'200px',height:'200px', backgroundColor:'#171B26', flexGrow:'1'}}>w</div>
-                <div style={{width:'200px',height:'200px', backgroundColor:'#171B26', flexGrow:'1'}}>w</div>
+            <div style={{ width: '300px', height: '150px', backgroundColor: '', flexGrow: '1' }}>
+              <img src="http://localhost:8800/static/images/vox/1.png"  height='150px' width='300px' alt="" />
+                </div>
+            <div style={{width: '300px', height: '150px', backgroundColor: '', flexGrow: '1' }}>
+            <img src="http://localhost:8800/static/images/vox/2.jpg"   height='150px' width='300px'  alt="" />
+                </div>
+            <div style={{ width: '300px', height: '150px', backgroundColor: '', flexGrow: '1' }}>
+            <img src="http://localhost:8800/static/images/vox/3.png"  height='150px' width='300px'  alt="" />
+                </div>
+            <div style={{ width: '300px', height: '150px', backgroundColor: '', flexGrow: '1' }}>
+            <img src="http://localhost:8800/static/images/vox/4.png"  height='150px' width='300px' alt="" />
+                </div>
                 
 
           </div>
@@ -155,34 +163,34 @@ const Main = (props) => {
         </Box>
 
        
-        <Container sx={{backgroundColor:'#f9f2f2'}}>
+        {/* <Box sx={{backgroundColor:'#f9f2f2', border:'1px solid green'}}>
             
             <Box sx={{paddingTop:{sm:'50px',xs:'20px'},paddingBottom:{sm:'50px',xs:'20px'},fontSize:{sm:'32px',xs:'22px'}, color:'#2A2A2D',fontWeight:'800'}}>Trade Anywhere</Box>
             
             
-            <Box sx={{display:'flex',flexDirection:{xs:'column', sm:'row'}, alignItems:'center',backgroundColor:'#f2f2f2'}}>
+          <Box sx={{display:'flex', justifyContent:'center', width:window.innerWidth}}>  <Box sx={{display:'flex',flexDirection:{xs:'column', sm:'row'}, alignItems:'center',backgroundColor:'#f2f2f2'}}>
            
-            <div style={{ width: "50%" }}><img src="http://139.84.137.232/api/static/images/banner4.png" width="500px" height="500px" alt="" /></div>
+           <div style={{ width: "50%" }}><img src="/static/images/trades.png" width="300px" height="300px" alt="" /></div>
+          
+          
+           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: {sm:'500px',xs:'200px'}, flexDirection: 'column' }}>
            
+           <Box sx={{height:{sm:'10vh',xs:'6vh'}}} >
            
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: {sm:'500px',xs:'200px'}, flexDirection: 'column' }}>
-            
-            <Box sx={{height:{sm:'10vh',xs:'6vh'}}} >
-            
-            <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><AppleIcon/>&nbsp;Apple</IconButton>
-            <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><GoogleIcon/>&nbsp;Google Play</IconButton>
-            <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><LaptopIcon/>&nbsp;Mac Os</IconButton>
-            </Box>
-            
-            <Box sx={{height:{sm:'10vh',xs:'6vh'}}} >
-            <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><WindowIcon/>&nbsp;Windows</IconButton>
-            <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><FlutterDashOutlinedIcon/>&nbsp; Linux</IconButton>
-            <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><WebhookIcon/>&nbsp;APIs</IconButton>
-            </Box>
-            
-            </Box>
-            </Box>
-            </Container>
+           <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><AppleIcon/>&nbsp;Apple</IconButton>
+           <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><GoogleIcon/>&nbsp;Google Play</IconButton>
+           <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><LaptopIcon/>&nbsp;Mac Os</IconButton>
+           </Box>
+           
+           <Box sx={{height:{sm:'10vh',xs:'6vh'}}} >
+           <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><WindowIcon/>&nbsp;Windows</IconButton>
+           <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><FlutterDashOutlinedIcon/>&nbsp; Linux</IconButton>
+           <IconButton sx={{color:'#2A2A2D' , fontSize:{sm:'16px', xs:'12px'} , padding:'10px'}}><WebhookIcon/>&nbsp;APIs</IconButton>
+           </Box>
+           
+           </Box>
+           </Box></Box>
+            </Box> */}
  
 </Box>
   </> 

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './css/Login.css';
+import React, { useState , useReducer} from 'react';
+// import './css/Login.css';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
@@ -9,10 +9,29 @@ import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRig
 import { Button,Checkbox , Divider } from '@mui/material';
 import Header from '../Home/Header'
 import { useNavigate } from 'react-router-dom';
-import {Box} from '@mui/material'
-
+import { Box } from '@mui/material'
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Security from '@mui/icons-material/VerifiedUser';
+import Context from '../../hooks/useTheme';
 export default function Login() {
  
+  const reducer = (state, action) => {
+
+    switch(action.type){
+
+        case "update":
+            return action.payload
+        default:
+            throw new Error()
+    }
+
+
+}
+
+const [state,dispatcher] = useReducer(reducer,{color:'#171B26'})
+
+
   const [logined, setlogined] = useState({})
  
   const navilogin =  useNavigate() 
@@ -99,27 +118,37 @@ else
   
   
     <>
-      <Header/>
-    <Box className="Registration" sx={{padding:{xs:'20px'}}}>
+      
+    <Context.Provider value={{
+      color:state.color,
+      dispatcher : dispatcher
+  }}>
+      <Box sx={{ overflow: 'hidden' }}>
+      <Header />
+      <Box sx={{ display: 'flex', height: '4vh', color: 'grey', fontSize: '11px', justifyContent:'center', alignItems:'center', backgroundColor:'#1B202E'}}>
+        <Box sx={{display:'flex', alignItems:'center'}}><Security sx={{color:'#5661FF', fontSize:'16px'}} />&nbsp;Official website: https://www.bcex.io</Box>
+ 
+      </Box>
+    <Box className="Registration" sx={{backgroundColor:state.color,padding:{xs:'20px'}}}>
         
         
         
         
        
-        <div className="regbox0">
+        <div  className="regbox0" style={{ display:'flex',gap:'20px', alignItems:'center', padding:'10px'}}>
 
       
            <div className="img">
-
+   
                
               </div>
 
-       <div className="regbox1">
+       <div className="regbox1" style={{background:'transparent'}}>
 
            
           
          
-           <div className="heading">Login</div>
+           <Box sx={{color:'grey', fontSize:{sm:'18px',xs:'16px'}, padding:'15px'}}>Login in your <span style={{color:'#5661FF'}}>BCEX Account</span></Box>
           
            <div id="regbox">
                    
@@ -128,48 +157,46 @@ else
             
                
                <div className="aligndiv">
-               <TextField onChange={handleChangeEmail}
+               <input type='mail' onChange={handleChangeEmail}
         id="xyzlemail" fullWidth placeholder='Email Address' margin='dense' 
-        label="Email" size="small" 
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <EmailOutlinedIcon style={{color:'#30CFD0'}} />
-            </InputAdornment>
-          ),type:"email"
-        }}variant="outlined"/>
+        label="Email" size="small" style={{background:'transparent',padding:'15px',width:'33ch' ,margin:'7px', border:'1px solid grey'}}
+     variant="outlined"/>
  </div>
 
  
 
 <div className="aligndiv">
-<TextField placeholder='Password' 
+<input placeholder='Password' type='password'
         id="xyzlpass" fullWidth
         label="Password" size="small"
         margin='dense'
-        
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <LockOpenOutlinedIcon style={{color:'#30CFD0'}}/>
-            </InputAdornment>
-          ), type:"password"
-        }}variant="outlined"/>
-</div>
+        style={{background:'transparent',padding:'15px',width:'33ch' ,margin:'7px', border:'1px solid grey'}}
+       variant="outlined"/>
+              </div>
+             <div style={{color:'grey'}}> <FormControlLabel  control={<Checkbox   size="small" defaultChecked />} label={<Box sx={{fontSize:'10px'}}>Bind IP (Security Option)</Box>} /></div>
 
-
+<div style={{display:'flex', justifyContent:'flex-end',  color:'#5661FF', cursor:'pointer', margin:'7px'}}>forgot password?</div>
                
 
-               <Button sx={{m:1}} variant="outlined" onClick={Login} style={{backgroundColor:'#30CFD0', color:'white'}} endIcon={<KeyboardArrowRightOutlinedIcon />}>Login</Button>
+               <Button sx={{m:1}} variant="outlined" onClick={Login} style={{backgroundColor:'#5661FF', color:'white'}} endIcon={<KeyboardArrowRightOutlinedIcon />}>Login</Button>
                {logined? <p  style={{ color:'#30CFD0', textAlign:'center', marginTop:'7px'}}>{logined.msg}</p>:<div></div>}
            </div>
-       </div>
+          </div>
+          
+
+          <Box sx={{  display:{sm:'flex',xs:'none'}, flexDirection:'column',alignItems:'center',gap:'10px',width:'500px'}}>
+            <Box sx={{backgroundColor:'grey',padding:'20px'}}><img src="http://139.84.137.232/api/static/images/qrcode.png" height='150px' width='150px' style={{ borderRadius: '9px' }} alt="" /></Box>
+            <h2 style={{color:'grey'}}>Log in with QR code</h2>
+            <div style={{color:'#4D5162'}}>Scan this Code with your <span style={{color:'#5661FF', cursor:'pointer'}}>Bcex.io App</span></div>
+            <div style={{color:'#4D5162'}}>Trade Anytime, Anywhere - Bcex.io</div>
+          </Box>
 
    </div>  
 <Divider></Divider>
 
-</Box>
-
+      </Box>
+      <Box sx={{position:'fixed',backgroundColor:'#1B202E', bottom:'0px', height:'5vh' , width:window.innerWidth, display:'flex', justifyContent:'center', alignItems:'center', color:'grey'}}><Security sx={{color:'#5661FF', fontSize:'16px'}} />&nbsp;Secured by Google</Box>
+</Box></Context.Provider>
     </>
 
 

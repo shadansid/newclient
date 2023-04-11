@@ -67,7 +67,7 @@ axios.post('http://139.84.137.232/api/addmoney', {
 <MenuItem sx={{display:'flex', alignItems:'center',  color:'grey'}} value={"eth"}><img src="http://139.84.137.232/api/static/images/coinimage/ETH.png"  height='20px' width='20px' alt="" />&nbsp; ETH</MenuItem>
       
         </Select>
-        <input  type='number'  id="amountbox" style={{background:'transparent',margin:'10px',height:'27px' ,input:{color:"grey"}, width:'74%',border:'1px solid grey', padding:'10px'}} size='small' placeholder='Amount' /></div>
+        <input  type='number'  id="amountbox" style={{background:'transparent',margin:'10px',height:'27px' ,input:{color:"grey"}, width:{xs:'60%',sm:'74%'},border:'1px solid grey', padding:'10px'}} size='small' placeholder='Amount' /></div>
         <div></div>
         <Button size='small' sx={{marginTop:'10px', fontSize:{sm:'14px',xs:'11px'}}} onClick={addmn} variant='contained'>Add Money</Button>
         </Container>

@@ -35,11 +35,7 @@ const Showwallet = () => {
 
     
     })
-    // .catch(err=> console.log(err))
 
-
-
-//  axios.get('https://api.binance.com/api/v3/ticker/price?symbol=')
 
 
    
@@ -47,7 +43,7 @@ const Showwallet = () => {
 
   },[walletdata])
 
-// console.log("this is wallet data "+ walletdata.quantity)
+
    
     
   
@@ -95,7 +91,7 @@ const Showwallet = () => {
           
           </div>
           
-          })}
+          })} 
           
           </Box>:<Loading/>}
 

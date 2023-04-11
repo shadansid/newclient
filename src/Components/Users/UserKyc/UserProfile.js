@@ -4,7 +4,7 @@ import User6 from '@mui/icons-material/AccountCircle';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 
-const UserProfile = () => {
+const UserProfile = ({bg}) => {
 
     const [user, setUser] = useState(0)
     const navigate = useNavigate();
@@ -24,7 +24,9 @@ const UserProfile = () => {
 
 
 
-}
+    }
+    
+    console.log("This is a propssssssssssssssssssssss" + bg)
 
 const Navigate3 = () => {
     navigate('/trade')

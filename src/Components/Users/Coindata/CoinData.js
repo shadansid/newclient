@@ -74,7 +74,7 @@ return (
       <>
       
      
-      {DisbableBtn?<></>:<CoinListBox disbableBtn={disbableBtn} DisbableBtn={DisbableBtn} coins={coins}  data={props.on} />}
+      {DisbableBtn?<></>:<CoinListBox bg={props.bgcolor} disbableBtn={disbableBtn} DisbableBtn={DisbableBtn} coins={coins}  data={props.on} />}
       
 
         </>
