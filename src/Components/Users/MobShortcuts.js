@@ -9,7 +9,7 @@ import Addmoney from '@mui/icons-material/AddCardOutlined';
 import { Link, useNavigate } from 'react-router-dom';
 
 
-const MobShortcuts = () => {
+const MobShortcuts = ({bg}) => {
   const navigate = useNavigate()
   const movetoDesposit = () => {
     navigate('/userpanel/wallet/addmoney')
@@ -27,7 +27,7 @@ const MobShortcuts = () => {
         <div style={{backgroundColor:'' , padding:'10px'}}>
 
 
-<Box sx={{backgroundColor:'#1d2230' ,display:{sm:'none',xs:'flex'}, color:'white' ,width:'auto', height:'10vh' , alignItems:'center', justifyContent:'space-between', gap:{sm:'20px',xs:'10px'} , padding:'10px'}}>
+<Box sx={{backgroundColor:(bg == '#ffffff'?'#f2f2f2':'#1d2230' ),display:{sm:'none',xs:'flex'}, color:'white' ,width:'auto', height:'10vh' , alignItems:'center', justifyContent:'space-between', gap:{sm:'20px',xs:'10px'} , padding:'10px'}}>
 
                   
 

@@ -59,7 +59,7 @@ if(vvcode.status === 200){
     
   
   }
-
+  
 
   
   });
@@ -98,7 +98,7 @@ if(vvcode.status === 200){
            
           
          
-           <div className="heading">Verify</div>
+           <div className="heading" style={{color:'#5661FF'}}>Verify</div>
           
            <div id="regbox">
                    
@@ -116,7 +116,7 @@ if(vvcode.status === 200){
         }}variant="outlined"/>
  </div>
 
-               <Button sx={{m:1}} variant="outlined" onClick={Login} style={{backgroundColor:'#30CFD0', color:'white'}} endIcon={<KeyboardArrowRightOutlinedIcon />}>Submit</Button>
+               <Button sx={{m:1}} variant="outlined" onClick={Login} style={{backgroundColor:'#5661FF', color:'white'}} endIcon={<KeyboardArrowRightOutlinedIcon />}>Submit</Button>
 
            </div>
        </div>

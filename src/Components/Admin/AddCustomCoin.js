@@ -46,7 +46,7 @@ const AddCustomCoin = () => {
    <div id="addcoin">
    <h2>custom coin</h2>  
 
-   <form action="/addcustomcoin" method='POST'>
+   <form action="http://139.84.137.232/api/addcustomcoin" method='POST'>
             <div>Enter Symbol : <input type="text" id='symbol' style={{ background: 'transparent', margin: '10px', width: '48ch', padding: '15px', m: "1", border: '1px solid grey' }} /></div>
             {/* <div>Enter Symbol: <input type="text" id='symbol' style={{ background: 'transparent', margin: '10px', width: '48ch', padding: '15px', m: "1", border: '1px solid grey' }} /></div> */}
             

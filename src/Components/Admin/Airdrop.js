@@ -38,14 +38,7 @@ const Airdrop = () => {
     <div id="Airdrop">
      <form action="/airdrop" method='POST' encType='multipart/form-data'>
      
-          <Select style={{ height: '40px', border: '1px solid grey', width: '18%', color: 'grey', marginRight: '1px', color: 'black', backgroundColor: 'none' }} id="coin"  >  
-        
-            {coinlist && coinlist.map((e) => {
-                return <MenuItem value={e.symbol}><img src={`http://139.84.137.232/api/static/images/coinimage/${e.symbol}.png`}  height='20px' width='20px' alt="" />&nbsp;{e.symbol}</MenuItem> 
-    })}
-
-
-</Select> 
+       
           
            <div>
 <input type="number" min="1"  id="quantity" placeholder={"Quantity"}  style={{background:'transparent',margin:'10px',width:'48ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
@@ -54,11 +47,11 @@ const Airdrop = () => {
 
 
 
-{/*       
+      
       <IconButton color="primary" aria-label="upload picture" component="label">
   <input  name='airdrop' accept="image/*" type="file" />
   <PhotoCamera />
-</IconButton> */}
+</IconButton>
 <div><input id='img' style={{backgroundColor:'grey', padding:'10px'}} accept="image/*"  multiple type="file" /></div>
           
           

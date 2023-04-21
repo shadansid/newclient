@@ -400,7 +400,7 @@ const limitX = ()=>{
 
 <div>
 
-<input type="number" disabled  placeholder={"Avbl" + " " + ": " + "$ "+avblCoin.msg} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:(color =='#ffffff'? '1px solid #E7E7E8':'1px solid grey')}} />
+<input type="number" disabled  placeholder={"Avbl" + " " + ": " + "$ "+(avblCoin.msg == undefined?'Log in ':avblCoin.msg)} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:(color =='#ffffff'? '1px solid #E7E7E8':'1px solid grey')}} />
 </div>
          
          {limit? <div>

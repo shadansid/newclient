@@ -13,7 +13,7 @@ import Wallet from './Components/Users/Wallet/Wallet'
 import User from './Components/Admin/User'
 import Test from './Test'
 import Limit from './Components/Users/Coindata/Limit'
-import Coin from './Components/Users/Coindata/Coin'
+
 import Stoplimit from './Components/Users/Coindata/StopLimit'
 
 import { render } from "react-dom";  
@@ -37,12 +37,12 @@ import Addmoney from './Components/Users/Wallet/Addmoney'
 import Withdraw from './Components/Users/Wallet/Withdraw'
 import Showwallet from './Components/Users/Wallet/Showwallet'
 import Data24hr from './Components/Users/Data24hr'
-import TradeTicker from './Components/Users/TradeTicker'
+
 import Google2FA from './Components/Users/Google2FA'
 import CustomChart from './Components/Users/CustomChart'
 import OpenOrder from './Components/Users/OpenOrder';
 import OrderHistory from './Components/Users/OrderHistory';
-import MobTrade from './Pages/MobTrade'
+
 import AdminDashboard from './Components/Admin/AdminDashboard'
 import { SellCoin } from './Components/Users/Coindata/SellCoin'
 import UserProfile from './Components/Users/UserKyc/UserProfile'
@@ -98,11 +98,6 @@ function App() {
       </Route>
 
 
-      <Route exact path="/mobtrade" element={<MobTrade/>}>
-      {/* <Route exact path="/mobtrade/buysell" element={<BuyCoin/>}/>
-      <Route exact path="/mobtrade/buysell/sellcoin" element={<SellCoin/>}/> */}
-       
-          </Route>
       <Route exact path="/Logout" element={<Logout/>}/>
       
       {/* <Route exact path="/trade" element={<Trade/>}/> */}
@@ -114,7 +109,7 @@ function App() {
       <Route exact path="/vcode" element={<Vcode/>}/>
       <Route exact path="/airdropcontest" element={<AirdropContest/>}/>
       <Route exact path="/data24" element={<Data24hr/>}/>
-      <Route exact path="/ticker" element={<TradeTicker/>}/>
+
       <Route exact path="/google2fa" element={<Google2FA/>}/>
       <Route exact path="/customchart" element={<CustomChart/>}/>
      

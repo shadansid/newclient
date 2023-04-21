@@ -1,5 +1,5 @@
 import React from 'react'
-
+import UserHeader from '../Users/UserHeader'
 import {useNavigate} from 'react-router-dom'
 import { Button,Box } from '@mui/material'
 
@@ -17,10 +17,10 @@ const RequestCall = () => {
  
   return (
     <>
-         
+         <UserHeader/>
          
       <Box sx={{height:'100vh' , backgroundColor:'#171B26' ,paddingLeft:{sm:'200px',xs:'30px'},paddingRight:{sm:'200px',xs:'30px'} , paddingTop:'70px'}}>
-      <div style={{display:"flex",alignItems:'center', justifyContent:'center', flexDirection:'column',gap:'3', height:'80vh' , border:'1px solid grey'}}>
+      <div style={{display:"flex",alignItems:'center', justifyContent:'center', flexDirection:'column',gap:'3', height:'80vh' , border:''}}>
       
       <div style={{fontSize:'20px',color:'white',padding:'20px'}}>
         

@@ -4,6 +4,8 @@ import Main from './Main'
 import Footer from './Footer'
 import { useContext, useEffect, useState, useReducer } from 'react'
 import Context from '../../hooks/useTheme';
+import Help from './Help'
+
 
 import Boxes from './Boxes'
 const HomePage = () => {
@@ -31,14 +33,15 @@ const [state,dispatcher] = useReducer(reducer,{color:'#ffffff'})
       dispatcher : dispatcher
   }}>
     <div style={{ backgroundColor: 'white' }}>
-   <Header></Header>
+   <Header/>
         <Main color={state.color} ></Main>
-       < Boxes/>
-   <Footer color={state.color}></Footer>
    
+   <Footer color={state.color}></Footer>
+   <Help/>
       </div>
+
       </Context.Provider>
   )
-}
+} 
 
 export default HomePage

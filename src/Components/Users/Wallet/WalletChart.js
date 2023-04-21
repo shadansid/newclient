@@ -39,7 +39,7 @@ const data = {
       {
         data: [300, 50, 100, 70],
          
-            backgroundColor: ['#990033', '#FF9000', '#5442F2', '#19B6A4'],
+            backgroundColor: [ '#5442F2', '#19B6A4'],
             // hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
             hoverBackgroundColor: ['#990033', '#FF9000', '#5442F2', '#19B6A4'],
             borderWidth: 0

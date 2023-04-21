@@ -66,7 +66,7 @@ const Data24hr = ({coins,coinChange, color}) => {
     <Box sx={{backgroundColor:color}}>
 
 
-<Container sx={{backgroundColor:color , color:(color =='#ffffff'?'grey':'white') , height:{sm:'10vh',xs:'7vh'} , display:'flex' , alignItems:'center', justifyContent:'space-between'}}>
+<Container sx={{backgroundColor:(color == '#ffffff'?'#ebedef':'#171b26') , color:(color =='#ffffff'?'grey':'white') , height:{sm:'10vh',xs:'7vh'} , display:'flex' , alignItems:'center', justifyContent:'space-between'}}>
 
 <Box sx={{display:'flex', flexDirection:'column' , padding:{sm:'10px',xs:'0px'}}}>
 <div style={{color:'grey', fontSize:{sm:'11px',xs:'9px'}}}>Symbol</div>

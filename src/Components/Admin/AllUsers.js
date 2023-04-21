@@ -16,7 +16,7 @@ const AllUsers = () => {
         
           })
  
-    })
+    },[])
 
   
   
@@ -41,7 +41,7 @@ const AllUsers = () => {
       return <>
         
         
-        <AllUserBox Name={ele.Name} email={ele.email} userid={ele.userid} pancard={ele.Pancard} adharcard={ele.adharcard} phone={ele.Phone} />
+        <AllUserBox Name={ele.Name} email={ele.email} userid={ele.userid} pancard={ele.Pancard} adharcard={ele.adharcard} phone={ele.Phone} Active={ele.Active} />
        
         </>
 

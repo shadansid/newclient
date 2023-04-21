@@ -73,14 +73,16 @@ const register = ()=>{
 let email = document.getElementById('xyzemail').value; 
 let name = document.getElementById('xyzname').value; 
 let pass = document.getElementById('xyzpass').value; 
+let referralcode = document.getElementById('xyzreferral').value; 
 
 
 
 const formdata = {
 
   name:name,
-  email:email,
-  password:pass,
+  email:email, 
+  password: pass,
+  referralcode: referralcode
   
 
 }
@@ -245,7 +247,19 @@ const handleChangePass = (e) =>{
         id="xyzname" placeholder='Full Name' style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'7px', border:'1px solid grey'}}
         label="Full Name" size="small" fullWidth  margin='dense' 
        variant="outlined"/>
+                </div>
+                
+
+                
+                <div className="aligndiv">
+<input onChange={handleChangeName}
+        id="xyzreferral" placeholder='Refer code (Optional)' style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'7px', border:'1px solid grey'}}
+        label="Refer code (Optional)" size="small" fullWidth  margin='dense' 
+       variant="outlined"/>
 </div>
+
+
+
 
 <div className="aligndiv">
 <input placeholder='Password' onChange={handleChangePass}
@@ -300,19 +314,26 @@ const handleChangePass = (e) =>{
         <Box sx={{ display:{sm:'flex',xs:'none'}, flexDirection:'column', gap:'10px', alignItems:'', width:'500px',backgroundColor:'' }}>
    
           <Box sx={{backgroundColor:'#1F2433',borderRadius:'9px', display:'flex', gap:'10px', padding:'20px'}}>
-            <Icon1 sx={{ fill: '#3C6AF8', stroke:'' , fontSize:'42px'}} /> &nbsp; <Box>
+              {/* <Icon1 sx={{ fill: '#3C6AF8', stroke: '', fontSize: '42px' }} /> */}
+            <img src='http://139.84.137.232/api/static/images/gift.png' height='50px' width='50px' />
+            
+              &nbsp; <Box>
               <Box sx={{fontSize:'16px', color:'white',marginBottom:'10px'}}>Win up to $100 in Welcome Rewards</Box>
               <Box  sx={{color:'#4D4E59'}}>Complete Beginner Tasks & Win Awesome Prize</Box></Box>
           </Box>
           <Box sx={{backgroundColor:'#1F2433',borderRadius:'9px', display:'flex', gap:'10px', padding:'20px'}}>
-            <Icon2 sx={{ fill: 'orange', stroke:'' , fontSize:'42px'}} /> &nbsp; <Box >
+          <img src='http://139.84.137.232/api/static/images/invite.png' height='50px' width='50px' />
+              {/* <Icon2 sx={{ fill: 'orange', stroke: '', fontSize: '42px' }} /> */}
+              &nbsp; <Box >
               <Box  sx={{fontSize:'16px', color:'white',marginBottom:'10px'}}>Invite Friends and Earn Rewards
 </Box>
               <Box sx={{color:'#4D4E59'}}>Get trading fee discount and up to 40% commission with your friends
 </Box></Box>
           </Box>
           <Box sx={{backgroundColor:'#1F2433',borderRadius:'9px', display:'flex', gap:'10px', padding:'20px'}}>
-            <Icon3 sx={{ fill: '#F4C184', stroke:'' , fontSize:'42px'}} /> &nbsp; <Box>
+          <img src='http://139.84.137.232/api/static/images/reward.png' height='50px' width='50px' />
+              {/* <Icon3 sx={{ fill: '#F4C184', stroke: '', fontSize: '42px' }} /> */}
+              &nbsp; <Box>
               <Box  sx={{fontSize:'16px', color:'white',marginBottom:'10px'}}>Enjoy $5,000,000+ Prize Pools</Box>
               <Box sx={{color:'#4D4E59'}}>Participate in Activities to Win Mega Rewards</Box></Box>
           </Box>

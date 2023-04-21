@@ -1,18 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Facebook from '@mui/icons-material/FacebookOutlined';
 import { Button,Alert } from '@mui/material'
 import Gift from '@mui/icons-material/CardGiftcard';
 import Gift2 from '@mui/icons-material/CardGiftcardTwoTone';
 import  { useRef } from 'react';
 import { borderRadius } from '@mui/system';
+import axios from 'axios'
 const Referral = () => {
  
   const inputRef = useRef(null);
 
 
+  const [show, setShow] = useState(0)
+ const [ReferralData, setReferralData] = useState(0)
 
 
-
+  
+ 
 
 
 
@@ -38,9 +42,22 @@ const Referral = () => {
 
   }
 
-
-  const [show, setShow] = useState(0)
   
+  useEffect(() => {
+  
+    const getdata = async ()=> {
+     
+      const response = await axios.get(`http://139.84.137.232/api/getreferraldata`);
+      console.log(response.data)
+      setReferralData(response.data)
+  
+   }
+
+   getdata()
+
+
+
+},[])
 
 
 
@@ -58,7 +75,7 @@ const Referral = () => {
         
         <div style={{fontSize:'20px',color:'white',padding:'20px', display:'flex',flexDirection:'column'}}>
         
-<input type="text" id="myInput"  disabled  value="https://bcex.com/user?value=98899/referid?" style={{background:'transparent',padding:'10px',width: {sm:'51ch',xs:'40ch'} , border:'1px solid #EA661C'}} />
+<input type="text" id="myInput"  disabled  value={ReferralData && ReferralData[0].yourcode} style={{background:'transparent',padding:'10px',width: {sm:'51ch',xs:'40ch'} , border:'1px solid #EA661C'}} />
 
     <Button id="copy" onClick={myFunction} sx={{ background: '#EA661C', padding: '5px', width: {sm:'51ch',xs:'40ch'}, color:'white' ,borderRadius:'0px' }} >Copy Code</Button>
 

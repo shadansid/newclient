@@ -15,7 +15,7 @@ export const SellCoin = ({coins,coinChange}) => {
     const [verified, setVerified] = useState(0)
     useEffect(() => {
             
-          axios.get('http://139.84.137.232/api/checkverified')
+          axios.get('/checkverified')
           .then(function (response) {
             
             // console.log(response);
@@ -43,7 +43,7 @@ const sell = ()=>{
 // console.log(sellamount)
 
 
-fetch("http://139.84.137.232/api/sellcoin", {
+fetch("/sellcoin", {
   method: "POST",
 
   body: JSON.stringify({
@@ -89,7 +89,7 @@ settesting2("")
 const [avblsellCoin,setavblsellCoin] = useState(0);
 const avblsell = ()=>{
 
-  axios.post('http://139.84.137.232/api/avblsell', {symbol:context.symbol})
+  axios.post('/avblsell', {symbol:context.symbol})
   .then((res) => {
   
     setavblsellCoin(res.data)
