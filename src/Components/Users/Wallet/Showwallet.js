@@ -190,7 +190,7 @@ const Showwallet = () => {
                   {/* {ele.type== 'credit'? :} */}
                   <div style={{ width: '20%' }}>
                     <img
-                      src={`/static/images/coinimage/${ele.currency.toUpperCase()}.png`}
+                      src={`http://139.84.137.232/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`}
                       alt=""
                       height="30px"
                       width="30px"

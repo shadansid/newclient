@@ -277,7 +277,7 @@ const Dashboard = () => {
                 <Box
                   sx={{
                     backgroundImage:
-                      "url('/static/images/Airdrop/Airdrop3.gif')",
+                      "url('http://139.84.137.232/api/static/images/Airdrop/Airdrop3.gif')",
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     height: { sm: '300px', xs: '200px' },
