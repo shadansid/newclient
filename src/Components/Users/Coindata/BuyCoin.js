@@ -11,18 +11,18 @@ import {Link} from 'react-router-dom';
 
 function BuyCoin({coins,coinChange,color}) {
   const context = useContext(Context)
+console.log("BUY coin Render")
 
-
-  const [verified, setVerified] = useState(0)
+  const [verified, setVerified] = useState(1)
   useEffect(() => {
           
         axios.get('/checkverified')
         .then(function (response) {
           
-          // console.log(response);
+          // console.log(response); 
           setVerified(response.data)
 
-        })
+        }) 
 
 
       })

@@ -7,11 +7,13 @@ import CoinListBox from './CoinListBox';
 
 // const client = new W3CWebSocket('wss://stream.binance.com:9443/ws/ethusdt@trade');
 const client = new W3CWebSocket('wss://stream.binance.com:9443/ws/ethusdt@trade/dogeusdt@trade/btcusdt@trade/lunausdt@trade/bnbusdt@trade/solusdt@trade/xrpusdt@trade/adausdt@trade/ltcusdt@trade/btcbusd@trade');
-
+client.onopen = () => {
+  // console.log('WebSocket Client Connected') ;
+ };
 
 function CoinData(props) {
 
-
+// console.log("Coin Data render")
 
   const [coin,setcoin] = useState({});
 
@@ -23,9 +25,7 @@ function CoinData(props) {
 
 }
 
-  client.onopen = () => {
-    // console.log('WebSocket Client Connected');
-  };
+  
   useEffect(()=>{
     
     

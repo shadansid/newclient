@@ -10,14 +10,16 @@ const client = new W3CWebSocket(
   'wss://stream.binance.com:9443/ws/ethusdt@trade/dogeusdt@trade/btcusdt@trade/lunausdt@trade/bnbusdt@trade/solusdt@trade/xrpusdt@trade/adausdt@trade/ltcusdt@trade/btcbusd@trade'
 )
 
+client.onopen = () => {
+  console.log('WebSocket Client Connected')
+}
+
 function CoinDatah({ bg }) {
   const [coin, setcoin] = useState({})
 
   const [coins, setCoins] = useState([])
 
-  client.onopen = () => {
-    console.log('WebSocket Client Connected')
-  }
+ 
   useEffect(() => {
     client.onmessage = (message) => {
       // console.log(message.s)
