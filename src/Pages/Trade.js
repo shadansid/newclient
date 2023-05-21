@@ -40,8 +40,8 @@ import { Outlet, Link, NavLink } from 'react-router-dom'
 
 const Trade = () => {
   const [size, setsize] = useState(0)
- const navigate =  useNavigate()
-  
+  const navigate = useNavigate()
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
@@ -58,11 +58,11 @@ const Trade = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  
-  
-  
-  
-  
+
+
+
+
+
   useEffect(() => {
     let size = document.getElementById('middlebox').offsetWidth
     setsize(size)
@@ -170,7 +170,7 @@ const Trade = () => {
           >
             <div
               className="coinwrap"
-              // style={{ overflow: 'scroll' }}
+            // style={{ overflow: 'scroll' }}
             >
               <CoinData
                 bgcolor={state2.color}
@@ -195,7 +195,7 @@ const Trade = () => {
                 ></Data24hr>
 
                 <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                  {   (
+                  {(
                     <AdvancedRealTimeChart
                       style={{ zIndex: -2 }}
                       height={350}
@@ -214,7 +214,7 @@ const Trade = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     gap: '30px',
-                    backgroundColor:(state2.color == '#ffffff'?'#f5f5f5':'#171b26')
+                    backgroundColor: (state2.color == '#ffffff' ? '#f5f5f5' : '#171b26')
                   }}
                 >
                   <BuyCoin

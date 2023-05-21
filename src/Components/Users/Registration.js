@@ -99,7 +99,7 @@ export default function Registration() {
     setInterval(() => {
       setnotvalid(true)
 
-    }, 3000)
+    }, 3000) 
 
     if (validemail && validpass) {
       fetch('http://139.84.137.232/api/adduser', {
@@ -277,7 +277,7 @@ export default function Registration() {
 
                 <div className="aligndiv">
                   <input placeholder='Password' onChange={handleChangePass}
-                    id="xyzpass" fullWidth
+                    id="xyzpass" fullWidth style={{ background: 'transparent', padding: '15px', width: '38ch', margin: '7px', border: '1px solid grey' }}
                     label="Password" size="small"
                     margin='dense'
 
