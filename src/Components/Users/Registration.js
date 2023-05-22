@@ -280,7 +280,7 @@ export default function Registration() {
                     id="xyzpass" fullWidth style={{ background: 'transparent', padding: '15px', width: '38ch', margin: '7px', border: '1px solid grey' }}
                     label="Password" size="small"
                     margin='dense'
-
+                    type='password'
                     variant="outlined" />
                 </div>
 
@@ -321,7 +321,7 @@ export default function Registration() {
               </div>
               <Box sx={{ color: 'grey', paddingTop: '20px', textAlign: 'center' }}>Already have an account? <span style={{ color: '#5661FF' }}>Log In</span></Box>
             </div>
-
+  
 
 
           </div>
@@ -330,14 +330,14 @@ export default function Registration() {
 
             <Box sx={{ backgroundColor: '#1F2433', borderRadius: '9px', display: 'flex', gap: '10px', padding: '20px' }}>
               {/* <Icon1 sx={{ fill: '#3C6AF8', stroke: '', fontSize: '42px' }} /> */}
-              <img src='/static/images/gift.png' height='50px' width='50px' />
+              <img src='http://139.84.137.232/api/static/images/gift.png' height='50px' width='50px' />
 
               &nbsp; <Box>
                 <Box sx={{ fontSize: '16px', color: 'white', marginBottom: '10px' }}>Win up to $100 in Welcome Rewards</Box>
                 <Box sx={{ color: '#4D4E59' }}>Complete Beginner Tasks & Win Awesome Prize</Box></Box>
             </Box>
             <Box sx={{ backgroundColor: '#1F2433', borderRadius: '9px', display: 'flex', gap: '10px', padding: '20px' }}>
-              <img src='/static/images/invite.png' height='50px' width='50px' />
+              <img src='http://139.84.137.232/api/static/images/invite.png' height='50px' width='50px' />
               {/* <Icon2 sx={{ fill: 'orange', stroke: '', fontSize: '42px' }} /> */}
               &nbsp; <Box >
                 <Box sx={{ fontSize: '16px', color: 'white', marginBottom: '10px' }}>Invite Friends and Earn Rewards
@@ -346,7 +346,7 @@ export default function Registration() {
                 </Box></Box>
             </Box>
             <Box sx={{ backgroundColor: '#1F2433', borderRadius: '9px', display: 'flex', gap: '10px', padding: '20px' }}>
-              <img src='/static/images/reward.png' height='50px' width='50px' />
+              <img src='http://139.84.137.232/api/static/images/reward.png' height='50px' width='50px' />
               {/* <Icon3 sx={{ fill: '#F4C184', stroke: '', fontSize: '42px' }} /> */}
               &nbsp; <Box>
                 <Box sx={{ fontSize: '16px', color: 'white', marginBottom: '10px' }}>Enjoy $5,000,000+ Prize Pools</Box>

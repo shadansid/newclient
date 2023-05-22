@@ -47,7 +47,7 @@ const TradeHistoryDashboard = () => {
 
 return <div style={{display:'flex', alignItems:'center',justifyContent:'space-around' , padding:'20px',backgroundColor:'#1C2230', justifyContent:'space-between'}}>
 {/* {ele.type== 'credit'? :} */}
-<div style={{width:'', display:'flex', alignItems:'center'}}><img src={`/static/images/coinimage/${ele.currency.toUpperCase()}.png`} alt=""  height="20px" width="20px"/>&nbsp; &nbsp;<span style={{color:'#6F6A6D'}}>{ele.currency}</span></div>
+<div style={{width:'', display:'flex', alignItems:'center'}}><img src={`http://139.84.137.232/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`} alt=""  height="20px" width="20px"/>&nbsp; &nbsp;<span style={{color:'#6F6A6D'}}>{ele.currency}</span></div>
 
   <div style={{ width: '', color: ((ele.type === 'credit') ? 'green' : 'red') }}>{"$ " + (ele.quantity * ele.amount).toFixed(3)}</div>
   

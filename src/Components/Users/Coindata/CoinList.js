@@ -6,6 +6,7 @@ import Star from '@mui/icons-material/StarBorderOutlined'
 import Star2 from '@mui/icons-material/Star'
 import { Link } from 'react-router-dom'
 import Context2 from '../../../hooks/useTheme2'
+import '../../../Pages/css/Trade.css'
 
 function CoinList(props) {
   // // --------------------------------------------------
@@ -60,18 +61,18 @@ function CoinList(props) {
 
   return (
     <>
-      {
-        <Box
+      { 
+        <a href='#buysellitems'
           className="coinlis"
           style={{
             borderTop:
               props.bg == '#ffffff' ? '1px solid #E7E7E8' : '1px solid #363c4e',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-around',
+            justifyContent: 'space-around',textDecoration:'none'
           }}
           id={props.symbol}
-        >
+        > 
           <div
             style={{ width: '10%', cursor: 'pointer', paddingLeft: '10px' }}
             id="coinimg"
@@ -151,8 +152,9 @@ function CoinList(props) {
                 </Button>
               </IconButton>
             </Link>
-          </Box>
-        </Box>
+            </Box>
+            </a>
+        
       }
     </>
   )

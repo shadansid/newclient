@@ -140,7 +140,7 @@ const Data24hr = ({coins,coinChange, color}) => {
 
 
 
-          <Box sx={{ display: { xs:'block', sm:'none'}}}>
+          <Box sx={{ display: { xs:'none', sm:'none'}}}>
               
           <Box sx={{
               backgroundColor: '#171B26', width: {xs:window.innerWidth -20}

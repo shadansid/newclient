@@ -75,7 +75,7 @@ function CoinListBox({ coins, disbableBtn }, props) {
   useEffect(() => {}, [searchResults])
 
   const getdata = () => {
-    axios('/getcoin')
+    axios.get('/getcoin')
       .then((res) => res.data)
       .then((data) => {
         // console.log(data)

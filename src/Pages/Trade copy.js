@@ -45,8 +45,8 @@ const Trade = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
-        // console.log('Now it is mobile screen');
-        // navigate('/trade/buysell/buycoin')
+        console.log('Now it is mobile screen');
+        navigate('/trade/buysell/buycoin')
       }
     };
 
@@ -60,29 +60,6 @@ const Trade = () => {
   }, []);
 
 
-
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Adjust the breakpoint as needed
-    };
-
-    // Add event listener to handle window resize
-    window.addEventListener('resize', handleResize);
-
-    // Initial check for mobile device
-    handleResize();
-
-    // Clean up the event listener
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  // Set the height and width based on the device type
-  const height = isMobile ? 250 : 350;
-  const width = isMobile ? window.innerWidth - 40 : size - 40;
 
 
 
@@ -193,7 +170,7 @@ const Trade = () => {
           >
             <div
               className="coinwrap"
-              style={{ width: window.innerWidth, overflow: 'hidden' }}
+            // style={{ overflow: 'scroll' }}
             >
               <CoinData
                 bgcolor={state2.color}
@@ -205,10 +182,10 @@ const Trade = () => {
               <Box
                 id="middlebox"
                 sx={{
-                  display: { xs: 'block', sm: 'block' },
+                  display: { xs: 'none', sm: 'block' },
                   backgroundColor: state2.color,
                   padding: '10px',
-                  width: { xs: '', sm: '60%' },
+                  width: '60%',
                 }}
               >
                 <Data24hr
@@ -232,15 +209,12 @@ const Trade = () => {
                   )}
                 </Box>
 
-                <Box id='buysellitems'
+                <Box
                   sx={{
                     display: 'flex',
                     justifyContent: 'center',
-                    gap: { xs: '0px', sm: '30px' }, width: { xs: window.innerWidth, sm: 'auto' },
+                    gap: '30px',
                     backgroundColor: (state2.color == '#ffffff' ? '#f5f5f5' : '#171b26')
-
-
-                    // flexDirection: '@media only screen and (max-width: 768px) ? "column" : "row"',
                   }}
                 >
                   <BuyCoin
@@ -260,15 +234,155 @@ const Trade = () => {
               {/* Mob new ================================ */}
               {/* Mob new ================================ */}
 
+              {state.boolVal ? (
+                <Box sx={{ overflow: '' }}>
+                  <Box
+                    id="middlebox"
+                    sx={{
+                      display: { xs: 'block', sm: 'none' },
+                      backgroundColor:
+                        state2.color == '#ffffff' ? '#ebedef' : '#171B26',
+                      padding: '10px',
+                    }}
+                  >
+                    <Data24hr
+                      color={state2.color}
+                      coins={coins}
+                      coinChange={handleCoinChange}
+                    ></Data24hr>
 
+                    <Box
+                      sx={{
+                        display: { xs: 'block', sm: 'none' },
+                        width: window.innerWidth - 20,
+                        overflow: 'hidden',
+                      }}
+                    >
+                      {' '}
+                      {state.custom ? (
+                        <CustomChart />
+                      ) : (
+                        <AdvancedRealTimeChart
+                          height={window.innerHeight - 80}
+                          width={window.innerWidth - 20}
+                          symbol={state.symbol}
+                          theme={state2.color == '#ffffff' ? 'light' : 'dark'}
+                          container_id="chart2"
+                          hide_side_toolbar="false"
+                        ></AdvancedRealTimeChart>
+                      )}
+                    </Box>
+
+                    <Box
+                      sx={{
+                        overflowX: 'hidden',
+                        backgroundColor:
+                          state2.color == '#ffffff' ? '#ffffff' : '#171b26',
+                        top: '0vh',
+                        overflow: 'scroll',
+                        paddingBottom: '40px',
+                        paddingTop: '40px',
+                        zIndex: '8',
+                        overflow: 'hidden',
+                        width: '100%',
+                      }}
+                    >
+                      <Box>
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            height: '3vh',
+                            backgroundColor:
+                              state2.color == '#ffffff' ? 'grey' : '#1C2230',
+                            alignItems: 'center',
+                            width: window.innerWidth - 30,
+                          }}
+                        >
+                          <Box
+                            sx={{
+                              backgroundColor: changeColor ? '#2E7D32' : '',
+                              color: 'white',
+                              height: '4vh',
+                              display: 'flex',
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                              width: window.innerWidth * 0.5,
+                            }}
+                          >
+                            <NavLink
+                              onClick={changecolor1}
+                              style={{
+                                textDecoration: 'none',
+                                color: 'white',
+                                paddingLeft: '60px',
+                                paddingRight: '60px',
+                              }}
+                              to="/trade/buysell/buycoin"
+                            >
+                              Buy
+                            </NavLink>
+                          </Box>
+                          <Box
+                            sx={{
+                              backgroundColor: changeColor ? '' : '#D32F2F',
+                              display: 'flex',
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                              color: 'white',
+                              height: '4vh',
+                              width: window.innerWidth * 0.5,
+                            }}
+                          >
+                            <NavLink
+                              onClick={changecolor2}
+                              style={{
+                                textDecoration: 'none',
+                                color: 'white',
+                                paddingLeft: '60px',
+                                paddingRight: '60px',
+                              }}
+                              to="/trade/buysell/sellcoin"
+                            >
+                              Sell
+                            </NavLink>
+                          </Box>
+                        </Box>
+
+                        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                          <Outlet
+                            coins={coins}
+                            coinChange={handleCoinChange}
+                          ></Outlet>
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Box>
+
+                  {/* {buyactive || sellactive ?<></>:
+                            <Box sx={{ display:{xs:'block', sm:'none'},position: 'fixed', bottom: '70px', backgroundColor: '', height: '3vh', width: window.innerWidth }}>
+                            
+                            <Box sx={{ display: 'flex', height: '5vh', backgroundColor: '', alignItems: 'center', width:window.innerWidth}}>
+                    
+                    <Box onClick={BuyToggleBtn} sx={{ backgroundColor: '#2E7D32', cursor:'pointer',color: 'white', height: '5vh', display:'flex',justifyContent:'center',alignItems:'center',width:window.innerWidth* 0.5}}>
+                    
+                    <Box   style={{textDecoration:'none', color:'white'}} >Buy</Box>
+                    </Box>
+                    <Box  onClick={SellToggleBtn} sx={{backgroundColor:'#D32F2F',cursor:'pointer', display:'flex',justifyContent:'center',alignItems:'center', color:'white',height:'5vh', width:window.innerWidth* 0.5}}>
+                        
+                    <Box  style={{textDecoration:'none', color:'white'}}>Sell</Box>
+                    </Box>
+                    
+                    </Box>
+                            
+                            </Box>
+                            } */}
+                </Box>
+              ) : (
+                <></>
+              )}
 
               {/* Mob new ================================ */}
               {/* Mob new ================================ */}
-
-
-
-
-              {/* Orders Show side============================================================== */}
 
               <Box
                 sx={{
@@ -313,13 +427,7 @@ const Trade = () => {
                   <SellOrder bgcolor={state2.color}></SellOrder>
                 </Box>
               </Box>
-              {/* Orders Show side============================================================== */}
-
-
-
             </div>
-
-            {/* Orders Outlet here ======================================================================================= */}
 
             <div style={{ height: '7vh' }}></div>
             <Box
@@ -398,39 +506,17 @@ const Trade = () => {
                 </div>
 
                 <div style={{ backgroundColor: '#171B26', color: 'grey' }}>
-
+                  {/* {tradedata? <div style={{padding:'40px'}}><TradeHistory></TradeHistory></div> :<></>}
+                        {Fundx ? <div style={{padding:'40px'}}> <Showwallet></Showwallet></div> : <></>}
+                          {openOrderx?  <OpenOrder />:<></>}
+                          {orderhistoryx?   <OrderHistory />:<></>} */}
                   <Outlet />
                 </div>
               </div>
             </Box>
-
-            {/* Orders Outlet here ======================================================================================= */}
-
-
-
           </Context.Provider>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {/* Bottom Menu Mobile=============================================================== */}
+        {/* mobo=============================================================== */}
         <Box
           sx={{
             display: {

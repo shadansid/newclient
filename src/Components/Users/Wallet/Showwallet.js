@@ -7,6 +7,21 @@ const Showwallet = () => {
   const [walletdata, setwalletdata] = useState(0)
   const [total, settotal] = useState(0)
 
+  const [bcex, setbcex] = useState(0)
+  useEffect( () => {
+  
+    const BCEX = async() => {
+     
+
+      const bcexcoin = await axios.get('/bcexprice');
+      setbcex(bcexcoin.data)
+      console.log(bcexcoin.data)
+  
+   }
+BCEX()
+},[])
+
+
   useEffect(() => {
     const config = {
       headers: {
@@ -28,6 +43,11 @@ const Showwallet = () => {
            
   const [EachCoinPrice, setEachCoinPrice] = useState(0)
   let currency = []
+
+
+  
+
+
 
   useEffect(() => {
 
@@ -80,6 +100,7 @@ const Showwallet = () => {
 
 
   useEffect(() => {
+    
     if (EachCoinPrice && Array.isArray(walletdata.msg)) {
 
 
@@ -88,7 +109,11 @@ const Showwallet = () => {
 
         let symbol = e.currency.toUpperCase();
 
-        console.log(` ${symbol} ye jo haina ye wo hai complete ${e.currency}  ${e.quantity} space h Each coin :   ${(EachCoinPrice[e.currency.toUpperCase()] === undefined ? EachCoinPrice[symbol] : EachCoinPrice[symbol].USD)} `)
+        // console.log(` ${symbol} ye jo haina ye wo hai complete ${e.currency}  ${e.quantity} space h Each coin :   ${(EachCoinPrice[e.currency.toUpperCase()] === undefined ? EachCoinPrice[symbol] : EachCoinPrice[symbol].USD)} `)
+
+// console.log(walletdata.msg)
+console.log(EachCoinPrice)
+
       }
 
 
@@ -222,7 +247,7 @@ const Showwallet = () => {
                       width: '30%',
                     }}
                   >
-                    $ &nbsp; {ele.quantity * (EachCoinPrice[ele.currency.toUpperCase()] === undefined ? EachCoinPrice[ele.currency.toUpperCase()] : EachCoinPrice[ele.currency.toUpperCase()].USD)}
+                    $ &nbsp; {ele.quantity * (EachCoinPrice[ele.currency.toUpperCase()] === undefined ? (ele.quantity*bcex).toFixed(3) : EachCoinPrice[ele.currency.toUpperCase()].USD)}
                   </Box>
 
 

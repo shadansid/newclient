@@ -1,4 +1,4 @@
-import React, { useContext, useEffect,useMemo } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { SellCoin } from './SellCoin';
 
 import './Css/buycoin.css'
@@ -136,7 +136,7 @@ axios.post('/pay', postData, axiosConfig)
       
 
 
-
+// Sellcoin function ------------------------------------------
  
 
 const [avblCoin , setavblCoin] = useState("");
@@ -154,17 +154,27 @@ const avbl = ()=>{
   
 
 }
+const [avblsellCoin,setavblsellCoin] = useState(0);
+const avblsell = ()=>{
+
+  axios.post('/avblsell', {symbol:context.symbol})
+  .then((res) => {
+  
+    setavblsellCoin(res.data)
+  })
+  .catch((err) => {
+    // console.log("AXIOS ERROR: ", err);
+  })
+  
+
+}
 
 
 
 
 
 const [amountBox ,setamountBox ] = useState("Amount");
-
-
-
-  
-  const onchangeBuy = (e) => {
+const onchangeBuy = (e)=>{
     e.preventDefault()
     settesting(e.target.value);
 
@@ -174,24 +184,24 @@ const [amountBox ,setamountBox ] = useState("Amount");
       let   n2 = parseFloat(context.price);
       let   n5 = context.Cprice;
       setamountBox((n1/n5).toFixed(4))
-      
+      return 0;
     }
 
-    else {
-      let n1 = parseFloat(e.target.value);
-      let n4 = e.target.value;
-      let   n2 = parseFloat(context.price);
-      let   n5 = context.price;
-       setamountBox((n1 / n2).toFixed(4))
-       
-   
-  }
+   let n1 = parseFloat(e.target.value);
+   let n4 = e.target.value;
+   let   n2 = parseFloat(context.price);
+   let   n5 = context.price;
+   setamountBox((n1/n2).toFixed(4))
+   console.log("this is very big issue please fix it " + n1)
+   console.log("this is very big issue please fix it " + n2)
+   console.log("this is very big issue please fix it " + n4)
+   console.log("this is very big issue please fix it " + n5)
+
       
+
 
 
 }
-  
-
   
 const [slider, setSlider] = useState(0);
 const [testing, settesting] = useState(0);
@@ -223,7 +233,79 @@ const sliderX = (e)=>{
 }
 
   
+  // Sell change .....................................................................
+  
+  
+  
+  
+  
+  
+  const [amountBox2 ,setamountBox2 ] = useState("Amount");
+const onchangeSell = (e)=>{
+    e.preventDefault()
+    settesting2(e.target.value);
 
+    if(context.custom){
+      let n1 = parseFloat(e.target.value);
+      let n4 = e.target.value;
+      let   n2 = parseFloat(context.price);
+      let   n5 = context.Cprice;
+      setamountBox2((n1/n5).toFixed(4))
+      return 0;
+    }
+
+   let n1 = parseFloat(e.target.value);
+   let n4 = e.target.value;
+   let   n2 = parseFloat(context.price);
+   let   n5 = context.price;
+   setamountBox2((n1/n2).toFixed(4))
+   console.log("this is very big issue please fix it " + n1)
+   console.log("this is very big issue please fix it " + n2)
+   console.log("this is very big issue please fix it " + n4)
+   console.log("this is very big issue please fix it " + n5)
+
+      
+
+
+
+}
+  
+const [slider2, setSlider2] = useState(0);
+const [testing2, settesting2] = useState(0);
+
+const sliderX2 = (e)=>{
+
+      setSlider2(e.target.value)
+
+    let num = parseFloat(e.target.value)
+    let num2 = parseFloat(avblsellCoin.msg*context.price)
+    
+    let newprice = (num2*num)/100;
+    
+      
+  settesting2(newprice)
+  
+  let n1 = parseFloat(newprice);
+  let n4 = e.target.value;
+  let   n2 = parseFloat(context.price);
+  let   n5 = context.price;
+  setamountBox2((n1/n2).toFixed(4))
+  
+  
+
+
+
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // Sell change .....................................................................
   
   
 
@@ -267,6 +349,13 @@ const limitX = ()=>{
        </div>
 
 
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -321,7 +410,7 @@ const limitX = ()=>{
 
 
 {/* <div>{buyres? <div style={{color:'grey',fontSize:'14px'}}>{buyres.msg}</div>:<div></div>}</div> */}
-                {buyres ? <div style={{ position: 'fixed', top: '0', right: '0', bottom: '0', left: '0', margin: 'auto', height: '100vh',  backgroundColor: 'rgb(23 27 38 / 85%)', display: 'flex', justifyContent: 'center', alignItems: 'center',flexDirection:'column', zIndex:'10' }}>
+                {buyres ? <div style={{ position: 'fixed', top: '0', right: '0', bottom: '0', left: '0', margin: 'auto', height: '100vh',  backgroundColor: 'rgb(23 27 38 / 85%)', display: 'flex', justifyContent: 'center', alignItems: 'center',flexDirection:'column', zIndex:'15' }}>
                   
                   
                   <Alert sx={{ backgroundColor: '#1B202E', color: 'white', padding: '20px', boxShadow: '1px 1px -2px ', display:'flex', flexDirection:'column' }} severity="success">
