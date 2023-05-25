@@ -83,8 +83,8 @@ const TradeHistory = () => {
                       <img
                         src={`http://139.84.137.232/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`}
                         alt=""
-                        height="20px"
-                        width="20px"
+                        height="30px"
+                        width="30px"
                       />
                     </div>
                     <div style={{ width: '20%', color: '#6F6A6D' }}>
@@ -147,6 +147,7 @@ const TradeHistory = () => {
                       <div
                         style={{
                           display: 'flex',
+                          flexDirection:{xs:'column', sm:'row'},
                           alignItems: 'center',
                           padding: '25px',
                         }}

@@ -6,8 +6,8 @@ import axios from 'axios';
 import reportWebVitals from './reportWebVitals';
 
  
-axios.defaults.baseURL = 'http://139.84.137.232/api/';
-// axios.defaults.baseURL = ''; 
+// axios.defaults.baseURL = 'http://139.84.137.232/api/';
+axios.defaults.baseURL = ''; 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

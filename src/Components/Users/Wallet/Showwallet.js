@@ -7,19 +7,21 @@ const Showwallet = () => {
   const [walletdata, setwalletdata] = useState(0)
   const [total, settotal] = useState(0)
 
+
+
   const [bcex, setbcex] = useState(0)
-  useEffect( () => {
-  
-    const BCEX = async() => {
-     
+  useEffect(() => {
+
+    const BCEX = async () => {
+
 
       const bcexcoin = await axios.get('/bcexprice');
       setbcex(bcexcoin.data)
       console.log(bcexcoin.data)
-  
-   }
-BCEX()
-},[])
+
+    }
+    BCEX()
+  }, [])
 
 
   useEffect(() => {
@@ -40,12 +42,12 @@ BCEX()
       settotal(totalbal)
     })
   }, [])
-           
+
   const [EachCoinPrice, setEachCoinPrice] = useState(0)
   let currency = []
 
 
-  
+
 
 
 
@@ -100,7 +102,7 @@ BCEX()
 
 
   useEffect(() => {
-    
+
     if (EachCoinPrice && Array.isArray(walletdata.msg)) {
 
 
@@ -111,8 +113,8 @@ BCEX()
 
         // console.log(` ${symbol} ye jo haina ye wo hai complete ${e.currency}  ${e.quantity} space h Each coin :   ${(EachCoinPrice[e.currency.toUpperCase()] === undefined ? EachCoinPrice[symbol] : EachCoinPrice[symbol].USD)} `)
 
-// console.log(walletdata.msg)
-console.log(EachCoinPrice)
+        // console.log(walletdata.msg)
+        // console.log(EachCoinPrice)
 
       }
 
@@ -121,6 +123,8 @@ console.log(EachCoinPrice)
   }, [EachCoinPrice])
 
 
+  // console.log(" Single CR PR " + EachCoinPrice[0] )
+  // console.log(" Wallet Data Fetch request " + walletdata[0] )
 
 
 
@@ -181,7 +185,7 @@ console.log(EachCoinPrice)
           <Outlet />
         </Container></Box>
 
-      { Array.isArray(walletdata.msg) ? (
+      {Array.isArray(walletdata.msg) ? (
         <Box>
 
 
@@ -195,10 +199,30 @@ console.log(EachCoinPrice)
               fontSize: { sm: '25px', xs: '16px' },
               background: '#1B202E',
               padding: { sm: '25px', xs: '10px' },
-              color: 'grey',
+              color: 'grey', display: 'flex', justifyContent: 'space-around', alignItems: 'center'
             }}
           >
-            {total && 'Total Amount ≈' + '$' + '------'}
+
+            <div>
+              <div style={{ fontSize: '10px', color: '#a9a9a9', lineHeight: 3 }}>Total Balance (USDT)</div>
+
+              <div style={{ fontSize: '18px', color: 'white' }}>234.982 USDT</div>
+
+            </div>
+
+            <div>
+              <div style={{
+                fontSize: '10px', color: '#a9a9a9', lineHeight: 3
+              }}>Total Balance (BTC)</div>
+
+              <div style={{ fontSize: '18px', color: 'white' }}>0.0982 BTC</div>
+
+            </div>
+
+
+
+
+
           </Box>
 
           {walletdata &&
@@ -239,7 +263,7 @@ console.log(EachCoinPrice)
                   >
                     {ele.quantity}&nbsp;{ele.currency.toUpperCase()}
                   </Box>
-   
+
                   <Box
                     sx={{
                       color: '#7D8794',
@@ -247,7 +271,7 @@ console.log(EachCoinPrice)
                       width: '30%',
                     }}
                   >
-                    $ &nbsp; {ele.quantity * (EachCoinPrice[ele.currency.toUpperCase()] === undefined ? (ele.quantity*bcex).toFixed(3) : EachCoinPrice[ele.currency.toUpperCase()].USD)}
+                    $ &nbsp; {ele.quantity * (EachCoinPrice[ele.currency.toUpperCase()] === undefined ? (ele.quantity * bcex).toFixed(3) : EachCoinPrice[ele.currency.toUpperCase()].USD)}
                   </Box>
 
 
@@ -266,34 +290,34 @@ console.log(EachCoinPrice)
             })}
         </Box>
       ) : (
-          walletdata.msg === 4 ?
-        
-          <Box sx={{ marginTop: '20px', backgroundColor:'transparent' }}>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-around',
-              padding: '20px',
-              backgroundColor: '#1B202E',
-              color: 'grey',
-              position: 'scroll',
-              top: '20px',
-            }}
-          >
-            <div style={{ width: '' }}>Coin</div>
-            <div style={{ width: '' }}>Price</div>
-            <div style={{ width: '' }}>Amount</div>
-            <div style={{ width: '' }}>Type</div>
-            <div style={{ width: '' }}>Date</div>
+        walletdata.msg === 4 ?
 
-          </div>
-          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'grey', padding: '20px', backgroundColor: '#1a1f2a' }}> Nothing to show</Box>
-         
-              <Box sx={{ height: '100vh', backgroundColor: 'transparent' }}></Box>
-        </Box>
+          <Box sx={{ marginTop: '20px', backgroundColor: 'transparent' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-around',
+                padding: '20px',
+                backgroundColor: '#1B202E',
+                color: 'grey',
+                position: 'scroll',
+                top: '20px',
+              }}
+            >
+              <div style={{ width: '' }}>Coin</div>
+              <div style={{ width: '' }}>Price</div>
+              <div style={{ width: '' }}>Amount</div>
+              <div style={{ width: '' }}>Type</div>
+              <div style={{ width: '' }}>Date</div>
 
-        : <Loading />
+            </div>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'grey', padding: '20px', backgroundColor: '#1a1f2a' }}> Nothing to show</Box>
+
+            <Box sx={{ height: '100vh', backgroundColor: 'transparent' }}></Box>
+          </Box>
+
+          : <Loading />
       )}
     </>
   )

@@ -70,7 +70,7 @@ const Referral = () => {
       <Gift sx={{color:'#EA661C', height:'80px', width:'80px'}}/>
       <div style={{fontSize:{sm:'20px',xs:'16px'},color:'white',padding:'20px'}}>
         
-         Refer and Earn Upto <span style={{color:'#EA661C'}}> 1000 Token to start trade </span>
+         Refer and Earn Upto <span style={{color:'#EA661C'}}> 10 BCEX Token to start trade </span>
         </div>
         
         <div style={{fontSize:'20px',color:'white',padding:'20px', display:'flex',flexDirection:'column'}}>

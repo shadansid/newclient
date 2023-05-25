@@ -1,4 +1,4 @@
-import React, { useEffect, useState ,useRef} from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './css/UserPanel.css'
 import Login from '../Components/Users/Login'
 import UserHeader from '../Components/Users/UserHeader'
@@ -33,7 +33,7 @@ import axios from 'axios'
 
 const UserPanel = () => {
   const navilogout = useNavigate()
-    const [isLoggedIn, setLogin] = useState('invalid')
+  const [isLoggedIn, setLogin] = useState('invalid')
   const [toggle, settoggle] = useState(false)
 
 
@@ -51,7 +51,7 @@ const UserPanel = () => {
 
     const check = async () => {
 
-   const response = await axios.get('/checklogin')
+      const response = await axios.get('/checklogin')
       setLogin(response.data.msg)
 
       if (response.data.status === 200) {
@@ -66,7 +66,7 @@ const UserPanel = () => {
 
 
 
-  },[isLoggedIn])
+  }, [isLoggedIn])
 
 
 
@@ -128,16 +128,16 @@ const UserPanel = () => {
                   display: { xs: 'none', sm: 'block' },
                   width: '20%',
                   backgroundColor: '',
-                  marginRight:'50px'
+                  marginRight: '50px'
                 }}
               ></Container>
 
               <Container
-               ref={div2Ref}  sx={{ display: { xs: 'none', sm: 'flex', position: 'fixed' } }}
+                ref={div2Ref} sx={{ display: { xs: 'none', sm: 'flex', position: 'fixed' } }}
                 maxWidth="xl"
                 style={{
                   width: '20%',
-                  background: (state.color=='#ffffff'? 'linear-gradient(to bottom, #325469, #7192A8)':'linear-gradient(to bottom, #171B26, #152136)'),
+                  background: (state.color == '#ffffff' ? 'linear-gradient(to bottom, #325469, #7192A8)' : 'linear-gradient(to bottom, #171B26, #152136)'),
                   height: '100vh',
                   borderRight:
                     state.color == '#ffffff'
@@ -164,11 +164,11 @@ const UserPanel = () => {
                       },
                     }}
                   >
-                    <DashboardIcon style={{ color: '#939ba9' , fontSize:'18px' }} />
+                    <DashboardIcon style={{ color: '#939ba9', fontSize: '18px' }} />
                     <Link
                       style={{
                         textDecoration: 'none',
-                        color: (state.color =='#ffffff'? 'white': '#7D8794'),
+                        color: (state.color == '#ffffff' ? 'white' : '#7D8794'),
                         fontSize: '14px',
                         marginLeft: '10px',
                       }}
@@ -189,11 +189,11 @@ const UserPanel = () => {
                       },
                     }}
                   >
-                    <Person4Icon style={{color: '#939ba9' , fontSize:'18px'}} />
+                    <Person4Icon style={{ color: '#939ba9', fontSize: '18px' }} />
                     <Link
                       style={{
                         textDecoration: 'none',
-                        color: (state.color =='#ffffff'? 'white': '#7D8794'),
+                        color: (state.color == '#ffffff' ? 'white' : '#7D8794'),
                         fontSize: '14px',
                         marginLeft: '10px',
                       }}
@@ -214,11 +214,11 @@ const UserPanel = () => {
                       },
                     }}
                   >
-                    <AccountBalanceWalletIcon style={{ color: '#939ba9' , fontSize:'18px' }} />
+                    <AccountBalanceWalletIcon style={{ color: '#939ba9', fontSize: '18px' }} />
                     <Link
                       style={{
                         textDecoration: 'none',
-                        color: (state.color =='#ffffff'? 'white': '#7D8794'),
+                        color: (state.color == '#ffffff' ? 'white' : '#7D8794'),
                         fontSize: '14px',
                         marginLeft: '10px',
                       }}
@@ -239,17 +239,17 @@ const UserPanel = () => {
                       },
                     }}
                   >
-                    <EqualizerIcon style={{ color: '#939ba9' , fontSize:'18px' }} />
+                    <EqualizerIcon style={{ color: '#939ba9', fontSize: '18px' }} />
                     <Link
                       style={{
                         textDecoration: 'none',
-                        color: (state.color =='#ffffff'? 'white': '#7D8794'),
+                        color: (state.color == '#ffffff' ? 'white' : '#7D8794'),
                         fontSize: '14px',
                         marginLeft: '10px',
                       }}
                       to="/trade"
                     >
-                      Buy Coins
+                      Trades
                     </Link>
                   </Grid>
 
@@ -264,11 +264,11 @@ const UserPanel = () => {
                       },
                     }}
                   >
-                    <ArticleIcon style={{ color: '#939ba9' , fontSize:'18px' }} />
+                    <ArticleIcon style={{ color: '#939ba9', fontSize: '18px' }} />
                     <Link
                       style={{
                         textDecoration: 'none',
-                        color: (state.color =='#ffffff'? 'white': '#7D8794'),
+                        color: (state.color == '#ffffff' ? 'white' : '#7D8794'),
                         fontSize: '14px',
                         marginLeft: '10px',
                       }}
@@ -289,11 +289,11 @@ const UserPanel = () => {
                       },
                     }}
                   >
-                    <RequestPageIcon style={{ color: '#939ba9' , fontSize:'18px' }} />
+                    <RequestPageIcon style={{ color: '#939ba9', fontSize: '18px' }} />
                     <Link
                       style={{
                         textDecoration: 'none',
-                        color: (state.color =='#ffffff'? 'white': '#7D8794'),
+                        color: (state.color == '#ffffff' ? 'white' : '#7D8794'),
                         fontSize: '14px',
                         marginLeft: '10px',
                       }}
@@ -314,11 +314,11 @@ const UserPanel = () => {
                       },
                     }}
                   >
-                    <SecurityIcon style={{ color: '#939ba9' , fontSize:'18px'}} />
+                    <SecurityIcon style={{ color: '#939ba9', fontSize: '18px' }} />
                     <Link
                       style={{
                         textDecoration: 'none',
-                        color: (state.color =='#ffffff'? 'white': '#7D8794'),
+                        color: (state.color == '#ffffff' ? 'white' : '#7D8794'),
                         fontSize: '14px',
                         marginLeft: '10px',
                       }}
@@ -339,11 +339,11 @@ const UserPanel = () => {
                       },
                     }}
                   >
-                    <PersonAddIcon style={{color: '#939ba9' , fontSize:'18px' }} />
+                    <PersonAddIcon style={{ color: '#939ba9', fontSize: '18px' }} />
                     <Link
                       style={{
                         textDecoration: 'none',
-                        color: (state.color =='#ffffff'? 'white': '#7D8794'),
+                        color: (state.color == '#ffffff' ? 'white' : '#7D8794'),
                         fontSize: '14px',
                         marginLeft: '10px',
                       }}
@@ -364,11 +364,11 @@ const UserPanel = () => {
                       },
                     }}
                   >
-                    <SsidChartIcon style={{ color: '#939ba9' , fontSize:'18px' }} />
+                    <SsidChartIcon style={{ color: '#939ba9', fontSize: '18px' }} />
                     <Link
                       style={{
                         textDecoration: 'none',
-                        color: (state.color =='#ffffff'? 'white': '#7D8794'),
+                        color: (state.color == '#ffffff' ? 'white' : '#7D8794'),
                         fontSize: '14px',
                         marginLeft: '10px',
                       }}
@@ -389,11 +389,11 @@ const UserPanel = () => {
                       },
                     }}
                   >
-                    <PowerSettingsNewIcon style={{ color: '#939ba9' , fontSize:'18px' }} />
+                    <PowerSettingsNewIcon style={{ color: '#939ba9', fontSize: '18px' }} />
                     <Link
                       style={{
                         textDecoration: 'none',
-                        color: (state.color =='#ffffff'? 'white': '#7D8794'),
+                        color: (state.color == '#ffffff' ? 'white' : '#7D8794'),
                         fontSize: '14px',
                         marginLeft: '10px',
                       }}
@@ -435,7 +435,7 @@ const UserPanel = () => {
                 <Box
                   maxWidth="lg"
                   sx={{
-                    backgroundColor: state.color =='#ffffff'?'#ebedef':'#171b26',
+                    backgroundColor: state.color == '#ffffff' ? '#ebedef' : '#171b26',
                     display: { xs: 'block', sm: 'none' },
                   }}
                 >
@@ -445,8 +445,8 @@ const UserPanel = () => {
                 <Box
                   maxWidth="lg"
                   sx={{
-                    backgroundColor: state.color =='#ffffff'?'#ebedef':'#171b26',
-                    display: { xs: 'none', sm: 'block' },paddingLeft:'20px'
+                    backgroundColor: state.color == '#ffffff' ? '#ebedef' : '#171b26',
+                    display: { xs: 'none', sm: 'block' }, paddingLeft: '20px'
                   }}
                 >
                   <Outlet />
@@ -492,9 +492,10 @@ const UserPanel = () => {
                         padding: '10px',
                       }}
                     >
-                      <DashboardIcon
-                        sx={{ color: '#7D8794', fontSize: '18px' }}
+                      <div> <DashboardIcon
+                        sx={{ color: '#7D8794', fontSize: '20px' }}
                       />
+                        <div style={{ color: 'grey', fontSize: '9px', fontWeight: '400' }}> Dashboard</div> </div>
                     </IconButton>
                   </Link>
                 </Box>
@@ -511,9 +512,11 @@ const UserPanel = () => {
                         padding: '10px',
                       }}
                     >
-                      <Person4Icon
-                        sx={{ color: '#7D8794', fontSize: '18px' }}
+
+                      <div> <Person4Icon
+                        sx={{ color: '#7D8794', fontSize: '22px' }}
                       />
+                        <div style={{ color: 'grey', fontSize: '9px', fontWeight: '400' }}> Profile</div> </div>
                     </IconButton>
                   </Link>
                 </Box>
@@ -526,7 +529,12 @@ const UserPanel = () => {
                         padding: '10px',
                       }}
                     >
-                      <TradeNow sx={{ color: '#7D8794', fontSize: '18px' }} />
+
+                      <div> <TradeNow
+                        sx={{ color: '#7D8794', fontSize: '22px' }}
+                      />
+                        <div style={{ color: 'grey', fontSize: '9px', fontWeight: '400' }}> Trades</div> </div>
+
                     </IconButton>
                   </Link>
                 </Box>
@@ -542,9 +550,12 @@ const UserPanel = () => {
                         padding: '10px',
                       }}
                     >
-                      <AccountBalanceWalletIcon
-                        sx={{ color: '#7D8794', fontSize: '18px' }}
+                      <div> <AccountBalanceWalletIcon
+                        sx={{ color: '#7D8794', fontSize: '22px' }}
                       />
+                        <div style={{ color: 'grey', fontSize: '9px', fontWeight: '400' }}> Wallet</div> </div>
+
+
                     </IconButton>
                   </Link>
                 </Box>
@@ -560,9 +571,11 @@ const UserPanel = () => {
                         padding: '10px',
                       }}
                     >
-                      <ArticleIcon
-                        sx={{ color: '#7D8794', fontSize: '18px' }}
+
+                      <div> <ArticleIcon
+                        sx={{ color: '#7D8794', fontSize: '22px' }}
                       />
+                        <div style={{ color: 'grey', fontSize: '9px', fontWeight: '400' }}> History</div> </div>
                     </IconButton>
                   </Link>
                 </Box>

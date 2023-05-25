@@ -194,23 +194,7 @@ const limitX = ()=>{
 
 
   
-  const QuantityBox2 = (e) => {
-   
-    setamountBox2(e.target.value);
-  
-  
-    
-    
-    if(context.custom) {
-      settesting2(e.target.value * context.Cprice)
-    } else {
-      settesting2(e.target.value * context.price)
-    }
 
-
-
-
-  }
   
 
   
@@ -246,7 +230,7 @@ const limitX = ()=>{
 
 <div>                                                                           
 
-<input type="number" disabled  placeholder={context.symbol + " " + ": " +     (context.custom?avblsellCoin.msg:avblsellCoin.msg).toFixed(3) } style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
+<input type="number" disabled  placeholder={"Avbl" + " " + ": " + "$ "+     (context.custom?avblsellCoin.msg*context.Cprice:avblsellCoin.msg*context.price).toFixed(3) } style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
 </div>
 {limit? <div>
 
@@ -254,12 +238,12 @@ const limitX = ()=>{
 </div>:<span></span>}
 <div>
 
-<input type="number" id="sellamount" placeholder={"USD"}  value={testing2?testing2:""}   onChange={onchangeSell} style={{background:'transparent',margin:'10px',width:'38ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
+<input type="number" id="sellamount" placeholder={"Amount"}  value={testing2?testing2:""}   onChange={onchangeSell} style={{background:'transparent',margin:'10px',width:'38ch',padding:'15px' , m:"1", border:'1px solid grey'}} />
 </div>
 
 <div>
 
-<input type="number"  onChange={QuantityBox2}  placeholder={context.symbol} value={amountBox2}  style={{background:'transparent',padding:'15px' ,margin:'10px',width:'38ch', border:'1px solid grey'}} />
+<input type="number" disabled  placeholder={context.symbol} value={amountBox2}  style={{background:'transparent',padding:'15px' ,margin:'10px',width:'38ch', border:'1px solid grey'}} />
         </div>
        
     
@@ -278,10 +262,7 @@ sx={{width:'40ch'}}
 <div>
 
 {/* <Button size='small' onClick={sell} sx={{width:'52ch'}} color="error" variant="contained">Sell</Button> */}
-{!limit ? <span><Button size='small' onClick={sell}  disabled={testing2 == 0} sx={{width:'40ch',"&.Mui-disabled": {
-          background: "#5a2027",
-          color: "#c0c0c0"
-        }}} color="error" variant="contained">{verified?'sell':'Verify yourself' }  &nbsp;{ context.symbol}</Button></span>:<span></span>}
+{!limit ? <span><Button size='small' onClick={sell} sx={{width:'40ch'}} color="error" variant="contained">{verified?'sell':'Verify yourself' }  &nbsp;{ context.symbol}</Button></span>:<span></span>}
 
 
 {limit ? <span> <Button size='small' sx={{width:'40ch'}} color="error" variant="contained">{verified?'limit':'Verify yourself' } &nbsp;{ context.symbol}</Button></span>:<span></span>}

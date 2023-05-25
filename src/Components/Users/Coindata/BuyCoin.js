@@ -242,6 +242,25 @@ const limitX = ()=>{
     setlimit(0)
   }
    
+
+
+  const QuantityBox = (e) => {
+   
+const newValue = e.target.value
+
+  setamountBox(newValue);
+
+
+    if(context.custom) {
+      settesting(newValue*context.Cprice)
+    } else {
+      settesting(newValue*context.price)
+    }
+    
+
+  }
+
+
   
   return (
    
@@ -279,7 +298,7 @@ const limitX = ()=>{
 
 <div>
 
-<input type="number" disabled  placeholder={"Avbl" + " " + ": " +(avblCoin.msg == undefined?'Log in ':"$ "+avblCoin.msg)} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:(color =='#ffffff'? '1px solid #E7E7E8':'1px solid grey')}} />
+<input type="number" disabled  placeholder={"USD" + " " + ": " +(avblCoin.msg == undefined?'Log in ':" "+avblCoin.msg)} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:(color =='#ffffff'? '1px solid #E7E7E8':'1px solid grey')}} />
 </div>
          
          {limit? <div>
@@ -289,12 +308,12 @@ const limitX = ()=>{
           
           <div>
 
-          <input type="number" min="1" max='2400' onwheel="this.blur()" id="buyamount" value={testing?testing:""} onChange={onchangeBuy} placeholder={"Amount"} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:(color =='#ffffff'? '1px solid #E7E7E8':'1px solid grey')}} />
+          <input type="number" min="1" max='2400' onwheel="this.blur()" id="buyamount" value={testing?testing:""} onChange={onchangeBuy} placeholder={"USD"} style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:(color =='#ffffff'? '1px solid #E7E7E8':'1px solid grey')}} />
           </div>
 
           <div>
 
-<input type="number"  value={amountBox} placeholder={context.symbol} style={{background:'transparent',margin:'10px',padding:'15px' ,width:'38ch', border:'1px solid grey'}} />
+<input type="number" onChange={QuantityBox}  value={amountBox} placeholder={context.symbol} style={{background:'transparent',margin:'10px',padding:'15px' ,width:'38ch', border:'1px solid grey'}} />
 </div>
       
     
@@ -314,7 +333,10 @@ const limitX = ()=>{
 
 
 
-                {!limit ? <span><Button size='small' onClick={buy} sx={{ width: '40ch' }} color="success" variant="contained">{verified?'Buy':'Verify yourself' } &nbsp;{ context.symbol}</Button></span>:<span></span>}
+                {!limit ? <span><Button size='small'   disabled={testing == 0} onClick={buy} sx={{ width: '40ch',"&.Mui-disabled": {
+          background: "#1e3d29",
+          color: "#c0c0c0"
+        } }} color="success" variant="contained">{verified?'Buy':'Verify yourself' } &nbsp;{ context.symbol}</Button></span>:<span></span>}
 
 
 {limit ? <span> <Button size='small' onClick={buyLimit} sx={{width:'40ch'}} color="success" variant="contained">{verified?"Limit":'Verify yourself'} &nbsp;{ context.symbol}</Button></span>:<span></span>}

@@ -94,7 +94,7 @@ const UserHeader = () => {
           maxWidth="xl"
           style={{
             width: window.innerWidth,
-            backgroundColor: color,
+            backgroundColor: '#171b26',
             height: '100vh',
             borderRight: '1px solid #2A2F3F',
           }}
