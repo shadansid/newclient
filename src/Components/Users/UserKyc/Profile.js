@@ -4,23 +4,11 @@ import User6 from '@mui/icons-material/AccountCircle'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const UserProfile = ({ bg }) => {
+const Profile = ({ bg }) => {
   const [user, setUser] = useState(0)
   const navigate = useNavigate()
 
-  const Navigate = () => {
-    navigate('/userpanel/wallet/addmoney')
-  }
-
-  const Navigate2 = () => {
-    navigate('/userpanel/wallet/withdraw')
-  }
-
-
-  const Navigate3 = () => {
-    navigate('/trade')
-  }
-
+  
   useEffect(() => {
     axios
       .get('/userprofile')
@@ -130,47 +118,11 @@ const UserProfile = ({ bg }) => {
             </Box>
           </Box>
 
-          <Box
-            sx={{
-              display: 'flex',
-              gap: '50px',
-              alignItems: 'center',
-              height: '10vh',
-              width: '100%',
-              justifyContent: 'flex-end',
-            }}
-          >
-            <Box sx={{ display: { sm: 'flex', xs: 'none' }, gap: '20px' }}>
-              <Button
-                onClick={Navigate}
-                sx={{ padding: '4px', fontSize: '10px', backgroundColor: '#4f5aeb' }}
-                variant="contained"
-                
-              >
-                Deposite
-              </Button>
-              <Button
-                onClick={Navigate2}
-                sx={{ padding: '4px', fontSize: '10px', backgroundColor: '#4f5aeb' }}
-                variant="contained"
-            
-              >
-                Withdraw
-              </Button>
-              <Button
-                onClick={Navigate3}
-                sx={{ padding: '4px', fontSize: '10px', backgroundColor: '#4f5aeb' }}
-                variant="contained"
-               
-              >
-                Buy Crypto
-              </Button>
-            </Box>
-          </Box>
+          
         </Container>
       </div>
     </>
   )
 }
 
-export default UserProfile
+export default Profile

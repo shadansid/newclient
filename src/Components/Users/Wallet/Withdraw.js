@@ -15,8 +15,8 @@ let wemail = document.getElementById('wemail').value;
 
 let data = {
 
-    wamount:wamount,
-    wemail:wemail,
+    amount:amount,
+    email:email,
     wcoin:coin
 }
 axios.post('/internalwithdraw',data).then((res)=>{
@@ -29,25 +29,21 @@ axios.post('/internalwithdraw',data).then((res)=>{
 
   }
 
-  const exwithdraw = ()=>{
-    let wamount = document.getElementById('amount').value;
-    let wemail = document.getElementById('email').value;
-    
-    let data = {
-    
-        wamount:wamount,
-        wemail:wemail,
-        wcoin:coin
-    }
-    axios.post('/externalWithdraw',data).then((res)=>{
-        // console.log(res.data.msg)
-    })
-    
-    
-    
-    
-    
-      }
+
+  const [amount, setAmount] = useState("")  
+  const Amount = (e) => {
+      setAmount(e.target.value)
+
+  }
+
+  const [email, setEmail] = useState("")
+  const Email = (e) => {
+    setEmail(e.target.value)
+
+
+  }
+
+ 
 
   
     return (
@@ -64,9 +60,9 @@ axios.post('/internalwithdraw',data).then((res)=>{
 <MenuItem   sx={{color:'grey', display:'flex', alignItems:'center'}} value="DOGE"><img src="/static/images/coinimage/DOGE.png"  height='15px' width='15px' alt="" />&nbsp;DOGE</MenuItem>  
 </Select> 
 
-<input small type="number" min='1' id='wamount' placeholder='Amount' style={{background:'transparent',margin:'10px',height:'27px' ,input:{color:"grey"}, width:'74%',border:'1px solid grey', padding:'10px'}}/>
+<input small type="number" min='1' id='wamount' onChange={Amount} placeholder='Amount' style={{background:'transparent',margin:'10px',height:'27px' ,input:{color:"grey"}, width:'74%',border:'1px solid grey', padding:'10px'}}/>
 
-<input id='wemail' placeholder='Email Address'style={{background:'transparent',margin:'10px',height:'27px' ,input:{color:"grey"}, width:'74%',border:'1px solid grey', padding:'10px'}}/>
+<input id='wemail' onChange={Email} placeholder='Email Address'style={{background:'transparent',margin:'10px',height:'27px' ,input:{color:"grey"}, width:'74%',border:'1px solid grey', padding:'10px'}}/>
 
 <Button size='small' sx={{ fontSize:{sm:'11px',xs:'11px'}}} variant="contained" onClick={inwithdraw}>Withdraw</Button>
 </div>

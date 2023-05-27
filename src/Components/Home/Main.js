@@ -120,7 +120,7 @@ const Main = (props) => {
 
                 {/* <img src='/static/images/header.png'></img> */}
                 <Box>
-                  <Box sx={{display:{sm:'block',xs:'none'}, cursor: 'pointer', padding: '70px', background: `url('http://139.84.137.232/api/static/images/laptop.png')` }} >
+                  <Box sx={{display:{sm:'block',xs:'none'}, cursor: 'pointer', padding: '70px', background: `url('http://153.92.223.84/api/static/images/laptop.png')` }} >
                     <img
 
                       style={imgStyle}
@@ -129,7 +129,7 @@ const Main = (props) => {
                       onLoad={handleMouseOver}
 
 
-                      src='http://139.84.137.232/api/static/images/rocket.png' ></img></Box>
+                      src='http://153.92.223.84/api/static/images/rocket.png' ></img></Box>
 
 
                 </Box>
@@ -157,16 +157,16 @@ const Main = (props) => {
 
 
             <div style={{ width: '300px', height: '150px', backgroundColor: '', flexGrow: '1' }}>
-              <img src="http://139.84.137.232/api/static/images/vox2/1.png" height='150px' width='300px' alt="" />
+              <img src="http://153.92.223.84/api/static/images/vox2/1.png" height='150px' width='300px' alt="" />
             </div>
             <div style={{ width: '300px', height: '150px', backgroundColor: '', flexGrow: '1' }}>
-              <img src="http://139.84.137.232/api/static/images/vox2/2.jpg" height='150px' width='300px' alt="" />
+              <img src="http://153.92.223.84/api/static/images/vox2/2.jpg" height='150px' width='300px' alt="" />
             </div>
             <div style={{ width: '300px', height: '150px', backgroundColor: '', flexGrow: '1' }}>
-              <img src="http://139.84.137.232/api/static/images/vox2/3.png" height='150px' width='300px' alt="" />
+              <img src="http://153.92.223.84/api/static/images/vox2/3.png" height='150px' width='300px' alt="" />
             </div>
             <div style={{ width: '300px', height: '150px', backgroundColor: '', flexGrow: '1' }}>
-              <img src="http://139.84.137.232/api/static/images/vox2/4.png" height='150px' width='300px' alt="" />
+              <img src="http://153.92.223.84/api/static/images/vox2/4.png" height='150px' width='300px' alt="" />
             </div>
 
 
@@ -196,7 +196,7 @@ const Main = (props) => {
     </Box>
     <Box>
 
-      <img src="http://139.84.137.232/api/static/images/banner3.png" height="400px" width="400px"></img>
+      <img src="http://153.92.223.84/api/static/images/banner3.png" height="400px" width="400px"></img>
 
 
 
@@ -205,10 +205,10 @@ const Main = (props) => {
           {/* 
       <Box sx={{ display:'flex' , gap:'20px' , paddingTop:'80px'}}>
 
-          <div><img src="http://139.84.137.232/api/static/images/vox/1.png" height="170px" width="300px" alt="" /></div>
-          <div><img src="http://139.84.137.232/api/static/images/vox/2.jpg" height="170px" width="300px" alt="" /></div>
-          <div><img src="http://139.84.137.232/api/static/images/vox/3.png" height="170px" width="300px" alt="" /></div>
-          <div><img src="http://139.84.137.232/api/static/images/vox/4.png" height="170px" width="300px" alt="" /></div>
+          <div><img src="http://153.92.223.84/api/static/images/vox/1.png" height="170px" width="300px" alt="" /></div>
+          <div><img src="http://153.92.223.84/api/static/images/vox/2.jpg" height="170px" width="300px" alt="" /></div>
+          <div><img src="http://153.92.223.84/api/static/images/vox/3.png" height="170px" width="300px" alt="" /></div>
+          <div><img src="http://153.92.223.84/api/static/images/vox/4.png" height="170px" width="300px" alt="" /></div>
           </Box> */}
 
 
@@ -249,7 +249,7 @@ const Main = (props) => {
 
           </Box>
           <Box ><img style={imgStyle2} onMouseOut={handleMouseOut}
-            onMouseOver={handleMouseOver2} src="http://139.84.137.232/api/static/images/frontpc.png" alt="" /></Box>
+            onMouseOver={handleMouseOver2} src="http://153.92.223.84/api/static/images/frontpc.png" alt="" /></Box>
 
         </Box>
 
@@ -300,14 +300,14 @@ const Main = (props) => {
 
                 <Box sx={{ backgroundColor: (props.color == '#ffffff' ? '#1F2433' : '#f2f2f2'), borderRadius: '9px', display: 'flex', gap: '10px', padding: '20px' }}>
                   {/* <Icon1 sx={{ fill: '#3C6AF8', stroke: '', fontSize: '42px' }} /> */}
-                  <img src='http://139.84.137.232/api/static/images/gift.png' height='50px' width='50px' />
+                  <img src='http://153.92.223.84/api/static/images/gift.png' height='50px' width='50px' />
 
                   &nbsp; <Box>
                     <Box sx={{ fontSize: '16px', color: props.color, marginBottom: '10px' }}>Win up to $100 in Welcome Rewards</Box>
                     <Box sx={{ color: '#4D4E59' }}>Complete Beginner Tasks & Win Awesome Prize</Box></Box>
                 </Box>
                 <Box sx={{ backgroundColor: (props.color == '#ffffff' ? '#1F2433' : '#f2f2f2'), borderRadius: '9px', display: 'flex', gap: '10px', padding: '20px' }}>
-                  <img src='http://139.84.137.232/api/static/images/invite.png' height='50px' width='50px' />
+                  <img src='http://153.92.223.84/api/static/images/invite.png' height='50px' width='50px' />
                   {/* <Icon2 sx={{ fill: 'orange', stroke: '', fontSize: '42px' }} /> */}
                   &nbsp; <Box >
                     <Box sx={{ fontSize: '16px', color: props.color, marginBottom: '10px' }}>Invite Friends and Earn Rewards
@@ -316,7 +316,7 @@ const Main = (props) => {
                     </Box></Box>
                 </Box>
                 <Box sx={{ backgroundColor: (props.color == '#ffffff' ? '#1F2433' : '#f2f2f2'), borderRadius: '9px', display: 'flex', gap: '10px', padding: '20px' }}>
-                  <img src='http://139.84.137.232/api/static/images/reward.png' height='50px' width='50px' />
+                  <img src='http://153.92.223.84/api/static/images/reward.png' height='50px' width='50px' />
                   {/* <Icon3 sx={{ fill: '#F4C184', stroke: '', fontSize: '42px' }} /> */}
                   &nbsp; <Box>
                     <Box sx={{ fontSize: '16px', color: props.color, marginBottom: '10px' }}>Enjoy $5,000,000+ Prize Pools</Box>
@@ -349,16 +349,16 @@ const Main = (props) => {
 
 
             <div style={{ width: '300px', height: '150px', backgroundColor: '', flexGrow: '1' }}>
-              <img src="http://139.84.137.232/api/static/images/vox2/1.png" height='150px' width='300px' alt="" />
+              <img src="http://153.92.223.84/api/static/images/vox2/1.png" height='150px' width='300px' alt="" />
             </div>
             <div style={{ width: '300px', height: '150px', backgroundColor: '', flexGrow: '1' }}>
-              <img src="http://139.84.137.232/api/static/images/vox2/2.jpg" height='150px' width='300px' alt="" />
+              <img src="http://153.92.223.84/api/static/images/vox2/2.jpg" height='150px' width='300px' alt="" />
             </div>
             <div style={{ width: '300px', height: '150px', backgroundColor: '', flexGrow: '1' }}>
-              <img src="http://139.84.137.232/api/static/images/vox2/3.png" height='150px' width='300px' alt="" />
+              <img src="http://153.92.223.84/api/static/images/vox2/3.png" height='150px' width='300px' alt="" />
             </div>
             <div style={{ width: '300px', height: '150px', backgroundColor: '', flexGrow: '1' }}>
-              <img src="http://139.84.137.232/api/static/images/vox2/4.png" height='150px' width='300px' alt="" />
+              <img src="http://153.92.223.84/api/static/images/vox2/4.png" height='150px' width='300px' alt="" />
             </div>
 
 

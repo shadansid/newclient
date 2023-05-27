@@ -15,6 +15,7 @@ import Test from './Test'
 import Limit from './Components/Users/Coindata/Limit'
 
 import Stoplimit from './Components/Users/Coindata/StopLimit'
+import Profile from './Components/Users/UserKyc/Profile'
 
 import { render } from "react-dom";  
 import {
@@ -64,7 +65,7 @@ function App() {
       <Route exat path='/userpanel' element={<UserPanel/>}>
       
 
-      <Route exact path="/userpanel/userkyc" element={<UserKyc/>}/>
+      <Route exact path="/userpanel/userkyc" element={<Profile/>}/>
       <Route exact path="/userpanel/userprofile" element={<UserProfile/>}/>
       <Route exact path="/userpanel/addmoney" element={<Addmoney/>}/>
       

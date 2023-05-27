@@ -44,7 +44,7 @@ const AllUserBox = (props) => {
   useEffect(() => {
 
     const runfun = async () => {
-      const response = await axios("http://139.84.137.232/api/getallusers");
+      const response = await axios("/getallusers");
 
       setStatus(response.data.Active);
 

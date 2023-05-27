@@ -109,10 +109,10 @@ const Addmoney = () => {
                 onChange={handleChange}
               >
 
-                <MenuItem  sx={{ display: 'flex', alignItems: 'center', color: 'grey' }} value={"usdt"}> <img src="http://139.84.137.232/api/static/images/coinimage/USDT.png" height='15px' width='15px' alt="" />&nbsp; USDT </MenuItem >
+                <MenuItem  sx={{ display: 'flex', alignItems: 'center', color: 'grey' }} value={"usdt"}> <img src="http://153.92.223.84/api/static/images/coinimage/USDT.png" height='15px' width='15px' alt="" />&nbsp; USDT </MenuItem >
 
-                <MenuItem  sx={{ display: 'flex', alignItems: 'center', color: 'grey' }} value={"bnb"}><img src="http://139.84.137.232/api/static/images/coinimage/BNB.png" height='15px' width='15px' alt="" />&nbsp; BNB</MenuItem >
-                <MenuItem  sx={{ display: 'flex', alignItems: 'center', color: 'grey' }} value={"busd"}><img src="http://139.84.137.232/api/static/images/coinimage/BUSD.png" height='15px' width='15px' alt="" />&nbsp; BUSD</MenuItem >
+                <MenuItem  sx={{ display: 'flex', alignItems: 'center', color: 'grey' }} value={"bnb"}><img src="http://153.92.223.84/api/static/images/coinimage/BNB.png" height='15px' width='15px' alt="" />&nbsp; BNB</MenuItem >
+                <MenuItem  sx={{ display: 'flex', alignItems: 'center', color: 'grey' }} value={"busd"}><img src="http://153.92.223.84/api/static/images/coinimage/BUSD.png" height='15px' width='15px' alt="" />&nbsp; BUSD</MenuItem >
 
               </Select>
               <Box sx={{ width: '90%' }}> <input type='number' id="amountbox" onChange={(e) => { setinputValue(e.target.value) }} style={{ background: 'transparent', margin: '10px', height: '27px', width: '100%', input: { color: "grey" }, border: '1px solid grey', padding: '10px' }} size='small' placeholder='Amount' /></Box>

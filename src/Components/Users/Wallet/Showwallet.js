@@ -7,6 +7,8 @@ const Showwallet = () => {
   const [walletdata, setwalletdata] = useState(0)
   const [total, settotal] = useState(0)
 
+  const [TotalAmount, setTotalAmount] = useState(0)
+ const [TotalAmountBTC, setTotalAmuntBTC] = useState(0)
 
 
   const [bcex, setbcex] = useState(0)
@@ -17,7 +19,7 @@ const Showwallet = () => {
 
       const bcexcoin = await axios.get('/bcexprice');
       setbcex(bcexcoin.data)
-      console.log(bcexcoin.data)
+      // console.log("this is Per BCEX Token " + bcexcoin.data)
 
     }
     BCEX()
@@ -75,7 +77,13 @@ const Showwallet = () => {
         console.log(response.data)
         setEachCoinPrice(response.data)
 
+        console.log("Wallet Data is hERE ! " + walletdata.msg)
+        console.log("Each Coin Price  is HERE ! " + EachCoinPrice)
+  
+       
 
+
+  
       }
 
       fetchData();
@@ -83,7 +91,6 @@ const Showwallet = () => {
 
 
       // console.log('this is each coin price' + EachCoinPrice.BTC.USD)
-
 
 
 
@@ -117,6 +124,40 @@ const Showwallet = () => {
         // console.log(EachCoinPrice)
 
       }
+
+
+      // console.log(EachCoinPrice['BTC'].USD)
+      let TotalAmountArray = []
+     let total_sum = 0
+      walletdata.msg.map((E) => {
+       
+       
+     
+       
+        TotalAmountArray.push( E.quantity * (EachCoinPrice[E.currency.toUpperCase()] === undefined ? (E.quantity * bcex).toFixed(3) : EachCoinPrice[E.currency.toUpperCase()].USD))
+
+
+
+     console.log(   E.quantity * (EachCoinPrice[E.currency.toUpperCase()] === undefined ? (E.quantity * bcex).toFixed(3) : EachCoinPrice[E.currency.toUpperCase()].USD)
+     )
+      })
+
+        console.log(TotalAmountArray)
+
+
+
+         
+     
+      for (let i in TotalAmountArray) {
+          
+        total_sum += TotalAmountArray[i]
+      }
+
+      console.log(total_sum)
+
+      setTotalAmount(total_sum.toFixed(5))
+      // setTotalAmuntBTC((total_sum/EachCoinPrice.['BTC'].USD).toFixed(8))
+
 
 
     }
@@ -206,7 +247,7 @@ const Showwallet = () => {
             <div>
               <div style={{ fontSize: '10px', color: '#a9a9a9', lineHeight: 3 }}>Total Balance (USDT)</div>
 
-              <div style={{ fontSize: '18px', color: 'white' }}>234.982 USDT</div>
+              <div style={{ fontSize: '18px', color: 'white' }}>{TotalAmount && TotalAmount} USDT</div>
 
             </div>
 
@@ -215,7 +256,7 @@ const Showwallet = () => {
                 fontSize: '10px', color: '#a9a9a9', lineHeight: 3
               }}>Total Balance (BTC)</div>
 
-              <div style={{ fontSize: '18px', color: 'white' }}>0.0982 BTC</div>
+              <div style={{ fontSize: '18px', color: 'white' }}>{TotalAmountBTC && TotalAmountBTC} BTC</div>
 
             </div>
 
@@ -239,7 +280,7 @@ const Showwallet = () => {
                   {/* {ele.type== 'credit'? :} */}
                   <div style={{ width: '20%' }}>
                     <img
-                      src={`http://139.84.137.232/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`}
+                      src={`http://153.92.223.84/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`}
                       alt=""
                       height="30px"
                       width="30px"
@@ -271,7 +312,10 @@ const Showwallet = () => {
                       width: '30%',
                     }}
                   >
-                    $ &nbsp; {ele.quantity * (EachCoinPrice[ele.currency.toUpperCase()] === undefined ? (ele.quantity * bcex).toFixed(3) : EachCoinPrice[ele.currency.toUpperCase()].USD)}
+                    $ &nbsp; {ele.quantity * (EachCoinPrice[ele.currency.toUpperCase()] === undefined ?  bcex: EachCoinPrice[ele.currency.toUpperCase()].USD)}
+
+
+                    {/* {EachCoinPrice[ele.currency.toUpperCase()] === undefined ?  "this is quantity of bcex " + ele.quantity * bcex:"ele.quantity"} */}
                   </Box>
 
 

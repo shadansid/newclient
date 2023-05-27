@@ -102,7 +102,7 @@ export default function Registration() {
     }, 3000) 
 
     if (validemail && validpass) {
-      fetch('http://139.84.137.232/api/adduser', {
+      fetch('/adduser', {
         method: 'POST',
         body: JSON.stringify(formdata),
         headers: {
@@ -330,14 +330,14 @@ export default function Registration() {
 
             <Box sx={{ backgroundColor: '#1F2433', borderRadius: '9px', display: 'flex', gap: '10px', padding: '20px' }}>
               {/* <Icon1 sx={{ fill: '#3C6AF8', stroke: '', fontSize: '42px' }} /> */}
-              <img src='http://139.84.137.232/api/static/images/gift.png' height='50px' width='50px' />
+              <img src='http://153.92.223.84/api/static/images/gift.png' height='50px' width='50px' />
 
               &nbsp; <Box>
                 <Box sx={{ fontSize: '16px', color: 'white', marginBottom: '10px' }}>Win up to $100 in Welcome Rewards</Box>
                 <Box sx={{ color: '#4D4E59' }}>Complete Beginner Tasks & Win Awesome Prize</Box></Box>
             </Box>
             <Box sx={{ backgroundColor: '#1F2433', borderRadius: '9px', display: 'flex', gap: '10px', padding: '20px' }}>
-              <img src='http://139.84.137.232/api/static/images/invite.png' height='50px' width='50px' />
+              <img src='http://153.92.223.84/api/static/images/invite.png' height='50px' width='50px' />
               {/* <Icon2 sx={{ fill: 'orange', stroke: '', fontSize: '42px' }} /> */}
               &nbsp; <Box >
                 <Box sx={{ fontSize: '16px', color: 'white', marginBottom: '10px' }}>Invite Friends and Earn Rewards
@@ -346,7 +346,7 @@ export default function Registration() {
                 </Box></Box>
             </Box>
             <Box sx={{ backgroundColor: '#1F2433', borderRadius: '9px', display: 'flex', gap: '10px', padding: '20px' }}>
-              <img src='http://139.84.137.232/api/static/images/reward.png' height='50px' width='50px' />
+              <img src='http://153.92.223.84/api/static/images/reward.png' height='50px' width='50px' />
               {/* <Icon3 sx={{ fill: '#F4C184', stroke: '', fontSize: '42px' }} /> */}
               &nbsp; <Box>
                 <Box sx={{ fontSize: '16px', color: 'white', marginBottom: '10px' }}>Enjoy $5,000,000+ Prize Pools</Box>

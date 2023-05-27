@@ -16,7 +16,7 @@ const Loading = () => {
         }}
       >
         <img
-          src={`http://139.84.137.232/api/static/images/loading2.gif`}
+          src={`http://153.92.223.84/api/static/images/loading2.gif`}
           height="30px"
           width="30px"
           alt="" 

@@ -55,7 +55,7 @@ const WalletDashboard = ({ bg }) => {
               {/* {ele.type== 'credit'? :} */}
               <Box style={{ width: '20%' }}>
                 <img
-                  src={`http://139.84.137.232/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`}
+                  src={`http://153.92.223.84/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`}
                   alt=""
                   height="30px"
                   width="30px"

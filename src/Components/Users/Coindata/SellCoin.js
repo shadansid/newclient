@@ -246,7 +246,7 @@ const limitX = ()=>{
 
 <div>                                                                           
 
-<input type="number" disabled  placeholder={context.symbol + " " + ": " +     (context.custom?avblsellCoin.msg:avblsellCoin.msg).toFixed(3) } style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
+<input type="number" disabled  placeholder={"Token" + " " + ": " +      (context.custom?avblsellCoin.msg*1:avblsellCoin.msg*1).toFixed(3) } style={{background:'transparent',padding:'15px',width:'38ch' ,margin:'10px', border:'1px solid grey'}} />
 </div>
 {limit? <div>
 
