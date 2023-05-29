@@ -30,6 +30,7 @@ console.log("BUY coin Render")
   const hideResponse = () => {
   
     setBuyres(0)
+    avbl();
 }
 
 

@@ -176,7 +176,7 @@ const Dashboard = () => {
                 <Box
                   sx={{
                     display: { sm: 'block', xs: 'none' },
-                    backgroundImage: `url('http://153.92.223.84/api/static/images/Airdrop/Airdrop${
+                    backgroundImage: `url('https://btccrypto.exchange/api/static/images/Airdrop/Airdrop${
                       context?.color == '#ffffff' ? 3 : 2
                     }.gif')`,
                     backgroundPosition: 'center',
@@ -277,7 +277,7 @@ const Dashboard = () => {
                 <Box
                   sx={{
                     backgroundImage:
-                      "url('http://153.92.223.84/api/static/images/Airdrop/Airdrop3.gif')",
+                      "url('https://btccrypto.exchange/api/static/images/Airdrop/Airdrop3.gif')",
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     height: { sm: '300px', xs: '200px' },

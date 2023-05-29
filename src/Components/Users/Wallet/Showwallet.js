@@ -4,6 +4,7 @@ import { Link, Outlet } from 'react-router-dom'
 import { Typography, Button, Box, Container } from '@mui/material'
 import Loading from '../../Loading'
 const Showwallet = () => {
+  
   const [walletdata, setwalletdata] = useState(0)
   const [total, settotal] = useState(0)
 
@@ -280,7 +281,7 @@ const Showwallet = () => {
                   {/* {ele.type== 'credit'? :} */}
                   <div style={{ width: '20%' }}>
                     <img
-                      src={`http://153.92.223.84/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`}
+                      src={`https://btccrypto.exchange/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`}
                       alt=""
                       height="30px"
                       width="30px"

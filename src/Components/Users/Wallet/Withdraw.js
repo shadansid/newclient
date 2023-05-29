@@ -1,9 +1,12 @@
 import React, {useState} from 'react'
-import {Typography,Button,TextField,Select,MenuItem} from '@mui/material'
+import {Typography,Button,TextField,Select,MenuItem,Alert} from '@mui/material'
 import axios from 'axios';
+// import {Container, Typography, Toolbar,IconButton, Button,Badge,Grid,Divider, Box, Slider,} from '@mui/material'
 const Withdraw = () => {
   
-  const [coin,setcoin] = useState("");
+  const [coin, setcoin] = useState("");
+  
+  const [response, setresponse] = useState(0)
   const handleChange = (event) => {
     setcoin(event.target.value);
   };
@@ -20,7 +23,8 @@ let data = {
     wcoin:coin
 }
 axios.post('/internalwithdraw',data).then((res)=>{
-    // console.log(res.data.msg)
+    // console.log("yayha dekh  !!!!!!!@@" + res.data.msg)
+    setresponse(res.data)
 })
 
 
@@ -43,7 +47,11 @@ axios.post('/internalwithdraw',data).then((res)=>{
 
   }
 
- 
+  const hideResponse = () => {
+  
+    setresponse(0)
+}
+
 
   
     return (
@@ -67,7 +75,25 @@ axios.post('/internalwithdraw',data).then((res)=>{
 <Button size='small' sx={{ fontSize:{sm:'11px',xs:'11px'}}} variant="contained" onClick={inwithdraw}>Withdraw</Button>
 </div>
 
-</div>
+        </div>
+        
+
+
+
+
+
+        {response.msg ? <div style={{ position: 'fixed', top: '0', right: '0', bottom: '0', left: '0', margin: 'auto', height: '100vh',  backgroundColor: 'rgb(23 27 38 / 85%)', display: 'flex', justifyContent: 'center', alignItems: 'center',flexDirection:'column', zIndex:'10' }}>
+                  
+                  
+                  <Alert sx={{ backgroundColor: '#1B202E', color: 'white', padding: '20px', boxShadow: '1px 1px -2px ', display:'flex', flexDirection:'column' }} severity="success">
+                    <div>{response.msg}</div>
+                  <Button size='small' variant='contained' onClick={hideResponse}>OK</Button>
+                  
+                  </Alert>
+
+                  
+                
+                </div> : <></>}
     
     </>
   

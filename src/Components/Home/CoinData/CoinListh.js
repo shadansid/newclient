@@ -77,13 +77,13 @@ function CoinListh(props) {
         >
           {props.color == 'g' ? (
             <img
-              src="http://153.92.223.84/api/static/images/up.png"
+              src="https://btccrypto.exchange/api/static/images/up.png"
               height="26px"
               alt=""
             />
           ) : (
             <img
-              src="http://153.92.223.84/api/static/images/down.png"
+              src="https://btccrypto.exchange/api/static/images/down.png"
               height="26px"
               alt=""
             />

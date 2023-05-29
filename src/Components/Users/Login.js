@@ -70,7 +70,7 @@ const loginData = {
  
 
 
-fetch('/login', {
+fetch('https://btccrypto.exchange/api/login', {
   method: 'POST',
   body:JSON.stringify(loginData),
   headers: {

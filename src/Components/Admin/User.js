@@ -128,7 +128,7 @@ const rows = [
 export default function CollapsibleTable() {
   
     const [users,setUsers]= useState({})
- fetch('/getallusers').then((response) => response.json()).then((data) => setUsers(data));
+ fetch('https://btccrypto.exchange/api/getallusers').then((response) => response.json()).then((data) => setUsers(data));
   
   
     return (

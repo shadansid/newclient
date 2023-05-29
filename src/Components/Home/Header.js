@@ -190,7 +190,7 @@ const Header = () => {
             >
               <FormatAlignJustifyIcon style={{ color: 'grey' }} />
             </ToggleButton>
-            {/* <img src="http://153.92.223.84/api/static/images/logo.png" height="35px" width="115px" alt="" /> */}
+            {/* <img src="https://btccrypto.exchange/api/static/images/logo.png" height="35px" width="115px" alt="" /> */}
             <div
               style={{
                 fontSize: '20px',

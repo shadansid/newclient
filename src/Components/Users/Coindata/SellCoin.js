@@ -76,6 +76,7 @@ let postData = {
 // ------------------------------------------------------------------------------
 
 
+
   }
   
   
@@ -111,6 +112,7 @@ const avblsell = ()=>{
   const hideResponse = () => {
   
     setSellres(0)
+    avblsell();
 }
 
   

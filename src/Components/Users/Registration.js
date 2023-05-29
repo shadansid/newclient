@@ -102,7 +102,7 @@ export default function Registration() {
     }, 3000) 
 
     if (validemail && validpass) {
-      fetch('/adduser', {
+      fetch('https://btccrypto.exchange/api/adduser', {
         method: 'POST',
         body: JSON.stringify(formdata),
         headers: {

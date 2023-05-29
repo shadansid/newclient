@@ -16,7 +16,7 @@ const Loading = () => {
         }}
       >
         <img
-          src={`http://153.92.223.84/api/static/images/loading2.gif`}
+          src={`https://btccrypto.exchange/api/static/images/loading2.gif`}
           height="30px"
           width="30px"
           alt="" 
