@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2023 at 11:03 PM
+-- Generation Time: Jun 03, 2023 at 06:16 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -40,25 +40,12 @@ CREATE TABLE `addresses` (
 
 INSERT INTO `addresses` (`userid`, `usdtaddress`, `ethaddress`, `btcaddress`) VALUES
 ('747bcee4-2cb3-4c3d-b3d3-91096b135310', '0x3DB379C1029C99b59f9C36595af49c42f18286c5', '0xeCBf3A65aE64333006642d30ad2032b10B8dA7a9', '0xf581a660AE3Ec4Bf46A71626b9F627B44Ce9cafB'),
-('01c2f618-1efd-4ecf-a0ed-a9e53e378817', '0x5DabA6f04256f5EcE5c3f3091D30a78E6B168972', '0x4534D2A6Cff01Fd4d2725dC548c798052a750fba', '0x418794E9b058B1b065a3A5520AAb18080a813CE6'),
-('9b7d8370-422a-41c7-adda-fd84a706c3d4', '0x41EA16F9aA5cb22E998D4CC216e2afc66809B4D5', '0x9462Ee592186f12c629Cc6884115d5bf8C72B8E1', '0xFA609Fe05a062589e77c5B9D3F23051105320F45');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `airdrop`
---
-
-CREATE TABLE `airdrop` (
-  `Airdrop` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `airdrop`
---
-
-INSERT INTO `airdrop` (`Airdrop`) VALUES
-('http://localhost:5000/static/images/Airdrop/airdrop.jpg');
+('9b7d8370-422a-41c7-adda-fd84a706c3d4', '0x41EA16F9aA5cb22E998D4CC216e2afc66809B4D5', '0x9462Ee592186f12c629Cc6884115d5bf8C72B8E1', '0xFA609Fe05a062589e77c5B9D3F23051105320F45'),
+('A20307F1', '0xCb0efC201b7AA55A7c9424aDa3E5c0792967Ed70', '0xCd10a5125bfae44F8bFCf1446038355e8A9bf91E', '0x7ee8f3790894d834B601B51CBC2FbD2bF0B8c8Bb'),
+('4BCE6829', '0x90C953bDEffF185741Ec2FE180c8DB88CC243Af2', '0x33c30eBaf04cA2A1852b1762D3D6B716DB27017c', '0x3762E0656a8368190D0e49D2C1baC32e0e402841'),
+('110C2A61', '0xF56307Fe0096Fb4DDd973Fb2AE95A29b971c5cDD', '0x8a2F48cae04d325Eb388D9981e7FCcD3Aaa93f00', '0x024eb055527ceBbb65191AbC72D9Bfa9Df3Cb90e'),
+('924E4BB7', '0xb1F4E44A0bE1aEd30bA49b271af86290b448cb05', '0x0834Aed55b368cf9D4e62C0c228D547837Af8C89', '0xAE00CC7B97cAc398FBc41f1bc5e5739AC4da9F96'),
+('60BBDB81', '0x5523E15503972BA1d9DE2B63C7e412b54DE56759', '0x3Ec54e7f8cc3CA3E4F57ca4A4fE2b64ef94f558b', '0xaBaBbBCD87cdCca540e8e4421893D324D788C9A5');
 
 -- --------------------------------------------------------
 
@@ -168,10 +155,13 @@ INSERT INTO `emailverification` (`UserId`, `email`, `vcode`, `createddate`) VALU
 ('d8591c30-7545-4501-b633-96e650d2a5a0', 'zaratarakkum@gmail.com', 527232, '2023-04-21 03:54:17'),
 ('9b7d8370-422a-41c7-adda-fd84a706c3d4', 'cryptobtc349@gmail.com', 733957, '2023-05-13 02:08:48'),
 ('0239ab3a-da59-42b2-a16f-e79dadec4869', 'kabac79405@carpetra.com', 544001, '2023-05-13 02:10:15'),
-('e31e1658-8927-4ae5-b9b7-26f32af63624', 'qnextsolution262@gmail.com', 382354, '2023-05-13 02:12:27'),
-('01c2f618-1efd-4ecf-a0ed-a9e53e378817', 'adm.globiz@gmail.com', 112749, '2023-05-13 22:23:17'),
+('110C2A61', 'qnextsolution262@gmail.com', 117906, '2023-05-13 02:12:27'),
+('924E4BB7', 'adm.globiz@gmail.com', 969728, '2023-05-13 22:23:17'),
 ('80a28164-1f22-4656-aabb-051b9bc1f7ba', 'arbtoken369@gmail.com', 485697, '2023-05-13 22:28:56'),
-('a41630bd-1e2e-464e-a7ba-5ddad82a002f', 'danielforry10@gmail.com', 855262, '2023-05-25 19:30:06');
+('4BCE6829', 'danielforry10@gmail.com', 526881, '2023-05-25 19:30:06'),
+('A20307F1', 'shadan7053sid@gmail.com', 897272, '2023-05-31 15:53:50'),
+('D190A240', 'mebahij708@ozatvn.com', 872870, '2023-05-31 17:03:18'),
+('60BBDB81', 'yiripan278@ozatvn.com', 796163, '2023-06-03 18:16:50');
 
 -- --------------------------------------------------------
 
@@ -207,7 +197,14 @@ CREATE TABLE `inandouthistory` (
 
 INSERT INTO `inandouthistory` (`userid`, `fromadd`, `toadd`, `coin`, `amount`, `type`, `dt`) VALUES
 ('747bcee4-2cb3-4c3d-b3d3-91096b135310', 'admin@bcex', '747bcee4-2cb3-4c3d-b3d3-91096b135310', 'usdt', 1200, 'Deposite', '2023-05-30 02:28:20'),
-('747bcee4-2cb3-4c3d-b3d3-91096b135310', 'admin@bcex', '747bcee4-2cb3-4c3d-b3d3-91096b135310', 'usdt', 200, 'Deposite', '2023-05-30 02:28:25');
+('747bcee4-2cb3-4c3d-b3d3-91096b135310', 'admin@bcex', '747bcee4-2cb3-4c3d-b3d3-91096b135310', 'usdt', 200, 'Deposite', '2023-05-30 02:28:25'),
+('747bcee4-2cb3-4c3d-b3d3-91096b135310', 'wearning52@gmail.com', 'cryptobtc349@gmail.com', 'ETH', 5, 'withdraw', '2023-05-31 15:46:03'),
+('A20307F1', 'admin@bcex', 'A20307F1', 'usdt', 1200, 'Deposite', '2023-05-31 17:06:13'),
+('A20307F1', 'shadan7053sid@gmail.com', 'wearning52@gmail.com', 'USDT', 300, 'withdraw', '2023-06-02 16:03:54'),
+('A20307F1', 'shadan7053sid@gmail.com', 'wearning52@gmail.com', 'USDT', 230, 'withdraw', '2023-06-02 16:06:17'),
+('A20307F1', 'shadan7053sid@gmail.com', 'wearning52@gmail.com', 'USDT', 80, 'withdraw', '2023-06-02 16:10:15'),
+('A20307F1', 'shadan7053sid@gmail.com', 'wearning52@gmail.com', 'USDT', 12, 'withdraw', '2023-06-02 16:11:33'),
+('60BBDB81', 'admin@bcex', '60BBDB81', 'usdt', 1200, 'Deposite', '2023-06-03 18:19:21');
 
 -- --------------------------------------------------------
 
@@ -285,8 +282,36 @@ CREATE TABLE `referral` (
 
 INSERT INTO `referral` (`userid`, `yourcode`, `ReferralCode`, `dt`) VALUES
 ('747bcee4-2cb3-4c3d-b3d3-91096b135310', 'B1498FB1', '', '2023-04-21 03:56:20'),
-('01c2f618-1efd-4ecf-a0ed-a9e53e378817', '3168166A', '', '2023-05-22 16:17:30'),
-('9b7d8370-422a-41c7-adda-fd84a706c3d4', 'C5A7A16F', '', '2023-05-26 17:04:12');
+('9b7d8370-422a-41c7-adda-fd84a706c3d4', 'C5A7A16F', '', '2023-05-26 17:04:12'),
+('A20307F1', '7120E6FD', 'sid', '2023-05-31 17:04:49'),
+('4BCE6829', '32CB0302', '7120E6FD', '2023-06-02 17:09:41'),
+('110C2A61', 'E5D2E203', '7120E6FD', '2023-06-02 17:30:27'),
+('924E4BB7', '2A600F08', '7120E6FD', '2023-06-02 22:27:00'),
+('60BBDB81', '9A892004', '7120E6FD', '2023-06-03 18:16:50');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `referralwallet`
+--
+
+CREATE TABLE `referralwallet` (
+  `userid` varchar(70) NOT NULL,
+  `currency` varchar(55) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `refercode` varchar(55) NOT NULL,
+  `dt` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `referralwallet`
+--
+
+INSERT INTO `referralwallet` (`userid`, `currency`, `quantity`, `refercode`, `dt`) VALUES
+('924E4BB7', 'BCEX', 20, '7120E6FD', '2023-06-02 22:27:03'),
+('A20307F1', 'BCEX', 10, '2A600F08', '2023-06-02 22:27:03'),
+('60BBDB81', 'BCEX', 20, '7120E6FD', '2023-06-03 18:16:53'),
+('A20307F1', 'BCEX', 10, '9A892004', '2023-06-03 18:16:53');
 
 -- --------------------------------------------------------
 
@@ -481,7 +506,15 @@ INSERT INTO `transactionhistory` (`UserId`, `quantity`, `amount`, `quantityvalue
 ('747bcee4-2cb3-4c3d-b3d3-91096b135310', 614.112, 0.07313, 44.91, 'DOGE', 'credit', 'a569e857-9f1b-4262-9feb-e4c5a25919ca', 'success', 0.09, 0.2, 45, '2023-05-29 16:17:06'),
 ('747bcee4-2cb3-4c3d-b3d3-91096b135310', 40940.8, 0.07313, 2994, 'DOGE', 'credit', 'dd3dacaf-0e8c-4732-b945-f5f57aac4f2d', 'success', 6, 0.2, 3000, '2023-05-29 16:17:18'),
 ('747bcee4-2cb3-4c3d-b3d3-91096b135310', 0.414764, 1898.48, 787.422, 'ETH', 'credit', '446631be-dde6-4b21-8e7e-14de4566b5b8', 'success', 1.578, 0.2, 789, '2023-05-29 16:21:32'),
-('747bcee4-2cb3-4c3d-b3d3-91096b135310', 0.414738, 1898.6, 787.422, 'ETH', 'credit', '446f95e7-b2a5-4f73-b771-08dcc1996e50', 'success', 1.578, 0.2, 789, '2023-05-29 16:22:15');
+('747bcee4-2cb3-4c3d-b3d3-91096b135310', 0.414738, 1898.6, 787.422, 'ETH', 'credit', '446f95e7-b2a5-4f73-b771-08dcc1996e50', 'success', 1.578, 0.2, 789, '2023-05-29 16:22:15'),
+('e4fe82c7-aef2-40ff-8208-8ecfcc659f77', 987.141, 0.5055, 499, 'XRP', 'credit', 'df2f39a1-10a0-4934-9448-99a42870bc00', 'success', 1, 0.2, 500, '2023-05-31 15:56:21'),
+('e4fe82c7-aef2-40ff-8208-8ecfcc659f77', 1.2999, 307.1, 399.2, 'BNB', 'credit', 'df1592d2-8ce7-493f-87ef-e9870bef8284', 'success', 0.8, 0.2, 400, '2023-05-31 15:57:24'),
+('A20307F1', 7984, 0.05, 399.2, 'BCEX', 'credit', '87c90629-60c9-4c31-abf3-72ebafd45951', 'success', 0.8, 0.2, 400, '2023-05-31 17:07:20'),
+('A20307F1', 0.0233539, 1901.65, 44.411, 'ETH', 'credit', 'efa39298-b401-4864-befe-29894283c7e0', 'success', 0.089, 0.2, 44.5, '2023-06-03 15:49:09'),
+('60BBDB81', 9980, 0.05, 499, 'BCEX', 'credit', '71b29a61-0e66-47e6-8140-0184968d770e', 'success', 1, 0.2, 500, '2023-06-03 18:19:43'),
+('60BBDB81', 4.70533, 21.21, 99.8, 'SOL', 'credit', 'b0e82f00-ce7e-4f37-a0ae-351147e2e26b', 'success', 0.2, 0.2, 100, '2023-06-03 18:20:16'),
+('60BBDB81', 0.104819, 1904.23, 199.6, 'ETH', 'credit', '9fc6776c-606c-440a-bee2-69abc730164c', 'success', 0.4, 0.2, 200, '2023-06-03 18:20:24'),
+('60BBDB81', 0.974609, 307.2, 299.4, 'BNB', 'credit', 'f6e1eba4-e783-4452-8e1d-3de51b1470ad', 'success', 0.6, 0.2, 300, '2023-06-03 18:20:36');
 
 -- --------------------------------------------------------
 
@@ -511,9 +544,32 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`sno`, `userid`, `Name`, `date`, `email`, `Phone`, `Pancard`, `adharcard`, `password`, `referral`, `Active`, `Role`, `verified`, `lastlogin`) VALUES
-(163, '747bcee4-2cb3-4c3d-b3d3-91096b135310', 'wearning web', '2023-04-21 03:56:20', 'wearning52@gmail.com', '234', '432', '324', '$2b$10$sl0zjWfHtUO8xRPxbHsYrusdo319jhq4XkDuUKbvtPfEYCzRltxly', NULL, 1, 1, 1, '2023-05-30 02:19:49'),
-(185, '01c2f618-1efd-4ecf-a0ed-a9e53e378817', 'ss', '2023-05-22 16:17:30', 'adm.globiz@gmail.com', NULL, NULL, NULL, '$2b$10$V734U4DsC/0IDRLX5BArC.q1AZmmzvCVg14re3uLYKZSZM6NfQ8cy', NULL, 1, 0, 1, '2023-05-26 16:42:27'),
-(189, '9b7d8370-422a-41c7-adda-fd84a706c3d4', 'Crypto', '2023-05-26 17:04:12', 'cryptobtc349@gmail.com', NULL, NULL, NULL, '$2b$10$d/DBvQjvtUBOi3zsJv9OOOhmNYBZ5.KDxmBvjte5uesNlAKch9pIu', NULL, 1, 0, 1, '2023-05-30 00:48:46');
+(163, '747bcee4-2cb3-4c3d-b3d3-91096b135310', 'wearning web', '2023-04-21 03:56:20', 'wearning52@gmail.com', '234', '432', '324', '$2b$10$sl0zjWfHtUO8xRPxbHsYrusdo319jhq4XkDuUKbvtPfEYCzRltxly', NULL, 1, 1, 1, '2023-06-03 21:21:45'),
+(189, '9b7d8370-422a-41c7-adda-fd84a706c3d4', 'Crypto', '2023-05-26 17:04:12', 'cryptobtc349@gmail.com', NULL, NULL, NULL, '$2b$10$d/DBvQjvtUBOi3zsJv9OOOhmNYBZ5.KDxmBvjte5uesNlAKch9pIu', NULL, 1, 0, 1, '2023-05-31 15:45:33'),
+(192, 'A20307F1', 'sid', '2023-05-31 17:04:49', 'shadan7053sid@gmail.com', NULL, NULL, NULL, '$2b$10$VZC8jLIgwWVcIMVr2jbmFuKg55Sl7Y0MthMZ2QFQSdPR/Rk9/BIlG', NULL, 1, 0, 1, '2023-06-03 18:55:56'),
+(193, '4BCE6829', 'Danny', '2023-06-02 17:09:41', 'danielforry10@gmail.com', NULL, NULL, NULL, '$2b$10$zPnrLJJ40WuGvB8Sp04xy.FEDkzTtlr7PBSXpTANuCrl3P8jSnhBa', NULL, 1, 0, 1, NULL),
+(194, '110C2A61', 'q next', '2023-06-02 17:30:27', 'qnextsolution262@gmail.com', NULL, NULL, NULL, '$2b$10$C82Wee/.SQ5847O7ekn23.WnrHC.zQoNwcVJQOWu2Z1JFrgw.QBTi', NULL, 1, 0, 1, NULL),
+(195, '924E4BB7', 'Admin', '2023-06-02 22:27:00', 'adm.globiz@gmail.com', NULL, NULL, NULL, '$2b$10$FI5oRZTl8u/8Qnj0yCLaqe5jFg6gsApnTDKh/jG9Wd5wHcAJlzBZC', NULL, 1, 0, 1, NULL),
+(196, '60BBDB81', 'TEMP', '2023-06-03 18:16:50', 'yiripan278@ozatvn.com', NULL, NULL, NULL, '$2b$10$UjRI9SFj/z5sG3T2h6F4JussOyz0I2J3PTvC.hh0iL2z7XmTLG3Iq', NULL, 1, 0, 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `validatemail`
+--
+
+CREATE TABLE `validatemail` (
+  `userid` varchar(55) NOT NULL,
+  `code` int(11) NOT NULL,
+  `dt` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `validatemail`
+--
+
+INSERT INTO `validatemail` (`userid`, `code`, `dt`) VALUES
+('A20307F1', 555618, '2023-06-02 15:56:21');
 
 -- --------------------------------------------------------
 
@@ -533,7 +589,7 @@ CREATE TABLE `wallet` (
 --
 
 INSERT INTO `wallet` (`UserId`, `quantity`, `currency`, `custom`) VALUES
-('747bcee4-2cb3-4c3d-b3d3-91096b135310', 8.7948, 'ETH', NULL),
+('747bcee4-2cb3-4c3d-b3d3-91096b135310', 3.7948, 'ETH', NULL),
 ('747bcee4-2cb3-4c3d-b3d3-91096b135310', 7.96533, 'BCEX', NULL),
 ('747bcee4-2cb3-4c3d-b3d3-91096b135310', 19.9653, 'SOL', NULL),
 ('747bcee4-2cb3-4c3d-b3d3-91096b135310', 7.96533, 'ADA', NULL),
@@ -543,16 +599,19 @@ INSERT INTO `wallet` (`UserId`, `quantity`, `currency`, `custom`) VALUES
 ('747bcee4-2cb3-4c3d-b3d3-91096b135310', 7.96533, 'BNB', NULL),
 ('747bcee4-2cb3-4c3d-b3d3-91096b135310', 7.96533, 'LTC', NULL),
 ('747bcee4-2cb3-4c3d-b3d3-91096b135310', 7.96533, 'BTC', NULL),
-('01c2f618-1efd-4ecf-a0ed-a9e53e378817', 1839.33, 'usdt', NULL),
-('01c2f618-1efd-4ecf-a0ed-a9e53e378817', 0.00604446, 'ETH', NULL),
-('01c2f618-1efd-4ecf-a0ed-a9e53e378817', 1816.36, 'BCEX', NULL),
-('01c2f618-1efd-4ecf-a0ed-a9e53e378817', 310.441, 'DOGE', NULL),
-('01c2f618-1efd-4ecf-a0ed-a9e53e378817', 77.7494, 'XRP', NULL),
 ('9b7d8370-422a-41c7-adda-fd84a706c3d4', 110744, 'usdt', NULL),
 ('9b7d8370-422a-41c7-adda-fd84a706c3d4', 13860.2, 'BNB', NULL),
 ('9b7d8370-422a-41c7-adda-fd84a706c3d4', 13860.2, 'BCEX', NULL),
-('747bcee4-2cb3-4c3d-b3d3-91096b135310', 5601, 'USDT', NULL),
-('9b7d8370-422a-41c7-adda-fd84a706c3d4', 11, 'ETH', NULL);
+('747bcee4-2cb3-4c3d-b3d3-91096b135310', 6223, 'USDT', NULL),
+('9b7d8370-422a-41c7-adda-fd84a706c3d4', 16, 'ETH', NULL),
+('A20307F1', 133.5, 'usdt', NULL),
+('A20307F1', 7984, 'BCEX', NULL),
+('A20307F1', 0.0233539, 'ETH', NULL),
+('60BBDB81', 100, 'usdt', NULL),
+('60BBDB81', 9980, 'BCEX', NULL),
+('60BBDB81', 4.70533, 'SOL', NULL),
+('60BBDB81', 0.104819, 'ETH', NULL),
+('60BBDB81', 0.974609, 'BNB', NULL);
 
 --
 -- Indexes for dumped tables
@@ -648,7 +707,7 @@ ALTER TABLE `customcoin`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=190;
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
 
 --
 -- Constraints for dumped tables
