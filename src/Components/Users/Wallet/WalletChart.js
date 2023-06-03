@@ -34,10 +34,12 @@ const WalletChart = () => {
 
     // Chart
 const data = {
-    labels: ['USDT', 'ETH', 'XRP' ],
+    // labels: ['USDT', 'ETH', 'XRP' ],
+    labels: ['not Connected', 'not Connected', 'not Connected' ],
     datasets: [
       {
-        data: [300, 50, 100, 70],
+        data: [50, 50, 50, 50],
+        // data: ['not Connected to Wallet', 'not Connected to Wallet', 'not Connected to Wallet', 'not Connected to Wallet'],
          
             backgroundColor: [ '#5442F2', '#19B6A4'],
             // hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],

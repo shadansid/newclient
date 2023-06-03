@@ -6,8 +6,8 @@ import axios from 'axios';
 import reportWebVitals from './reportWebVitals';
 
  
-axios.defaults.baseURL = 'https://btccrypto.exchange/api/';
-// axios.defaults.baseURL = ''; 
+// axios.defaults.baseURL = 'https://btccrypto.exchange/api/';
+axios.defaults.baseURL = ''; 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

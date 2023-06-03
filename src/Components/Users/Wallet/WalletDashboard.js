@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Box, Typography } from '@mui/material'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 const WalletDashboard = ({ bg }) => {
   const [walletdata, setwalletdata] = useState([])
   const [total, settotal] = useState(0)
@@ -80,12 +81,12 @@ const WalletDashboard = ({ bg }) => {
                 {ele.quantity}&nbsp;{ele.currency.toUpperCase()}
               </Box>
               <Box sx={{ width: '20%' }}>
-                <Button
-                  sx={{ fontSize: { sm: '13px', xs: '10px' } }}
+                <Link to='/userpanel/wallet/withdraw'
+                  style={{ fontSize: { sm: '13px', xs: '10px' }, textDecoration: 'none', color:'#5661ff'}}
                   size="small"
                 >
                   Widthraw
-                </Button>
+                </Link>
               </Box>
 
               {/* <div><img src= alt="" /></div> */}

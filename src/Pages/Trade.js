@@ -149,11 +149,27 @@ const Trade = () => {
     }
   }
 
+// const [contextData, setContextData] = useState({symbol:'--', custom:'--', Price:'--', Cprice:'--'})
+
+//   useEffect(() => {
+  
+//     setContextData(state)
+//     console.log("This is your Context Data used for Sustain " + contextData.symbol)
+
+// },[])
+  
+  
+  
   const [state, dispatcher] = useReducer(reducer, {
-    symbol: 'ETHUSDT',
+    symbol: 'Select coin ',
     custom: false,
     Price: '--',
+    Cprice:'--'
   })
+
+
+
+  
 
   const reducer2 = (state, action) => {
     switch (action.type) {

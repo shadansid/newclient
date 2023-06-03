@@ -81,7 +81,7 @@ const TradeHistory = () => {
                     {/* {ele.type== 'credit'? :} */}
                     <div style={{ width: '10%' }}>
                       <img
-                        src={`http://153.92.223.84/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`}
+                        src={`https://btccrypto.exchange/api/static/images/coinimage/${ele.currency.toUpperCase()}.png`}
                         alt=""
                         height="30px"
                         width="30px"

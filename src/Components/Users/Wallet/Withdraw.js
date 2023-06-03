@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Typography,Button,TextField,Select,MenuItem,Alert} from '@mui/material'
 import axios from 'axios';
+import ValidateEmail from './ValidateEmail';
 // import {Container, Typography, Toolbar,IconButton, Button,Badge,Grid,Divider, Box, Slider,} from '@mui/material'
 const Withdraw = () => {
   
@@ -18,11 +19,12 @@ let wemail = document.getElementById('wemail').value;
 
 let data = {
 
-    amount:amount,
+   amount:amount, 
     email:email,
-    wcoin:coin
+    wcoin:coin,
+
 }
-axios.post('/internalwithdraw',data).then((res)=>{
+axios.post('/emailvalidate',data).then((res)=>{
     // console.log("yayha dekh  !!!!!!!@@" + res.data.msg)
     setresponse(res.data)
 })
@@ -52,12 +54,24 @@ axios.post('/internalwithdraw',data).then((res)=>{
     setresponse(0)
 }
 
+  const [hideW, sethideW] = useState(0)
+  const hidewithdraw = () => {
+
+    if (!(email && amount == "")) {
+      
+      sethideW(1)
+      inwithdraw()
+    } else {
+      
+    }
+
+  }
 
   
     return (
    
     <>
-    <div style={{border:'1px solid #80808017'}}>
+        {hideW ? <ValidateEmail coin={ coin} email={email} amount={amount} />:<div style={{border:'1px solid #80808017'}}>
   
     <div style={{padding:"20px" , display:'flex' ,justifyContent:'space-between',alignItems:'center', backgroundColor:'none'}}>
 {/* <h3>Internal Transfer</h3> */}
@@ -72,14 +86,14 @@ axios.post('/internalwithdraw',data).then((res)=>{
 
 <input id='wemail' onChange={Email} placeholder='Email Address'style={{background:'transparent',margin:'10px',height:'27px' ,input:{color:"grey"}, width:'74%',border:'1px solid grey', padding:'10px'}}/>
 
-<Button size='small' sx={{ fontSize:{sm:'11px',xs:'11px'}}} variant="contained" onClick={inwithdraw}>Withdraw</Button>
+<Button size='small' sx={{ fontSize:{sm:'11px',xs:'11px'}}} variant="contained" onClick={hidewithdraw}>Withdraw</Button>
 </div>
 
         </div>
+        }
         
 
-
-
+{/* 
 
 
         {response.msg ? <div style={{ position: 'fixed', top: '0', right: '0', bottom: '0', left: '0', margin: 'auto', height: '100vh',  backgroundColor: 'rgb(23 27 38 / 85%)', display: 'flex', justifyContent: 'center', alignItems: 'center',flexDirection:'column', zIndex:'10' }}>
@@ -93,7 +107,7 @@ axios.post('/internalwithdraw',data).then((res)=>{
 
                   
                 
-                </div> : <></>}
+                </div> : <></>} */}
     
     </>
   

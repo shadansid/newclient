@@ -40,7 +40,8 @@ function CoinListBox({ coins, disbableBtn }, props) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://btccrypto.exchange/api/searchquery/${'U'}`
+        // `https://btccrypto.exchange/api/searchquery/${'U'}`
+        `/searchquery/${'U'}`
       )
       const data = await response.json()
       setSearchResults(data)
@@ -53,7 +54,8 @@ function CoinListBox({ coins, disbableBtn }, props) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://btccrypto.exchange/api/searchquery/${searchQuery}`
+        // `https://btccrypto.exchange/api/searchquery/${searchQuery}`
+        `/searchquery/${searchQuery}`
       )
       const data = await response.json()
       setSearchResults(data)

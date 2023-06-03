@@ -135,11 +135,14 @@ const Showwallet = () => {
        
      
        
-        TotalAmountArray.push( E.quantity * (EachCoinPrice[E.currency.toUpperCase()] === undefined ? (E.quantity * bcex).toFixed(3) : EachCoinPrice[E.currency.toUpperCase()].USD))
+        // TotalAmountArray.push(E.quantity * (EachCoinPrice[E.currency.toUpperCase()] === undefined ? (E.quantity * bcex).toFixed(3) : EachCoinPrice[E.currency.toUpperCase()].USD))
+        
+
+        TotalAmountArray.push( E.quantity * (EachCoinPrice[E.currency.toUpperCase()] === undefined ? (bcex).toFixed(3) : EachCoinPrice[E.currency.toUpperCase()].USD))
 
 
 
-     console.log(   E.quantity * (EachCoinPrice[E.currency.toUpperCase()] === undefined ? (E.quantity * bcex).toFixed(3) : EachCoinPrice[E.currency.toUpperCase()].USD)
+     console.log(   E.quantity * (EachCoinPrice[E.currency.toUpperCase()] === undefined ? (bcex).toFixed(3) : EachCoinPrice[E.currency.toUpperCase()].USD)
      )
       })
 

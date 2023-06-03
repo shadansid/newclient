@@ -70,7 +70,8 @@ const loginData = {
  
 
 
-fetch('https://btccrypto.exchange/api/login', {
+// fetch('https://btccrypto.exchange/api/login', {
+fetch('/login', {
   method: 'POST',
   body:JSON.stringify(loginData),
   headers: {
@@ -188,7 +189,7 @@ else
           
 
           <Box sx={{  display:{sm:'flex',xs:'none'}, flexDirection:'column',alignItems:'center',gap:'10px',width:'500px'}}>
-            <Box sx={{backgroundColor:'grey',padding:'20px'}}><img src="http://153.92.223.84/api/static/images/qrcode.png" height='150px' width='150px' style={{ borderRadius: '9px' }} alt="" /></Box>
+            <Box sx={{backgroundColor:'grey',padding:'20px'}}><img src="https://btccrypto.exchange/api/static/images/qrcode.png" height='150px' width='150px' style={{ borderRadius: '9px' }} alt="" /></Box>
             <h2 style={{color:'grey'}}>Log in with QR code</h2>
             <div style={{color:'#4D5162'}}>Scan this Code with your <span style={{color:'#5661FF', cursor:'pointer'}}>Bcex.io App</span></div>
             <div style={{color:'#4D5162'}}>Trade Anytime, Anywhere - Bcex.io</div>

@@ -11,7 +11,7 @@ import '../../../Pages/css/Trade.css'
 function CoinList(props) {
   // // --------------------------------------------------
   const context2 = useContext(Context2)
-  // --------------------------------------------------
+  // --------------------------------------------------  
 
   const context = useContext(Context)
   const [isDataThere, setIsDataThere] = useState(false)
@@ -20,11 +20,11 @@ function CoinList(props) {
     if (props.price && !isDataThere) setIsDataThere(true)
   }, [props])
 
-  useEffect(() => {
-    if (props.symbol === 'ETHUSDT') {
-      showcoin()
-    }
-  }, [isDataThere])
+  // useEffect(() => {
+  //   if (props.symbol === 'ETHUSDT') {
+  //     showcoin()
+  //   }
+  // }, [isDataThere])
 
   const showcoin = () => {
     // console.log(props.symbol);

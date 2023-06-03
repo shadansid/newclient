@@ -104,8 +104,9 @@ function App() {
       <Route exact path="/Logout" element={<Logout/>}/>
       
       {/* <Route exact path="/trade" element={<Trade/>}/> */}
-      <Route exact path="/chart" element={<Chart/>}/>
-      <Route exact path="/registration" element={<Registration/>}/>
+          <Route exact path="/chart" element={<Chart />} />
+          <Route exact path="/registration" element={<Registration/>} />
+      <Route exact path="/registration/:id" element={<Registration/>}/>
       <Route exact path="/login" element={<Login/>}/>
       <Route exact path="/testoy" element={<Test/>}/>
       <Route exact path="/bycoin" element={<BuyCoin/>}/>

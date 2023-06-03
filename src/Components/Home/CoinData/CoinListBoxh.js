@@ -77,7 +77,7 @@ function CoinListBoxh({ coins, bg }) {
       {
         coinid: 786507,
         symbol: 'SOLUSDT',
-        coinimg: '/static/images/coinimage/SOL.png',
+        coinimg: 'https://btccrypto.exchange/api/static/images/coinimage/SOL.png',
         quantity: null,
         price: null,
       },

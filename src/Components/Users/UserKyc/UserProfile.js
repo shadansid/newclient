@@ -78,7 +78,7 @@ const UserProfile = ({ bg }) => {
               <Box></Box>
               <Box sx={{ marginTop: '25px' }}>
                 <img
-                  src="http://153.92.223.84/api/static/images/levels/basic.png"
+                  src="https://btccrypto.exchange/api/static/images/levels/basic.png"
                   height={'40px'}
                   width={'40px'}
                   alt=""
